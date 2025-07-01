@@ -2980,7 +2980,7 @@ table.alt tbody tr td {
     width: 100%;
     height: 100%;
     background-color: #212931;
-    background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../images/bg2.png");
+    background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../images/WEI07491.JPG");
     background-size: auto, auto, 100% auto;
     background-position: center, center, top center;
     background-repeat: repeat, no-repeat, no-repeat;
@@ -4460,3 +4460,93 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 .today-label {
     color: red;
 }
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .card {
+    background-color: #ffffff10;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .card h4 {
+    font-size: 1.1rem;
+    color: #999;
+    margin-bottom: 0.6rem;
+  }
+  
+  .card p {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+  
+  .card a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .card a:hover {
+    text-decoration: underline;
+  }
+  .accordion {
+    width: 100%;
+    border-top: 1px solid #ccc;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .accordion-button {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1em;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .accordion-button:hover {
+    background: #f0f0f0;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #fafafa;
+    padding: 0 1em;
+  }
+
+  .accordion-content p {
+    padding: 1em 0;
+    margin: 0;
+  }
+
+  .accordion-button::after {
+    content: "＋";
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-button.active::after {
+    content: "－";
+    transform: rotate(180deg);
+  }
