@@ -11,19 +11,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-        <style>
-        .modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.75);align-items:center;justify-content:center;overflow-y:auto;padding:2rem;}
-        .modal.active{display:flex;animation:fadeIn .25s both;}
-        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-        .modal-content{background:#fff;max-width:860px;width:100%;padding:2.5rem 2rem;border-radius:8px;line-height:1.7;font-size:1rem;color:#333;position:relative;box-shadow:0 20px 40px rgba(0,0,0,.3);}
-        .modal-content h2{margin-top:0}
-        .modal-close{position:absolute;right:1.2rem;top:1rem;font-size:1.8rem;cursor:pointer;color:#888;line-height:1;}
-        .modal-close:hover{color:#000}
-        details{margin:.8rem 0;border:1px solid #e0e0e0;border-radius:6px;}
-        summary{cursor:pointer;padding:.6rem 1rem;font-weight:600;}
-        details[open] summary{background:#f5f5f5}
-        body.modal-open{overflow:hidden}
-        @media(max-width:600px){.modal-content{font-size:.94rem;padding:2rem 1.4rem;}}
+    <style>
+        html { scroll-behavior: smooth; }
+        .quick-nav { padding: 10px; text-align: center; border-bottom: none !important; border: white !important; }
+        .quick-nav a { color: #aacbe2 !important; font-weight: bold !important; font-size: 1rem !important; }
+        .quick-nav .button:hover { background-color: #005fa3 !important; }
+        .post { border-top: white !important; padding-top: 100px !important; }
+        .date { margin-bottom: 0px !important; }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+        }
+  /* Modal Content 美化 */
+  .modal-content {
+    background-color: #ffffff;
+    margin: 8% auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5em;
+    color: #005fa3;
+    border-bottom: 2px solid #aacbe2;
+    padding-bottom: 0.3em;
+  }
+
+  .modal-content p.intro {
+    font-style: italic;
+    margin-bottom: 1em;
+    color: #555;
+  }
+
+  .modal-content h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #005fa3;
+  }
+
+  .modal-content ul {
+    margin-left: 1.2em;
+    list-style-type: disc;
+  }
+
+  .modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  .modal-content small {
+    display: block;
+    margin-bottom: 1em;
+    color: #777;
+  }
+
+  .modal-content .button {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #0077c8, #00aaff);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .modal-content .button:hover {
+    background: linear-gradient(135deg, #005fa3, #0088dd);
+  }
+
+  .modal-close {
+    font-size: 1.5rem;
+    color: #aaa;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+  }
+  .modal-close:hover {
+    color: #333;
+  }
+/* 行程表 table 樣式 */
+.itinerary-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.8rem 0 1.2rem;
+  font-size:1rem;
+}
+.itinerary-table th,
+.itinerary-table td{
+  padding:.55rem .8rem;
+  border:1px solid #ddd;
+  text-align:left;
+}
+.itinerary-table th{
+  background:#f5f8fc;
+  color:#005fa3;
+  font-weight:600;
+}
+
     </style>
 </head>
 
@@ -159,28 +264,6 @@
             <section class="alt">
                 <h2>聯絡資訊</h2>
             </section>
-            <section class="alt">
-                <h3>地址</h3>
-                <p>日本琉球縣</p>
-            </section>
-            <section class="alt">
-                <h3>負責人<br /> XXX
-                </h3>
-                <p>+81 090-1234-5678</p>
-            </section>
-            <section class="alt">
-                <h3>聯絡電話
-                </h3>
-                <p>+81 98-1234-5678</p>
-            </section>
-            <section class="alt">
-                <h3>電子郵件</h3>
-                <p>example@gmail.com</a>
-                </p>
-            </section>
-
-
-
         </section>
 
     </footer>
@@ -204,14 +287,16 @@
          <strong>建議年齡：</strong>10–60歲<br>
          <strong>教練比例：</strong>1:2
       </p>
-      <label>參考行程表：</label>
-      <select>
-        <option>09:00 報到 &amp; 裝備講解</option>
-        <option>09:30 體能熱身</option>
-        <option>10:00 水中人魚體驗</option>
-        <option>11:00 水下攝影 &amp; 分享時間</option>
-        <option>11:30 結束 &amp; 返程</option>
-      </select>
+<h3>參考行程表</h3>
+<table class="itinerary-table">
+  <tr><th>時間</th><th>內容</th></tr>
+  <tr><td>09:00</td><td>報到 &amp; 裝備講解</td></tr>
+  <tr><td>09:30</td><td>體能熱身</td></tr>
+  <tr><td>10:00</td><td>水中人魚體驗</td></tr>
+  <tr><td>11:00</td><td>水下攝影 &amp; 分享時間</td></tr>
+  <tr><td>11:30</td><td>結束 &amp; 返程</td></tr>
+</table>
+
       <p><strong>價格：</strong>￥22,800（含稅）</p>
       <h3>報名須知</h3>
       <ul>
@@ -241,14 +326,16 @@
          <strong>建議年齡：</strong>10–60歲<br>
          <strong>教練比例：</strong>1:2
       </p>
-      <label>參考行程表：</label>
-      <select>
-        <option>09:00 報到 &amp; 裝備說明</option>
-        <option>09:30 呼吸 &amp; 漂浮練習</option>
-        <option>10:00 擺尾推進技巧</option>
-        <option>11:00 簡易下潛體驗</option>
-        <option>11:30 結束 &amp; 分享</option>
-      </select>
+<h3>參考行程表</h3>
+<table class="itinerary-table">
+  <tr><th>時間</th><th>內容</th></tr>
+  <tr><td>09:00</td><td>報到 &amp; 裝備說明</td></tr>
+  <tr><td>09:30</td><td>呼吸 &amp; 漂浮練習</td></tr>
+  <tr><td>10:00</td><td>擺尾推進技巧</td></tr>
+  <tr><td>11:00</td><td>簡易下潛體驗</td></tr>
+  <tr><td>11:30</td><td>結束 &amp; 分享</td></tr>
+</table>
+
       <p><strong>價格：</strong>￥29,800（含稅）</p>
       <h3>報名須知</h3>
       <ul>
@@ -277,16 +364,18 @@
          <strong>建議年齡：</strong>10–60歲<br>
          <strong>教練比例：</strong>1:4
       </p>
-      <label>參考行程表：</label>
-      <select>
-        <option>09:00 報到 &amp; 課程介紹</option>
-        <option>09:30 長距離擺尾練習</option>
-        <option>10:30 靜態停留技巧</option>
-        <option>12:00 午餐休息</option>
-        <option>13:00 優雅轉身 &amp; 環境適應</option>
-        <option>15:00 Fun Dive 體驗 (折扣¥4,000)</option>
-        <option>16:00 結業 &amp; 頒發 Mermaid 證照</option>
-      </select>
+<h3>參考行程表</h3>
+<table class="itinerary-table">
+  <tr><th>時間</th><th>內容</th></tr>
+  <tr><td>09:00</td><td>報到 &amp; 課程介紹</td></tr>
+  <tr><td>09:30</td><td>長距離擺尾練習</td></tr>
+  <tr><td>10:30</td><td>靜態停留技巧</td></tr>
+  <tr><td>12:00</td><td>午餐休息</td></tr>
+  <tr><td>13:00</td><td>優雅轉身 &amp; 環境適應</td></tr>
+  <tr><td>15:00</td><td>Fun Dive 體驗 (折扣¥4,000)</td></tr>
+  <tr><td>16:00</td><td>結業 &amp; 頒發 Mermaid 證照</td></tr>
+</table>
+
       <p><strong>價格：</strong>￥46,800（含稅）</p>
       <h3>報名須知</h3>
       <ul>
@@ -314,14 +403,16 @@
          <strong>建議年齡：</strong>12–60歲<br>
          <strong>教練比例：</strong>1:4
       </p>
-      <label>參考行程表：</label>
-      <select>
-        <option>Day1 09:00-12:00 泳池高階技巧</option>
-        <option>Day1 13:00-16:00 水下編舞基礎</option>
-        <option>Day2 08:00-11:00 海域實戰練習</option>
-        <option>Day2 11:30-13:00 拍攝應對演練</option>
-        <option>Day2 14:00-16:00 結業典禮 &amp; 進階證照頒發</option>
-      </select>
+<h3>參考行程表</h3>
+<table class="itinerary-table">
+  <tr><th>時間</th><th>內容</th></tr>
+  <tr><td>Day1 09:00‑12:00</td><td>泳池高階技巧</td></tr>
+  <tr><td>Day1 13:00‑16:00</td><td>水下編舞基礎</td></tr>
+  <tr><td>Day2 08:00‑11:00</td><td>海域實戰練習</td></tr>
+  <tr><td>Day2 11:30‑13:00</td><td>拍攝應對演練</td></tr>
+  <tr><td>Day2 14:00‑16:00</td><td>結業典禮 &amp; 進階證照頒發</td></tr>
+</table>
+
       <p><strong>價格：</strong>￥68,000（含稅）<br>
          <em>第二日改船潛加¥6,000／Fun Dive 折¥4,000</em>
       </p>
