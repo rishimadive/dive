@@ -27,25 +27,86 @@
             overflow: auto;
             background-color: rgba(0,0,0,0.6);
         }
-        .modal-content {
-            background-color: #fff;
-            margin: 10% auto;
-            padding: 20px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-        }
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #aaa;
-            cursor: pointer;
-        }
-        .modal-close:hover { color: #000; }
+  /* Modal Content 美化 */
+  .modal-content {
+    background-color: #ffffff;
+    margin: 8% auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5em;
+    color: #005fa3;
+    border-bottom: 2px solid #aacbe2;
+    padding-bottom: 0.3em;
+  }
+
+  .modal-content p.intro {
+    font-style: italic;
+    margin-bottom: 1em;
+    color: #555;
+  }
+
+  .modal-content h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #005fa3;
+  }
+
+  .modal-content ul {
+    margin-left: 1.2em;
+    list-style-type: disc;
+  }
+
+  .modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  .modal-content small {
+    display: block;
+    margin-bottom: 1em;
+    color: #777;
+  }
+
+  .modal-content .button {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #0077c8, #00aaff);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .modal-content .button:hover {
+    background: linear-gradient(135deg, #005fa3, #0088dd);
+  }
+
+  .modal-close {
+    font-size: 1.5rem;
+    color: #aaa;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+  }
+  .modal-close:hover {
+    color: #333;
+  }
     </style>
 </head>
 
@@ -138,10 +199,12 @@
                     </div>
 
                     <br><br>
-
-                    <h3>RiShima Dive 相信</h3>
-                    <p>當潛水回歸本心，自由，也就真正回來了。<br><a href="#">→ 點我看詳細行程</a></p>
-
+<center>
+                    <div>
+                        <h3>RiShima Dive 相信</h3>
+                    <h4>當潛水回歸本心，自由，也就真正回來了。</h4>
+                </div>
+</center>
                 </div>
             </section>
 
@@ -151,10 +214,6 @@
         <footer id="footer">
             <section class="split contact">
                 <section class="alt"><h2>聯絡資訊</h2></section>
-                <section class="alt"><h3>地址</h3><p>日本琉球縣</p></section>
-                <section class="alt"><h3>負責人<br /> XXX</h3><p>+81 090-1234-5678</p></section>
-                <section class="alt"><h3>聯絡電話</h3><p>+81 98-1234-5678</p></section>
-                <section class="alt"><h3>電子郵件</h3><p>example@gmail.com</p></section>
             </section>
         </footer>
 
@@ -164,48 +223,467 @@
 
     <!-- Modals -->
     <!-- Modal Template: Duplicate and update content -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>慶良間浮潛 詳細行程</h2>
-            <p>這裡放置慶良間浮潛的詳細行程內容......</p>
-        </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>美人魚換裝體驗 詳細行程</h2>
-            <p>這裡放置美人魚換裝體驗的詳細行程內容......</p>
-        </div>
-    </div>
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>美人魚潛水體驗 詳細行程</h2>
-            <p>這裡放置美人魚潛水體驗的詳細行程內容......</p>
-        </div>
-    </div>
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>美人魚持證潛水 詳細行程</h2>
-            <p>這裡放置美人魚持證潛水的詳細行程內容......</p>
-        </div>
-    </div>
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>自由潛水體驗 詳細行程</h2>
-            <p>這裡放置自由潛水體驗的詳細行程內容......</p>
-        </div>
-    </div>
-    <div id="modal6" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>自由潛水持證潛水 詳細行程</h2>
-            <p>這裡放置自由潛水持證潛水的詳細行程內容......</p>
-        </div>
-    </div>
+<!-- Modal1: 慶良間浮潛 詳細行程 -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>慶良間浮潛</h2>
+    <p class="intro">「來沖繩，別錯過這片世界級藍色奇蹟！」</p>
+
+    <p>
+      沖繩最令人屏息的海域就在這裡──慶良間國立海域公園，透明度高達40米，被譽為「玻璃海」、「天堂藍」。<br>
+      跟著 RiShima Dive 搭船出發，深入只有少數人才知道的秘境海域，與熱帶魚悠游、在珊瑚花園間浮潛穿梭，<br>
+      不會游泳也能輕鬆享受！來沖繩，別只是看看海，要真正「走進海」裡。<br>
+      你會驚艷，原來自己也能在這片海中，自然地、優雅地、開心地閃耀！
+    </p>
+
+    <h3>參考行程表</h3>
+    <select name="itinerary">
+      <option>慶良間群島 半日 2潛 船潛 ￥15,800</option>
+      <option>慶良間群島 全日 3潛 船潛 ￥17,800</option>
+    </select>
+    <small>價格為最終含稅價，不另加費用</small>
+
+    <h3>報名須知</h3>
+    <ul>
+      <li>費用包括：消費稅・乘船費・教練費・泳池費・保險・全套器材・接送(那霸市內)、專業水中攝影服務</li>
+      <li>費用不包括：午餐</li>
+    </ul>
+
+    <h3>參加條件</h3>
+    <ul>
+      <li>10歳以上60歳以下 ※未成年需監護者簽署</li>
+      <li>詳閱並遵照 <a href="#" target="_blank">健康自檢表</a>，未通過者無法參加且無法退費</li>
+    </ul>
+
+    <h3>注意事項</h3>
+    <ul>
+      <li>行程及潛水區域於前日可能因天候變動，請保持聯絡</li>
+      <li>活動當日請勿飲酒；中途退出無法退費</li>
+      <li>預約前請確認 <a href="#" target="_blank">預約規則及取消政策</a></li>
+    </ul>
+
+    <h3>需要帶的物品</h3>
+    <ul>
+      <li>泳衣・水母衣・拖鞋・換洗衣物・毛巾</li>
+    </ul>
+<center>
+    <h4>不只是浮潛，是一場與沖繩玻璃海相遇的旅程紀錄</h4>
+    
+<a
+  href="https://rishimadive.rezio.shop/widget/product/4KIEUJ/order?step=1"
+  target="_blank"
+  style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none"
+>
+  <div
+    style="
+        padding: 8px 25px;
+        border: 0;
+        margin: 0;
+        outline: 0;
+        font-weight: inherit;
+        font-style: inherit;
+        font-family: inherit;
+        vertical-align: baseline;
+        background: #007bbe;
+        color: #FFFFFF;
+        font-size: 14px;
+        width: fit-content;
+        border-radius: 5px;"
+  >
+    立即預約
+  </div>
+</a>
+      </center>  
+  </div>
+</div>
+
+<!-- Modal2: 美人魚換裝體驗 詳細行程 -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>美人魚換裝體驗</h2>
+    <p class="intro">「把沖繩旅程，變成童話故事的開場白。」</p>
+    <p>
+      海風吹拂、陽光閃爍，腳下是沖繩玻璃般透明的海水，<br>
+      然後穿上魚尾，成為真正的美人魚。<br>
+      這不是潛水課程，也不是只是拍照打卡，<br>
+      而是一場專屬你的夢幻變身體驗。<br>
+      從美人魚泳裝、搭配飾品、到攝影師引導拍攝，<br>
+      RiShima Dive為你打造一場融合角色扮演、造型藝術與海邊寫真的魔法時刻。
+    </p>
+    <h3>每一位都是主角</h3>
+    <ul>
+      <li>一場「玩到心底最深處」的海邊變身體驗</li>
+      <li>多款大人與兒童美人魚泳裝</li>
+      <li>專屬造型配件：貝殼頭飾、貝殼泳圈背景，簡易妝髮</li>
+      <li>專業攝影師現場引導拍攝，美姿不尷尬</li>
+      <li>提供照片全檔案，完整帶走你的沖繩回憶</li>
+      <li>拍攝場景選擇：沙灘 / 礁岩 / 客人住宿飯店泳池（需事前確認可使用）</li>
+      <li>中文教練＆攝影團隊，親切安心</li>
+    </ul>
+    <h3>誰適合來參加？</h3>
+    <ul>
+      <li>曾經是小女孩，現在願意為夢想拍一張寫真的你</li>
+      <li>想一起在海邊當仙氣人魚姊妹的閨蜜</li>
+      <li>情侶夫妻旅拍想來點不一樣的浪漫驚喜</li>
+      <li>想幫孩子留下「我當過美人魚」回憶的家長們</li>
+    </ul>
+    <h3>參考行程表</h3>
+    <select name="itinerary2">
+      <option value="solo">獨享人魚計畫｜1人｜60分鐘｜¥20,800</option>
+      <option value="couple">閨蜜／情侶夫妻雙人方案｜2人｜90分鐘｜¥24,800</option>
+      <option value="parent">親子組合計畫｜1大1小｜90分鐘｜¥26,800</option>
+      <option value="family">全家人魚派對｜2大1小或2大2小｜120分鐘｜¥32,800</option>
+    </select>
+    <small>每追加一人 ¥3,000<br>價格為最終含稅價，不另加費用</small>
+    <h3>報名須知</h3>
+    <ul>
+      <li>費用包括：消費稅・教練費・保險・全套器材・接送(那霸市內)・專業攝影服務（照片全檔案交付）</li>
+      <li>費用不包括：午餐</li>
+    </ul>
+    <h3>參加條件</h3>
+    <ul>
+      <li>6歳以上65歳以下</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>活動當日請勿飲酒</li>
+      <li>因天氣變化，行程及拍攝地點可能於前日臨時調整，請保持聯絡暢通</li>
+      <li>小雨且安全無虞則照常進行，大雨／強風／雷雨可免費改期或全額退費</li>
+      <li>中途放棄恕無法退費</li>
+      <li>預約前請詳閱：預約規則與取消政策</li>
+      <li>所有參加者需填寫並通過健康檢查表，未通過者無法參加且不退款</li>
+      <li>本體驗為淺灘拍攝，不涉及深水活動，不建議孕婦參加</li>
+      <li>魚尾服裝尺寸適合 S～XL，如超出請提前洽詢</li>
+      <li>若孩童現場不願拍攝，將採輕鬆互動方式進行，拍攝成果不保證</li>
+      <li>魚尾與飾品為共用道具，損壞或遺失需酌收賠償費用</li>
+      <li>請準時抵達，遲到超過15分鐘可能縮短拍攝時間，恕不退款</li>
+      <li>飯店泳池拍攝需事前確認授權及費用，由客人自行負擔</li>
+    </ul>
+    <h3>需要帶的物品</h3>
+    <ul>
+      <li>泳衣・水母衣・拖鞋・換洗衣物・毛巾・飲用水・防曬用品</li>
+
+    </ul>
+    <center>
+          <h4>限量預約開放中｜拍下屬於你的童話一頁</h4>
+
+<a
+  href="https://rishimadive.rezio.shop/widget/product/4KIEUJ/order?step=1"
+  target="_blank"
+  style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none"
+>
+  <div
+    style="
+        padding: 8px 25px;
+        border: 0;
+        margin: 0;
+        outline: 0;
+        font-weight: inherit;
+        font-style: inherit;
+        font-family: inherit;
+        vertical-align: baseline;
+        background: #007bbe;
+        color: #FFFFFF;
+        font-size: 14px;
+        width: fit-content;
+        border-radius: 5px;"
+  >
+    立即預約
+  </div>
+</a>
+        </center>
+  </div>
+</div>
+
+<!-- Modal3: 美人魚潛水體驗 詳細行程 -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>美人魚潛水體驗</h2>
+    <p class="intro">「來沖繩的第一件事，就是變身美人魚！」</p>
+    <p>
+      不需要任何經驗，零基礎也能輕鬆上手，立刻開啟一場夢幻的水下旅程。<br>
+      RiShima Dive為你揮動魔法棒，穿上專屬的人魚尾巴，學習最基本的擺尾動作與水中漂浮，<br>
+      感受身體在水中輕盈滑行的奇妙時刻。課程安排在泳池的可站立淺水區進行，<br>
+      氣氛輕鬆、安全舒適，特別適合對美人魚世界充滿好奇、想要拍下人生第一次美人魚體驗的你！
+    </p>
+    <h3>上課資訊</h3>
+    <ul>
+      <li>上課時間：半日</li>
+      <li>上課地點：泳池淺水區</li>
+      <li>課程內容：暖身指導、美人魚尾體驗、專業水中寫真影片</li>
+      <li>適合年齡：10-60歲</li>
+      <li>教練比例：1:2</li>
+    </ul>
+    <h3>價格</h3>
+    <p>￥22,800（最終含稅價，不另加費用）</p>
+    <h3>報名須知</h3>
+    <ul>
+      <li>費用包括：消費稅・教練費・泳池費・保險・全套器材・接送(那霸市內)・專業水中攝影（照片＋影片全檔案）</li>
+      <li>費用不包括：午餐</li>
+    </ul>
+    <h3>參加條件</h3>
+    <ul>
+      <li>10歳以上60歳以下 ※未成年需監護者簽署</li>
+      <li>所有參加者請詳閱並通過健康自檢表，未通過者無法參加且不退款</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>因天氣海況變化，行程及潛水區域前日可能調整，請保持聯絡</li>
+      <li>活動當日請勿飲酒</li>
+      <li>中途放棄恕無法退費</li>
+      <li>預約前請確認預約規則及取消政策</li>
+    </ul>
+    <h3>需要帶的物品</h3>
+    <ul>
+      <li>泳衣・水母衣・拖鞋・換洗衣物・毛巾</li>
+    </ul>
+    <center>
+    <h4>人魚夢，不再只是幻想｜立即預約，化身人魚</h4>
+    
+<a
+  href="https://rishimadive.rezio.shop/widget/product/4KIEUJ/order?step=1"
+  target="_blank"
+  style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none"
+>
+  <div
+    style="
+        padding: 8px 25px;
+        border: 0;
+        margin: 0;
+        outline: 0;
+        font-weight: inherit;
+        font-style: inherit;
+        font-family: inherit;
+        vertical-align: baseline;
+        background: #007bbe;
+        color: #FFFFFF;
+        font-size: 14px;
+        width: fit-content;
+        border-radius: 5px;"
+  >
+    立即預約
+  </div>
+</a>
+        </center>
+  </div>
+</div>
+
+<!-- Modal4: 美人魚水中攝影 詳細行程 -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>美人魚水中攝影</h2>
+    <p class="intro">「不只是潛水，更是表演與感官的融合」</p>
+    <p>
+      穿上魚尾，潛入沖繩玻璃般的湛藍海水，這次不再只是練習，而是真正成為海裡的主角。<br>
+      RiShima Dive為持證的你，打造專屬的水中冒險。<br>
+      無論是在光影交錯的青之洞窟、繽紛熱帶魚群環繞的砂邊，<br>
+      還是夢幻透明的慶良間離島大海，這一次，你將真正自由地舞動，留下屬於自己的海之記憶。
+    </p>
+    <h3>參考行程表</h3>
+    <select name="itinerary4">
+      <option>慶良間群島 半日 2潛 船潛 ￥19,800</option>
+      <option>慶良間群島 全日 3潛 船潛 ￥22,800</option>
+    </select>
+    <small>價格為最終含稅價，不另加費用</small>
+    <h3>報名須知</h3>
+    <ul>
+      <li>費用包括：消費稅・乘船費・教練費・保險・全套器材・接送・專業水中攝影（照片＋影片全檔案）</li>
+      <li>費用不包括：午餐</li>
+    </ul>
+    <h3>參加條件</h3>
+    <ul>
+      <li>持有自由潛水 A1 或 Mermaid 等級證照以上</li>
+      <li>10歳以上60歳以下 ※未成年需監護者簽署</li>
+      <li>詳閱並通過健康自檢表，未通過者無法參加且不退款</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>因天候變化，行程與區域前日可能調整，請保持聯絡</li>
+      <li>活動當日請勿飲酒；中途放棄恕無法退費</li>
+      <li>預約前請確認預約規則及取消政策</li>
+    </ul>
+    <center>
+            <h4>即刻預約，人魚與沖繩海再次相遇</h4>
+
+
+<a
+  href="https://rishimadive.rezio.shop/widget/product/4KIEUJ/order?step=1"
+  target="_blank"
+  style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none"
+>
+  <div
+    style="
+        padding: 8px 25px;
+        border: 0;
+        margin: 0;
+        outline: 0;
+        font-weight: inherit;
+        font-style: inherit;
+        font-family: inherit;
+        vertical-align: baseline;
+        background: #007bbe;
+        color: #FFFFFF;
+        font-size: 14px;
+        width: fit-content;
+        border-radius: 5px;"
+  >
+    立即預約
+  </div>
+</a>
+        
+    </center>
+  </div>
+</div>
+
+<!-- Modal5: 自由潛水體驗 詳細行程 -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>自由潛水體驗</h2>
+    <p class="intro">「用一口氣，遇見最純粹的自己」</p>
+    <p>
+      自由潛水，不是比憋氣，也不是比距離，而是用身體、呼吸，與大海展開一場靜謐的對話。<br>
+      這是一段讓心靈沉靜下來的旅程，無需潛水經驗、不必擅長游泳，只需放下焦慮，<br>
+      讓身體交給海水，學習相信當下。<br>
+      在 RiShima Dive，從浮潛開始，一步步走向真正的自由。<br>
+      透過溫柔且細緻的引導，感受用一口氣潛入海中與海龜共舞、隨陽光一同下沉的魔法時刻。
+    </p>
+    <h3>參考行程表</h3>
+    <select name="itinerary5">
+      <option>慶良間群島 半日 2潛 船潛 ￥18,800</option>
+      <option>慶良間群島 全日 3潛 船潛 ￥20,800</option>
+    </select>
+    <small>價格為最終含稅價，不另加費用</small>
+    <h3>報名須知</h3>
+    <ul>
+      <li>費用包括：消費稅・乘船費・教練費・保險・全套器材・接送・專業水中攝影（照片＋影片全檔案）</li>
+      <li>費用不包括：午餐</li>
+    </ul>
+    <h3>參加條件</h3>
+    <ul>
+      <li>10歳以上60歳以下 ※未成年需監護者簽署</li>
+      <li>詳閱並通過健康自檢表，未通過者無法參加且不退款</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>因天候變化，行程與區域前日可能調整，請保持聯絡</li>
+      <li>活動當日請勿飲酒；中途放棄恕無法退費</li>
+      <li>預約前請確認預約規則及取消政策</li>
+    </ul>
+    <h3>需要帶的物品</h3>
+    <ul>
+      <li>泳衣・水母衣・拖鞋・換洗衣物・毛巾</li>
+    </ul>
+    <center>
+    <h4>即刻預約，張開雙手，我們帶你體驗</h4>
+    
+<a
+  href="https://rishimadive.rezio.shop/widget/product/KODEOQ/order?step=1"
+  target="_blank"
+  style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none"
+>
+  <div
+    style="
+        padding: 8px 25px;
+        border: 0;
+        margin: 0;
+        outline: 0;
+        font-weight: inherit;
+        font-style: inherit;
+        font-family: inherit;
+        vertical-align: baseline;
+        background: #007bbe;
+        color: #FFFFFF;
+        font-size: 14px;
+        width: fit-content;
+        border-radius: 5px;"
+  >
+    立即預約
+  </div>
+</a>
+        
+</center>
+  </div>
+</div>
+
+<!-- Modal6: 自由潛水水中攝影 詳細行程 -->
+<div id="modal6" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>自由潛水水中攝影</h2>
+    <p class="intro">「不只是潛水，而是與沖繩海洋的深度連結。」</p>
+    <p>
+      曾經，靜靜潛入深藍，感受時間放慢、心跳與海水同步。<br>
+      這一次，讓 RiShima Dive 帶領你回到那個純粹的瞬間。<br>
+      從岸潛秘境「砂邊」、光影流轉的「青之洞窟」，到夢幻透明的「慶良間群島」，<br>
+      每一口氣，都是與海洋重新連結的旅程。<br>
+      有時，是為了突破自我；有時，只想靜靜待在水裡片刻。<br>
+      這趟旅程，不為考試、不為證照，只為了自己而潛。
+    </p>
+    <h2>RiShima Dive 相信：</h2>
+    <blockquote>當自由潛水回歸初衷，自由，也就真正回來了。</blockquote>
+    <h3>參考行程表</h3>
+    <select name="itinerary6">
+      <option>慶良間群島 半日 2潛 船潛 ￥17,800</option>
+      <option>慶良間群島 全日 3潛 船潛 ￥19,800</option>
+    </select>
+    <small>價格為最終含稅價，不另加費用</small>
+    <h3>報名須知</h3>
+    <ul>
+      <li>費用包括：消費稅・乘船費・教練費・保險・全套器材・接送・專業水中攝影（照片＋影片全檔案）</li>
+      <li>費用不包括：午餐</li>
+    </ul>
+    <h3>參加條件</h3>
+    <ul>
+      <li>持有 AIDA/PADI/Molchanovs 自由潛水證照</li>
+      <li>10歳以上60歳以下 ※未成年需監護者簽署</li>
+      <li>詳閱並通過健康自檢表，未通過者無法參加且不退款</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>因天候變化，行程與區域前日可能調整，請保持聯絡</li>
+      <li>活動當日請勿飲酒；中途放棄恕無法退費</li>
+      <li>預約前請確認預約規則及取消政策</li>
+    </ul>
+    <h3>需要帶的物品</h3>
+    <ul>
+      <li>泳衣・水母衣・拖鞋・換洗衣物・毛巾</li>
+    </ul>
+    <center>
+    <h4>即刻預約，讓身體與大海同步，再次與自己相遇</h4>
+    
+<a
+  href="https://rishimadive.rezio.shop/widget/product/KODEOQ/order?step=1"
+  target="_blank"
+  style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none"
+>
+  <div
+    style="
+        padding: 8px 25px;
+        border: 0;
+        margin: 0;
+        outline: 0;
+        font-weight: inherit;
+        font-style: inherit;
+        font-family: inherit;
+        vertical-align: baseline;
+        background: #007bbe;
+        color: #FFFFFF;
+        font-size: 14px;
+        width: fit-content;
+        border-radius: 5px;"
+  >
+    立即預約
+  </div>
+</a>
+        </center>
+  </div>
+</div>
+
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
