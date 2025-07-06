@@ -10,6 +10,193 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+<!-- 在 main.css 之後 -->
+<style>
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 1rem auto;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: rgba(0,0,0,0.1); /* 測試用 */
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform .5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.slide img {
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+  display:block;
+}
+
+/* -- 取代原本 .carousel-nav button 款式 -- */
+.carousel-nav button{
+  width:3rem;                /* 更大點擊範圍 */
+  height:3rem;
+  border-radius:50%;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  /* 玻璃效果 */
+  background:rgba(255,255,255,.35);
+  backdrop-filter:blur(4px);
+
+  /* 外觀＆動態 */
+  color:#fff;
+  font-size:1.5rem;
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+  cursor:pointer;
+  transition:background .3s ease, transform .3s ease;
+}
+
+.carousel-nav button:hover{
+  background:rgba(255,255,255,.6);
+  transform:scale(1.1);
+}
+
+.carousel-nav button:active{
+  transform:scale(.95);
+}
+
+/* 讓 SVG 圖示保持一致大小 */
+.carousel-nav svg{
+  width:1rem;
+  height:1rem;
+  pointer-events:none;       /* 避免點到 SVG 而非按鈕 */
+}
+
+/* 1. 讓左右箭頭浮在幻燈片中央 */
+.carousel-nav{
+  position:absolute;
+  top:50%;
+  left:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  transform:translateY(-50%);
+  padding:0 0.75rem;        /* 與左右邊緣留一點距離 */
+  z-index:10;               /* 保證在圖片上方 */
+}
+
+/* 取代（或補上）.dots 區塊 ── 最重要的是 position:absolute; */
+.dots{
+  position:absolute;
+  bottom:1rem;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  z-index:10;
+}
+
+/* --- dots 改成正方形 --- */
+/* ---------- 重新設定 .dots 內按鈕 ---------- */
+.dots button{
+  /* 把所有預設樣式拔掉（含 padding / border / line-height 等） */
+  all: unset;
+
+  display:block;              /* 讓寬高完全生效 */
+  width:0.7rem;
+  height:0.7rem;
+  margin:0 0.3rem;
+
+  background:rgba(255,255,255,.35);
+  backdrop-filter:blur(4px);
+  cursor:pointer;
+  transition:background .3s ease, transform .3s ease;
+}
+
+.dots button:hover{
+  background:rgba(255,255,255,.6);
+  transform:scale(1.25);
+}
+
+.dots button.active{
+  background:rgba(255,255,255,.9);
+  transform:scale(1.4);
+}
+
+
+.dots button:hover{
+  background:rgba(255,255,255,.6);
+  transform:scale(1.25);
+}
+
+.dots button.active{
+  background:rgba(255,255,255,.9);
+  transform:scale(1.4);
+}
+/* 讓整個 contact 橫排並把圖示推到最右 */
+.split.contact{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+
+/* 整行橫排，左邊文字、右邊圖示 */
+.contact-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0.5rem 0;
+  width:100%;
+}
+
+/* 圖示列 */
+.social-icons{
+  display:flex;
+  gap:0.75rem;   /* 圖示間距 */
+}
+
+/* 每個圖示基礎樣式 */
+.si{
+  display:inline-block;
+  width:1.8rem;
+  height:1.8rem;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+  filter:drop-shadow(0 0 3px rgba(0,0,0,.35));
+  transition:transform .25s, filter .25s;
+}
+.si:hover{
+  transform:scale(1.15);
+  filter:drop-shadow(0 0 6px rgba(0,0,0,.5));
+}
+
+/* 個別平台圖示（使用 simple‑icons CDN，可自行換成本地 SVG/PNG） */
+.si.line        { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg'); }
+.si.instagram   { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); }
+.si.xiaohongshu { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg'); }
+.si.wechat      { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg'); }
+.si.email       { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg'); }
+
+@media screen and (max-width: 736px) {
+  /* 隱藏「聯絡資訊」文字 */
+  .contact-bar h2 { display: none; }
+
+  /* 讓整條 contact-bar 變成置中的單行 */
+  .contact-bar {
+    justify-content: center !important;   /* 水平置中所有內容 */
+    align-items: center;                  /* 垂直置中（保險起見） */
+  }
+
+  /* 如果想確定圖示群本身也置中，可加上一行 */
+  .social-icons { margin: 0 auto; }
+}
+</style>
 
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
@@ -58,7 +245,40 @@
                     <span class="date">與自然合而為一的時光</span>
                     <h2><a href="#">RiShima Dive</a></h2>
                 </header>
-                <img class="image main" src="images/dji_mimo_20250622_105304_20250622105304_1750582663391_photo.JPG" alt="" />
+<div class="carousel">
+  <div class="slides">
+      <div class="slide"><img src="images/輪播.jpg" alt="Slide 1"></div>
+      <div class="slide"><img src="images/輪播(1).jpg" alt="Slide 2"></div>
+      <div class="slide"><img src="images/輪播＋自由潛水體驗.jpg" alt="Slide 3"></div>
+      <div class="slide"><img src="images/輪播＋自由潛水體驗(1).jpg" alt="Slide 4"></div>
+      <div class="slide"><img src="images/輪播＋慶良間浮潛行程.jpg" alt="Slide 5"></div>
+    </div>
+<div class="carousel-nav">
+  <button id="prev" aria-label="上一張">
+    <!-- 左箭頭 -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6" />
+    </svg>
+  </button>
+
+  <button id="next" aria-label="下一張">
+    <!-- 右箭頭 -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6" />
+    </svg>
+  </button>
+</div>
+    <div class="dots">
+      <button data-index="0" class="active"></button>
+      <button data-index="1"></button>
+      <button data-index="2"></button>
+      <button data-index="3"></button>
+      <button data-index="4"></button>
+    </div>
+  </div>
+  <br><br>
                 <h2>關於RiShima Dive </h2>
                 <p>「Ri」，來自琉球古語，意為海洋；<br>「Shima」，是那座被碧藍擁抱的島嶼。</p>
                 <p>當浪花輕語，與島嶼一同呼吸，RiShima Dive 便悄然誕生<br> 一座專屬潛水者的海之秘境，也是一段回歸自然的心靈旅程。
@@ -69,9 +289,6 @@
                 <ul class="actions stacked">
                     <li><a href="traffic.html" class="button primary fit">行程介紹</a></li>
                 </ul>
-                <ul class="actions stacked">
-                    <li><a href="" class="button primary fit">馬上報名</a></li>
-                </ul>
             </article>
 
 
@@ -79,13 +296,19 @@
 
         <!-- Footer -->
         <footer id="footer">
+  <div class="contact-bar" style="padding-top: 50px;">
+    <h2>　　聯絡資訊</h2>
 
-            <section class="split contact">
-                <section class="alt">
-                    <h2>聯絡資訊</h2>
-                </section>
-            </section>
-
+    <div class="social-icons">
+      <a href="https://lin.ee/JWvtCOY"                  target="_blank" aria-label="LINE"       class="si line"></a>
+      <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram"  class="si instagram"></a>
+      <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource="
+                                                   target="_blank" aria-label="小紅書"     class="si xiaohongshu"></a>
+      <a href="weixin://dl/chat?YUNYUNDIVE"             aria-label="WeChat"                    class="si wechat"></a>
+      <a href="mailto:rishimadive@gmail.com"            aria-label="Email"                     class="si email"></a>
+      <span>　　</span>
+    </div>
+  </div>
         </footer>
 
 
@@ -106,6 +329,38 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+<script>
+(function() {
+  const slides = document.querySelector('.carousel .slides');
+  const dots   = document.querySelectorAll('.carousel .dots button');
+  const prev   = document.getElementById('prev');
+  const next   = document.getElementById('next');
+  let current = 0, total = dots.length;
+
+  function go(idx) {
+    slides.style.transform = `translateX(${-100*idx}%)`;
+    dots.forEach(d => d.classList.toggle('active', +d.dataset.index === idx));
+    current = idx;
+  }
+
+  prev.addEventListener('click', () => go((current - 1 + total) % total));
+  next.addEventListener('click', () => go((current + 1) % total));
+  dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.index)));
+
+  /* === 自動輪播：3 秒換一次 === */
+  let timer = setInterval(() => go((current + 1) % total), 3000);
+
+  /* 滑鼠移入 .carousel 停止，移出繼續 */
+  const carousel = document.querySelector('.carousel');
+  carousel.addEventListener('mouseenter', () => clearInterval(timer));
+  carousel.addEventListener('mouseleave', () => {
+    timer = setInterval(() => go((current + 1) % total), 3000);
+  });
+})();
+</script>
+
+
+
 
 </body>
 
