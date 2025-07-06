@@ -100,13 +100,23 @@
     background: linear-gradient(135deg, #005fa3, #0088dd);
   }
 
-  .modal-close {
-    font-size: 1.5rem;
-    color: #aaa;
-    position: absolute;
-    top: 16px;
-    right: 20px;
-  }
+.modal-content {
+  position: relative; /* 加這行，讓 .modal-close 定位基準在白色框內 */
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 1px;
+  font-size: 1.5rem;
+  color: #aaa;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: none !important;
+
+}
   .modal-close:hover {
     color: #333;
   }
@@ -199,7 +209,7 @@
                 <li><a href="traffic.html">行程介紹</a></li>
                 <li class="active"><a href="check.html">PADI課程介紹</a></li>
                 <li><a href="question.html">常見問題</a></li>
-                <li><a href="">預約連結</a></li>
+                <li><a href="https://rishimadive.rezio.shop/" target="_blank" rel="noopener noreferrer">預約連結</a></li>
             </ul>
 
         </nav>
@@ -323,6 +333,8 @@
     <div class="modal-content">
       <button class="modal-close">&times;</button>
       <h2>PADI 美人魚體驗行程｜PADI Discover Mermaid</h2>
+      <img src="images/PADI 美人魚體驗行程.JPG" alt="美人魚體驗" style="width:100%; border-radius:8px; margin:1rem 0;" />
+
       <p><strong>上課時間：</strong>半日<br>
          <strong>上課地點：</strong>游泳池<br>
          <strong>課程內容：</strong>暖身指導、美人魚尾體驗、專業水中寫真影片<br>
@@ -362,6 +374,7 @@
     <div class="modal-content">
       <button class="modal-close">&times;</button>
       <h2>PADI 基礎人魚課程｜PADI Basic Mermaid</h2>
+      <img src="images/PADI 基礎人魚課程1.JPG" alt="基礎人魚課程" style="width:100%; border-radius:8px; margin:1rem 0;" />
       <p><strong>上課時間：</strong>半日<br>
          <strong>上課地點：</strong>游泳池<br>
          <strong>課程內容：</strong>人魚器材裝備使用、基礎安全、水中人魚技巧練習<br>
@@ -400,6 +413,7 @@
     <div class="modal-content">
       <button class="modal-close">&times;</button>
       <h2>PADI 美人魚課程｜PADI Mermaid</h2>
+            <img src="images/PADI 美人魚課程.JPG" alt="美人魚課程" style="width:100%; border-radius:8px; margin:1rem 0;" />
       <p><strong>上課時間：</strong>1日<br>
          <strong>上課地點：</strong>游泳池<br>
          <strong>課程內容：</strong>進階技巧、表現練習、環境適應能力<br>
@@ -439,6 +453,7 @@
     <div class="modal-content">
       <button class="modal-close">&times;</button>
       <h2>PADI 進階美人魚課程｜PADI Advanced Mermaid</h2>
+      <img src="images/PADI 進階美人魚課程.JPG" alt="進階美人魚課程" style="width:100%; border-radius:8px; margin:1rem 0;" />
       <p><strong>上課時間：</strong>2日<br>
          <strong>上課地點：</strong>第一天游泳池、第二天開放水域<br>
          <strong>課程內容：</strong>進階擺尾、水下編舞、團體協作、拍攝應對<br>
