@@ -13,62 +13,99 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
         /* 整行橫排，左邊文字、右邊圖示 */
-.contact-bar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0.5rem 0;
-  width:100%;
-}
-
-/* 圖示列 */
-.social-icons{
-  display:flex;
-  gap:0.75rem;   /* 圖示間距 */
-}
-
-/* 每個圖示基礎樣式 */
-.si{
-  display:inline-block;
-  width:1.8rem;
-  height:1.8rem;
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position:center;
-  filter:drop-shadow(0 0 3px rgba(0,0,0,.35));
-  transition:transform .25s, filter .25s;
-}
-.si:hover{
-  transform:scale(1.15);
-  filter:drop-shadow(0 0 6px rgba(0,0,0,.5));
-}
-
-/* 個別平台圖示（使用 simple‑icons CDN，可自行換成本地 SVG/PNG） */
-.si.line        { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg'); }
-.si.instagram   { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); }
-.si.xiaohongshu { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg'); }
-.si.wechat      { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg'); }
-.si.email       { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg'); }
-#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 ,#main p, #main br,#main center{
-    border-top: none !important;
-}
-#main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main p{
-    padding-top: 0px !important;
-
-}
-@media screen and (max-width: 736px) {
-  /* 隱藏「聯絡資訊」文字 */
-  .contact-bar h2 { display: none; }
-
-  /* 讓整條 contact-bar 變成置中的單行 */
-  .contact-bar {
-    justify-content: center !important;   /* 水平置中所有內容 */
-    align-items: center;                  /* 垂直置中（保險起見） */
-  }
-
-  /* 如果想確定圖示群本身也置中，可加上一行 */
-  .social-icons { margin: 0 auto; }
-}
+        
+        .contact-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            width: 100%;
+        }
+        /* 圖示列 */
+        
+        .social-icons {
+            display: flex;
+            gap: 0.75rem;
+            /* 圖示間距 */
+        }
+        /* 每個圖示基礎樣式 */
+        
+        .si {
+            display: inline-block;
+            width: 1.8rem;
+            height: 1.8rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, .35));
+            transition: transform .25s, filter .25s;
+        }
+        
+        .si:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 6px rgba(0, 0, 0, .5));
+        }
+        /* 個別平台圖示（使用 simple‑icons CDN，可自行換成本地 SVG/PNG） */
+        
+        .si.line {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg');
+        }
+        
+        .si.instagram {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+        }
+        
+        .si.xiaohongshu {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg');
+        }
+        
+        .si.wechat {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg');
+        }
+        
+        .si.email {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg');
+        }
+        
+        #main h1,
+        #main h2,
+        #main h3,
+        #main h4,
+        #main h5,
+        #main h6,
+        #main p,
+        #main br,
+        #main center {
+            border-top: none !important;
+        }
+        
+        #main h1,
+        #main h2,
+        #main h3,
+        #main h4,
+        #main h5,
+        #main h6,
+        #main p {
+            padding-top: 0px !important;
+        }
+        
+        @media screen and (max-width: 736px) {
+            /* 隱藏「聯絡資訊」文字 */
+            .contact-bar h2 {
+                display: none;
+            }
+            /* 讓整條 contact-bar 變成置中的單行 */
+            .contact-bar {
+                justify-content: center !important;
+                /* 水平置中所有內容 */
+                align-items: center;
+                /* 垂直置中（保險起見） */
+            }
+            /* 如果想確定圖示群本身也置中，可加上一行 */
+            .social-icons {
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 
@@ -119,32 +156,34 @@
                 <p>我喜歡慢慢來，喜歡看你在水中一點一滴放鬆、開花結果。</p>
                 <p>海教我溫柔，教我呼吸，教我等待。
                     <br>如果你也想聽見海的語言，我會在這裡等你。</p>
-                    <br><br>
-            
-<center><h2>📌 為什麼選擇 RiShima Dive？</h2>
-    <h3>不只是體驗，更是一場用心設計的夢想旅程。
-    <br>在沖繩想成為人魚，就來 RiShima Dive。</h3></center>
-<br>
+                <br><br>
 
-    <h4>PADI 認證美人魚教練全程授課</h4>
-    <p> 所有課程皆由具國際資格、中文溝通無障礙的專業教練親自指導，保證安全與品質。</p>
-    <h4>✅ 提供專業人魚尾與全套裝備</h4>
-    <p> 從魚尾、單蹼、面鏡到浮具，一應俱全，免裝備煩惱，輕鬆參與！</p>
-    <h4>✅ 專業水中攝影服務</h4>
-    <p>  搭配專業潛水攝影師，捕捉你最夢幻的一瞬，水下寫真照片＆影片全程記錄。</p>
-    <h4>✅ 小班制教學，量身引導</h4>
-    <p>  每堂課皆採小班制，依照學員能力個別調整節奏，學得更快更安心。</p>
-    <h4>✅ 在沖繩最美水域授課</h4>
-    <p>  我們精選透明度高、安全穩定的泳池與海域，讓你在絕美海景中安心學習。</p>
-    <h4>✅ 中文溝通無障礙，貼心照顧每個細節</h4>
-    <p>  不論是初次體驗還是進階訓練，我們都會用心陪伴，讓你放心享受這場夢想旅程。</p>
-    <br><br>
+                <center>
+                    <h2>📌 為什麼選擇 RiShima Dive？</h2>
+                    <h3>不只是體驗，更是一場用心設計的夢想旅程。
+                        <br>在沖繩想成為人魚，就來 RiShima Dive。</h3>
+                </center>
+                <br>
 
-<center>
-    <h2>想讓人魚夢想成真，來沖繩就從 RiShima Dive 開始。</h2>
-    <h3>點我預約 → <a href="">【立即預約，化身人魚】</a></h3>
-</center>
-</section>
+                <h4>PADI 認證美人魚教練全程授課</h4>
+                <p> 所有課程皆由具國際資格、中文溝通無障礙的專業教練親自指導，保證安全與品質。</p>
+                <h4>✅ 提供專業人魚尾與全套裝備</h4>
+                <p> 從魚尾、單蹼、面鏡到浮具，一應俱全，免裝備煩惱，輕鬆參與！</p>
+                <h4>✅ 專業水中攝影服務</h4>
+                <p> 搭配專業潛水攝影師，捕捉你最夢幻的一瞬，水下寫真照片＆影片全程記錄。</p>
+                <h4>✅ 小班制教學，量身引導</h4>
+                <p> 每堂課皆採小班制，依照學員能力個別調整節奏，學得更快更安心。</p>
+                <h4>✅ 在沖繩最美水域授課</h4>
+                <p> 我們精選透明度高、安全穩定的泳池與海域，讓你在絕美海景中安心學習。</p>
+                <h4>✅ 中文溝通無障礙，貼心照顧每個細節</h4>
+                <p> 不論是初次體驗還是進階訓練，我們都會用心陪伴，讓你放心享受這場夢想旅程。</p>
+                <br><br>
+
+                <center>
+                    <h2>想讓人魚夢想成真，來沖繩就從 RiShima Dive 開始。</h2>
+                    <h3>點我預約 → <a href="https://rishimadive.rezio.shop/" target="_blank">【立即預約，化身人魚】</a></h3>
+                </center>
+            </section>
 
 
         </div>
@@ -153,19 +192,18 @@
 
         <!-- Footer -->
         <footer id="footer">
-  <div class="contact-bar" style="padding-top: 50px;">
-    <h2>　　聯絡資訊</h2>
+            <div class="contact-bar" style="padding-top: 50px;">
+                <h2>　　聯絡資訊</h2>
 
-    <div class="social-icons">
-      <a href="https://lin.ee/JWvtCOY"                  target="_blank" aria-label="LINE"       class="si line"></a>
-      <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram"  class="si instagram"></a>
-      <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource="
-                                                   target="_blank" aria-label="小紅書"     class="si xiaohongshu"></a>
-      <a href="weixin://dl/chat?YUNYUNDIVE"             aria-label="WeChat"                    class="si wechat"></a>
-      <a href="mailto:rishimadive@gmail.com"            aria-label="Email"                     class="si email"></a>
-      <span>　　</span>
-    </div>
-  </div>
+                <div class="social-icons">
+                    <a href="https://lin.ee/JWvtCOY" target="_blank" aria-label="LINE" class="si line"></a>
+                    <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram" class="si instagram"></a>
+                    <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource=" target="_blank" aria-label="小紅書" class="si xiaohongshu"></a>
+                    <a href="weixin://dl/chat?YUNYUNDIVE" aria-label="WeChat" class="si wechat"></a>
+                    <a href="mailto:rishimadive@gmail.com" aria-label="Email" class="si email"></a>
+                    <span>　　</span>
+                </div>
+            </div>
         </footer>
 
 
