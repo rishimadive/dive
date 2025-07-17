@@ -12,13 +12,37 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        html { scroll-behavior: smooth; }
-        .quick-nav { padding: 10px; text-align: center; border-bottom: none !important; border: white !important; }
-        .quick-nav a { color: #aacbe2 !important; font-weight: bold !important; font-size: 1rem !important; }
-        .quick-nav .button:hover { background-color: #005fa3 !important; }
-        .post { border-top: white !important; padding-top: 100px !important; }
-        .date { margin-bottom: 0px !important; }
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .quick-nav {
+            padding: 10px;
+            text-align: center;
+            border-bottom: none !important;
+            border: white !important;
+        }
+        
+        .quick-nav a {
+            color: #aacbe2 !important;
+            font-weight: bold !important;
+            font-size: 1rem !important;
+        }
+        
+        .quick-nav .button:hover {
+            background-color: #005fa3 !important;
+        }
+        
+        .post {
+            border-top: white !important;
+            padding-top: 100px !important;
+        }
+        
+        .date {
+            margin-bottom: 0px !important;
+        }
         /* Modal styles */
+        
         .modal {
             display: none;
             position: fixed;
@@ -28,166 +52,193 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0, 0, 0, 0.6);
         }
-  /* Modal Content 美化 */
-  .modal-content {
-    background-color: #ffffff;
-    margin: 8% auto;
-    padding: 30px 40px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  .modal-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5em;
-    color: #005fa3;
-    border-bottom: 2px solid #aacbe2;
-    padding-bottom: 0.3em;
-  }
-
-  .modal-content p.intro {
-    font-style: italic;
-    margin-bottom: 1em;
-    color: #555;
-  }
-
-  .modal-content h3 {
-    font-size: 1.2rem;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    color: #005fa3;
-  }
-
-  .modal-content ul {
-    margin-left: 1.2em;
-    list-style-type: disc;
-  }
-
-  .modal-content select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-  }
-
-  .modal-content small {
-    display: block;
-    margin-bottom: 1em;
-    color: #777;
-  }
-
-  .modal-content .button {
-    display: inline-block;
-    margin-top: 1em;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #0077c8, #00aaff);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  .modal-content .button:hover {
-    background: linear-gradient(135deg, #005fa3, #0088dd);
-  }
-
-.modal-content {
-  position: relative; 
-}
-
-.modal-close {
-  position: absolute;
-  top: 16px;
-  right: 1px;
-  font-size: 1.5rem;
-  color: #aaa;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: none !important;
-
-}
-  .modal-close:hover {
-    color: #333;
-  }
-/* 行程表 table 樣式 */
-.itinerary-table{
-  width:100%;
-  border-collapse:collapse;
-  margin:.8rem 0 1.2rem;
-  font-size:1rem;
-}
-.itinerary-table th,
-.itinerary-table td{
-  padding:.55rem .8rem;
-  border:1px solid #ddd;
-  text-align:left;
-}
-.itinerary-table th{
-  background:#f5f8fc;
-  color:#005fa3;
-  font-weight:600;
-}
-/* 整行橫排，左邊文字、右邊圖示 */
-.contact-bar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0.5rem 0;
-  width:100%;
-}
-
-/* 圖示列 */
-.social-icons{
-  display:flex;
-  gap:0.75rem;   /* 圖示間距 */
-}
-
-/* 每個圖示基礎樣式 */
-.si{
-  display:inline-block;
-  width:1.8rem;
-  height:1.8rem;
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position:center;
-  filter:drop-shadow(0 0 3px rgba(0,0,0,.35));
-  transition:transform .25s, filter .25s;
-}
-.si:hover{
-  transform:scale(1.15);
-  filter:drop-shadow(0 0 6px rgba(0,0,0,.5));
-}
-
-/* 個別平台圖示（使用 simple‑icons CDN，可自行換成本地 SVG/PNG） */
-.si.line        { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg'); }
-.si.instagram   { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); }
-.si.xiaohongshu { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg'); }
-.si.wechat      { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg'); }
-.si.email       { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg'); }
-@media screen and (max-width: 736px) {
-  /* 隱藏「聯絡資訊」文字 */
-  .contact-bar h2 { display: none; }
-
-  /* 讓整條 contact-bar 變成置中的單行 */
-  .contact-bar {
-    justify-content: center !important;   /* 水平置中所有內容 */
-    align-items: center;                  /* 垂直置中（保險起見） */
-  }
-
-  /* 如果想確定圖示群本身也置中，可加上一行 */
-  .social-icons { margin: 0 auto; }
-}
+        /* Modal Content 美化 */
+        
+        .modal-content {
+            background-color: #ffffff;
+            margin: 8% auto;
+            padding: 30px 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .modal-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5em;
+            color: #005fa3;
+            border-bottom: 2px solid #aacbe2;
+            padding-bottom: 0.3em;
+        }
+        
+        .modal-content p.intro {
+            font-style: italic;
+            margin-bottom: 1em;
+            color: #555;
+        }
+        
+        .modal-content h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            color: #005fa3;
+        }
+        
+        .modal-content ul {
+            margin-left: 1.2em;
+            list-style-type: disc;
+        }
+        
+        .modal-content select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .modal-content small {
+            display: block;
+            margin-bottom: 1em;
+            color: #777;
+        }
+        
+        .modal-content .button {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #0077c8, #00aaff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .modal-content .button:hover {
+            background: linear-gradient(135deg, #005fa3, #0088dd);
+        }
+        
+        .modal-content {
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 1px;
+            font-size: 1.5rem;
+            color: #aaa;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: none !important;
+        }
+        
+        .modal-close:hover {
+            color: #333;
+        }
+        /* 行程表 table 樣式 */
+        
+        .itinerary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: .8rem 0 1.2rem;
+            font-size: 1rem;
+        }
+        
+        .itinerary-table th,
+        .itinerary-table td {
+            padding: .55rem .8rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .itinerary-table th {
+            background: #f5f8fc;
+            color: #005fa3;
+            font-weight: 600;
+        }
+        /* 整行橫排，左邊文字、右邊圖示 */
+        
+        .contact-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            width: 100%;
+        }
+        /* 圖示列 */
+        
+        .social-icons {
+            display: flex;
+            gap: 0.75rem;
+            /* 圖示間距 */
+        }
+        /* 每個圖示基礎樣式 */
+        
+        .si {
+            display: inline-block;
+            width: 1.8rem;
+            height: 1.8rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, .35));
+            transition: transform .25s, filter .25s;
+        }
+        
+        .si:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 6px rgba(0, 0, 0, .5));
+        }
+        /* 個別平台圖示（使用 simple‑icons CDN，可自行換成本地 SVG/PNG） */
+        
+        .si.line {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg');
+        }
+        
+        .si.instagram {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+        }
+        
+        .si.xiaohongshu {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg');
+        }
+        
+        .si.wechat {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg');
+        }
+        
+        .si.email {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg');
+        }
+        
+        @media screen and (max-width: 736px) {
+            /* 隱藏「聯絡資訊」文字 */
+            .contact-bar h2 {
+                display: none;
+            }
+            /* 讓整條 contact-bar 變成置中的單行 */
+            .contact-bar {
+                justify-content: center !important;
+                /* 水平置中所有內容 */
+                align-items: center;
+                /* 垂直置中（保險起見） */
+            }
+            /* 如果想確定圖示群本身也置中，可加上一行 */
+            .social-icons {
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 
@@ -205,7 +256,7 @@
         <nav id="nav">
             <ul class="links">
                 <li><a href="index.html">首頁</a></li>
-                <li ><a href="detail.html">關於我們</a></li>
+                <li><a href="detail.html">關於我們</a></li>
                 <li><a href="traffic.html">行程介紹</a></li>
                 <li class="active"><a href="check.html">PADI課程介紹</a></li>
                 <li><a href="question.html">常見問題</a></li>
@@ -220,320 +271,529 @@
             <!-- Post -->
             <section class="post">
                 <header class="major">
-                    
+
                     <h1>PADI課程介紹</h1>
-<span class="date">被自然擁抱的湛藍之旅</span>
+                    <span class="date">被自然擁抱的湛藍之旅</span>
                     <div class="quick-nav" style="padding-top: 0px; padding-bottom: 10px;">
-                        <a href="#card1">PADI 美人魚體驗行程</a>　
-                        <a href="#card2">PADI 基礎人魚課程</a>　
-                        <a href="#card3">PADI 美人魚課程</a>　
-                        <a href="#card4">PADI 進階美人魚課程</a>　
+                        <a href="#card1">PADI 美人魚體驗行程</a>
+                        <a href="#card2">PADI 基礎人魚課程</a>
+                        <a href="#card3">PADI 美人魚課程</a>
+                        <a href="#card4">PADI 進階美人魚課程</a>
 
                     </div>
                 </header>
 
 
-<h4>陽光、玻璃海與人魚尾巴，是沖繩最夢幻的三件事！</h4>
-<p>沖繩擁有清澈湛藍的玻璃海、閃耀的陽光與多彩的珊瑚礁，是亞洲最適合體驗水下世界的島嶼之一。<br>
-    在這片與海洋緊密相連的樂土，RiShima Dive 為每位嚮往人魚夢想的人設計了完整的 PADI 美人魚系列課程。<br>
-   從初次體驗到進階證照，從零基礎開始穿上夢幻人魚尾巴，在 RiShima Dive，一步步蛻變為真正的水中美人魚。<br>
-    不論是旅行中的紀念、美照打卡的亮點，還是未來進入表演或教學領域的起點，這裡就是夢想開始的地方。</p>
+                <h4>陽光、玻璃海與人魚尾巴，是沖繩最夢幻的三件事！</h4>
+                <p>沖繩擁有清澈湛藍的玻璃海、閃耀的陽光與多彩的珊瑚礁，是亞洲最適合體驗水下世界的島嶼之一。<br> 在這片與海洋緊密相連的樂土，RiShima Dive 為每位嚮往人魚夢想的人設計了完整的 PADI 美人魚系列課程。<br> 從初次體驗到進階證照，從零基礎開始穿上夢幻人魚尾巴，在 RiShima Dive，一步步蛻變為真正的水中美人魚。<br> 不論是旅行中的紀念、美照打卡的亮點，還是未來進入表演或教學領域的起點，這裡就是夢想開始的地方。
+                </p>
 
-    <h4>來沖繩，不只是看海，而是走進海裡，成為海的一部分。</h4>
-<br>
+                <h4>來沖繩，不只是看海，而是走進海裡，成為海的一部分。</h4>
+                <br>
 
-<div class="card-container">
+                <div class="card-container">
 
-    <div class="card" id="card1">
-    <h3> 1. PADI 美人魚體驗行程｜PADI Discover Mermaid</h3>
-    <h4>來沖繩第一件該做的事，就是穿上人魚尾巴！夢想起步，零基礎也能輕鬆體驗！</h4>
-    <p>不需要任何經驗，在 RiShima Dive，一切從「夢想的第一步」開始。<br>
-        由擁有 PADI 國際認證的專業人魚教練親自帶領，穿上專屬魚尾，學習水中漂浮與優雅擺尾等基本技巧，
-        一步步感受從人類蛻變為人魚的奇妙歷程。<br><br>
-       課程於泳池淺水區進行，安全舒適、氣氛輕鬆，<br>
-        無論是旅途中想留下特別回憶，還是單純想體驗童話世界，RiShima Dive 都是你夢想啟程的地方。<br><button class="open-modal" data-modal="modal1">
+                    <div class="card" id="card1">
+                        <h3> 1. PADI 美人魚體驗行程｜PADI Discover Mermaid</h3>
+                        <h4>來沖繩第一件該做的事，就是穿上人魚尾巴！夢想起步，零基礎也能輕鬆體驗！</h4>
+                        <p>不需要任何經驗，在 RiShima Dive，一切從「夢想的第一步」開始。<br> 由擁有 PADI 國際認證的專業人魚教練親自帶領，穿上專屬魚尾，學習水中漂浮與優雅擺尾等基本技巧， 一步步感受從人類蛻變為人魚的奇妙歷程。
+                            <br><br> 課程於泳池淺水區進行，安全舒適、氣氛輕鬆，
+                            <br> 無論是旅途中想留下特別回憶，還是單純想體驗童話世界，RiShima Dive 都是你夢想啟程的地方。<br><button class="open-modal" data-modal="modal1">
               點我看詳細課程
-            </button></p></div>
-<br>
+            </button></p>
+                    </div>
+                    <br>
 
 
-<div class="card" id="card2">
-<h3> 2. PADI 基礎人魚課程｜PADI Basic Mermaid</h3>
-<h4>在沖繩的碧海藍天中，與 RiShima Dive 一起打下你的人魚基礎！</h4>
-<p>從體驗邁向入門，RiShima Dive 將帶你踏出成為真正人魚的第一步。<br>
-    本課程將系統化教授水中基礎技巧，包含呼吸控制、水中轉身、擺尾推進與簡單下潛等，<br>
-    讓你在清澈海島氛圍中，自信地駕馭人魚尾。<br><br>
-   完成課程後可獲得 PADI Basic Mermaid 國際認證，是進入專業人魚世界的重要門票。<br>
-    在沖繩最美的水域，由 RiShima Dive 與你一起打下紮實基礎，朝夢想再前進一步。<br><button class="open-modal" data-modal="modal2">
+                    <div class="card" id="card2">
+                        <h3> 2. PADI 基礎人魚課程｜PADI Basic Mermaid</h3>
+                        <h4>在沖繩的碧海藍天中，與 RiShima Dive 一起打下你的人魚基礎！</h4>
+                        <p>從體驗邁向入門，RiShima Dive 將帶你踏出成為真正人魚的第一步。<br> 本課程將系統化教授水中基礎技巧，包含呼吸控制、水中轉身、擺尾推進與簡單下潛等，
+                            <br> 讓你在清澈海島氛圍中，自信地駕馭人魚尾。
+                            <br><br> 完成課程後可獲得 PADI Basic Mermaid 國際認證，是進入專業人魚世界的重要門票。<br> 在沖繩最美的水域，由 RiShima Dive 與你一起打下紮實基礎，朝夢想再前進一步。<br><button class="open-modal" data-modal="modal2">
               點我看詳細課程
-            </button></p></div>
-<br>
-<div class="card" id="card3">
-<h3>3. PADI 美人魚課程｜PADI Mermaid</h3>
-<h4>沖繩玻璃海成為你的專屬舞台，與 RiShima Dive 一起展現獨一無二的人魚風采！</h4>
-<p>進階美人魚課程將帶你更深入水下世界，<br>
-    強化游動技巧，學習長距離擺尾、靜態停留與優雅轉身等高階動作，<br>
-    同時掌握在不同水域中自我保護與環境適應的能力。<br>
-   完成課程後，你將獲得 PADI Mermaid 國際認證，<br>
-    讓你不只是學會技巧，更能在沖繩這片絕美海域中，自信展現專屬於你的水下魅力。<br>
-    RiShima Dive，助你蛻變成為最耀眼的人魚！<br><button class="open-modal" data-modal="modal3">
+            </button></p>
+                    </div>
+                    <br>
+                    <div class="card" id="card3">
+                        <h3>3. PADI 美人魚課程｜PADI Mermaid</h3>
+                        <h4>沖繩玻璃海成為你的專屬舞台，與 RiShima Dive 一起展現獨一無二的人魚風采！</h4>
+                        <p>進階美人魚課程將帶你更深入水下世界，<br> 強化游動技巧，學習長距離擺尾、靜態停留與優雅轉身等高階動作，
+                            <br> 同時掌握在不同水域中自我保護與環境適應的能力。
+                            <br> 完成課程後，你將獲得 PADI Mermaid 國際認證，<br> 讓你不只是學會技巧，更能在沖繩這片絕美海域中，自信展現專屬於你的水下魅力。
+                            <br> RiShima Dive，助你蛻變成為最耀眼的人魚！<br><button class="open-modal" data-modal="modal3">
               點我看詳細課程
-            </button></p></div>
+            </button></p>
+                    </div>
 
-        <br>
-        <div class="card" id="card4">
-<h3>4. PADI 進階美人魚課程｜PADI Advanced Mermaid</h3>
-<h4>以沖繩玻璃海為訓練場，與 RiShima Dive 一同邁向專業級人魚之路！</h4>
-<p>這門專業進階課程專為追求卓越的你設計，<br>
-    涵蓋高階潛水姿勢、水下編舞創作、團體協作及拍攝應對技巧，<br>
-    全面提升體能與耐力，為教學、比賽或表演領域奠定堅實基礎。<br>
-   結訓後即可獲得 PADI Advanced Mermaid 證照，<br>
-    讓你不僅是人魚，更是水下的專業表演者與領航者。<br>
-    RiShima Dive，助你踏上璀璨的專業舞台！<br><button class="open-modal" data-modal="modal4">
+                    <br>
+                    <div class="card" id="card4">
+                        <h3>4. PADI 進階美人魚課程｜PADI Advanced Mermaid</h3>
+                        <h4>以沖繩玻璃海為訓練場，與 RiShima Dive 一同邁向專業級人魚之路！</h4>
+                        <p>這門專業進階課程專為追求卓越的你設計，<br> 涵蓋高階潛水姿勢、水下編舞創作、團體協作及拍攝應對技巧，
+                            <br> 全面提升體能與耐力，為教學、比賽或表演領域奠定堅實基礎。
+                            <br> 結訓後即可獲得 PADI Advanced Mermaid 證照，<br> 讓你不僅是人魚，更是水下的專業表演者與領航者。
+                            <br> RiShima Dive，助你踏上璀璨的專業舞台！<br><button class="open-modal" data-modal="modal4">
               點我看詳細課程
-            </button></p></div>
+            </button></p>
+                    </div>
 
-        <br>
+                    <br>
 
 
             </section>
 
 
 
+            </div>
+
+
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="contact-bar" style="padding-top: 50px;">
+                    <h2>　　聯絡資訊</h2>
+
+                    <div class="social-icons">
+                        <a href="https://lin.ee/JWvtCOY" target="_blank" aria-label="LINE" class="si line"></a>
+                        <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram" class="si instagram"></a>
+                        <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource=" target="_blank" aria-label="小紅書" class="si xiaohongshu"></a>
+                        <a href="weixin://dl/chat?YUNYUNDIVE" aria-label="WeChat" class="si wechat"></a>
+                        <a href="mailto:rishimadive@gmail.com" aria-label="Email" class="si email"></a>
+                        <span>　　</span>
+                    </div>
+                </div>
+            </footer>
+
+
+            <!-- Copyright -->
+            <div id="copyright">
+                <ul>
+                    <li>&copy; RiShima Dive 2025</li>
+                </ul>
+            </div>
+        </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <h2>PADI 美人魚體驗行程｜PADI Discover Mermaid</h2>
+                <img src="images/PADI 美人魚體驗行程.JPG" alt="美人魚體驗" style="width:100%; border-radius:8px; margin:1rem 0;" />
+
+                <p>
+                    來沖繩的第一件事，就是在 <strong>RiShima Dive</strong> 穿上人魚尾巴！<br> 不需要任何經驗，在 RiShima Dive，一切從「夢想的第一步」開始。<br> 由擁有 PADI 國際認證的專業人魚教練親自帶領，穿上專屬魚尾，學習水中漂浮與優雅擺尾等基本技巧，<br> 一步步感受從人類蛻變為人魚的奇妙歷程。
+                    <br> 課程於泳池淺水區進行，安全舒適、氣氛輕鬆，
+                    <br> 無論是旅途中想留下特別回憶，還是單純想體驗童話世界，
+                    <strong>RiShima Dive</strong> 都是你夢想啟程的地方。
+                </p>
+
+                <h3>課程資訊</h3>
+                <ul>
+                    <li><strong>上課時間：</strong>半日</li>
+                    <li><strong>上課地點：</strong>游泳池</li>
+                    <li><strong>課程內容：</strong>暖身指導、美人魚尾體驗、專業水中寫真影片</li>
+                    <li><strong>適合人群：</strong>初次想嘗試、想留下沖繩獨一無二旅行回憶的你</li>
+                    <li><strong>建議年齡：</strong>10–60歲</li>
+                    <li><strong>教練比例：</strong>1:2</li>
+                </ul>
+
+                <h3>參考行程（上午場 / 下午場）</h3>
+                <table class="itinerary-table">
+                    <tr>
+                        <th>時間</th>
+                        <th>內容</th>
+                    </tr>
+                    <tr>
+                        <td>08:00 / 13:00</td>
+                        <td>泳池集合（請提前10分鐘抵達）</td>
+                    </tr>
+                    <tr>
+                        <td>08:15 / 13:15</td>
+                        <td>資料登記 / 裝備確認</td>
+                    </tr>
+                    <tr>
+                        <td>08:30 / 13:30</td>
+                        <td>解說行程、注意事項、器材準備（提供中英文）</td>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>體能熱身</td>
+                    </tr>
+                    <tr>
+                        <td>10:00</td>
+                        <td>水中人魚體驗</td>
+                    </tr>
+                    <tr>
+                        <td>11:00</td>
+                        <td>水下攝影 & 分享時間</td>
+                    </tr>
+                    <tr>
+                        <td>11:30 / 16:30</td>
+                        <td>結束 & 返程（附設溫水淋浴與更衣室）</td>
+                    </tr>
+                </table>
+
+                <h3>價格</h3>
+                <p><strong>￥22,800（含稅）</strong><br> 價格為最終含稅價，不另加費用
+                </p>
+
+                <h3>報名須知</h3>
+                <ul>
+                    <li>費用包括：教練費、泳池費、保險、全套器材、接送（那霸市內）、水下拍攝全包服務</li>
+                    <li>費用不包括：午餐</li>
+                </ul>
+
+                <h3>參加條件</h3>
+                <ul>
+                    <li>10歳以上60歳以下，未成年需監護者簽署</li>
+                    <li>需通過<a href="/health.html">健康自檢表</a>，未通過者無法參加且不退費</li>
+                </ul>
+
+                <h3>注意事項</h3>
+                <ul>
+                    <li>因天候或海況變化，行程可能於前日變動，請保持聯絡</li>
+                    <li>活動當日請勿飲酒</li>
+                    <li>如因個人因素中斷課程，恕不退費</li>
+                    <li>預約前請務必確認<a href="https://bluevistadive.com/reservation/#b">預約規則及取消政策</a></li>
+                </ul>
+
+                <h3>需自備物品</h3>
+                <p>泳衣、水母衣、拖鞋、換洗衣物、毛巾</p>
+
+                <h3 style="text-align:center; margin-top:2rem;">人魚夢，不再只是幻想</h3>
+                <p style="text-align:center;">從現在開始，讓沖繩的海洋見證你的蛻變。</p>
+                <div style="text-align:center; margin-top:1rem;">
+                    <a href="#booking" class="button" style="padding: 0.75rem 1.5rem; background-color:#ff69b4; color:white; border:none; border-radius:6px; font-weight:bold;">立即預約，化身人魚</a>
+                </div>
+            </div>
         </div>
 
 
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <h2>PADI 基礎人魚課程｜PADI Basic Mermaid</h2>
+                <img src="images/PADI 基礎人魚課程1.JPG" alt="基礎人魚課程" style="width:100%; border-radius:8px; margin:1rem 0;" />
 
-        <!-- Footer -->
-        <footer id="footer">
-  <div class="contact-bar" style="padding-top: 50px;">
-    <h2>　　聯絡資訊</h2>
+                <p>
+                    在沖繩的碧海藍天中，與 <strong>RiShima Dive</strong> 一起打下你的人魚基礎！<br> 從體驗邁向入門，RiShima Dive 將帶你踏出成為真正人魚的第一步。<br> 本課程系統化教授呼吸控制、水中轉身、擺尾推進與簡單下潛等技巧，
+                    <br> 讓你在清澈海島氛圍中，自信地駕馭人魚尾。
+                    <br> 完成課程後可獲得 <strong>PADI Basic Mermaid</strong> 國際認證，<br> 是進入專業人魚世界的重要門票！
+                </p>
 
-    <div class="social-icons">
-      <a href="https://lin.ee/JWvtCOY"                  target="_blank" aria-label="LINE"       class="si line"></a>
-      <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram"  class="si instagram"></a>
-      <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource="
-                                                   target="_blank" aria-label="小紅書"     class="si xiaohongshu"></a>
-      <a href="weixin://dl/chat?YUNYUNDIVE"             aria-label="WeChat"                    class="si wechat"></a>
-      <a href="mailto:rishimadive@gmail.com"            aria-label="Email"                     class="si email"></a>
-      <span>　　</span>
-    </div>
-  </div>
-        </footer>
+                <h3>課程資訊</h3>
+                <ul>
+                    <li><strong>上課時間：</strong>半日</li>
+                    <li><strong>上課地點：</strong>游泳池</li>
+                    <li><strong>課程內容：</strong>人魚器材裝備使用、基礎人魚潛水安全、水中人魚技巧練習</li>
+                    <li><strong>適合人群：</strong>享受飛翔、想取得正式證照的你</li>
+                    <li><strong>建議年齡：</strong>10–60歲</li>
+                    <li><strong>教練比例：</strong>1:2</li>
+                </ul>
 
+                <h3>參考行程（上午場）</h3>
+                <table class="itinerary-table">
+                    <tr>
+                        <th>時間</th>
+                        <th>內容</th>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>報到 & 裝備說明</td>
+                    </tr>
+                    <tr>
+                        <td>09:30</td>
+                        <td>呼吸 & 漂浮練習</td>
+                    </tr>
+                    <tr>
+                        <td>10:00</td>
+                        <td>擺尾推進技巧</td>
+                    </tr>
+                    <tr>
+                        <td>11:00</td>
+                        <td>簡易下潛體驗</td>
+                    </tr>
+                    <tr>
+                        <td>11:30</td>
+                        <td>結束 & 分享</td>
+                    </tr>
+                </table>
 
-        <!-- Copyright -->
-        <div id="copyright">
-            <ul>
-                <li>&copy; RiShima Dive 2025</li>
-            </ul>
+                <h3>價格</h3>
+                <p><strong>￥29,800（含稅）</strong><br> 價格為最終含稅價，不另加費用
+                </p>
+
+                <h3>報名須知</h3>
+                <ul>
+                    <li>費用包括：認證費、保險、全套器材、接送（那霸市內）、水下攝影</li>
+                    <li>費用不包括：午餐</li>
+                </ul>
+
+                <h3>參加條件</h3>
+                <ul>
+                    <li>10歳以上60歳以下，未成年需監護者簽署</li>
+                    <li>需遵守<a href="/health.html">健康自檢表</a>與取消政策，如取消將扣除￥21,000</li>
+                </ul>
+
+                <h3>注意事項</h3>
+                <ul>
+                    <li>因天候或海況變化，行程及潛水區域可能於前日調整，請保持聯絡</li>
+                    <li>活動當日請勿飲酒</li>
+                    <li>如因個人因素中斷課程，恕不退費</li>
+                    <li>預約前請詳閱 <strong><a href="https://bluevistadive.com/reservation/#b">預約規則及取消政策</a></strong></li>
+                </ul>
+
+                <h3>需自備物品</h3>
+                <p>泳衣、水母衣、拖鞋、換洗衣物、毛巾</p>
+
+                <h3 style="text-align:center; margin-top:2rem;">人魚夢，不再只是幻想</h3>
+                <p style="text-align:center;">從現在開始，讓沖繩的海洋見證你的蛻變。</p>
+                <div style="text-align:center; margin-top:1rem;">
+                    <a href="#booking" class="button" style="padding: 0.75rem 1.5rem; background-color:#ff69b4; color:white; border:none; border-radius:6px; font-weight:bold;">立即預約，化身人魚</a>
+                </div>
+            </div>
         </div>
-    </div>
-<div id="modal1" class="modal">
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-      <h2>PADI 美人魚體驗行程｜PADI Discover Mermaid</h2>
-      <img src="images/PADI 美人魚體驗行程.JPG" alt="美人魚體驗" style="width:100%; border-radius:8px; margin:1rem 0;" />
 
-      <p><strong>上課時間：</strong>半日<br>
-         <strong>上課地點：</strong>游泳池<br>
-         <strong>課程內容：</strong>暖身指導、美人魚尾體驗、專業水中寫真影片<br>
-         <strong>適合人群：</strong>初次體驗，想留下沖繩獨一無二回憶的你<br>
-         <strong>建議年齡：</strong>10–60歲<br>
-         <strong>教練比例：</strong>1:2
-      </p>
-<h3>參考行程表</h3>
-<table class="itinerary-table">
-  <tr><th>時間</th><th>內容</th></tr>
-  <tr><td>09:00</td><td>報到 &amp; 裝備講解</td></tr>
-  <tr><td>09:30</td><td>體能熱身</td></tr>
-  <tr><td>10:00</td><td>水中人魚體驗</td></tr>
-  <tr><td>11:00</td><td>水下攝影 &amp; 分享時間</td></tr>
-  <tr><td>11:30</td><td>結束 &amp; 返程</td></tr>
-</table>
 
-      <p><strong>價格：</strong>￥22,800（含稅）</p>
-      <h3>報名須知</h3>
-      <ul>
-        <li>費用包括：教練費、泳池費、保險、全套器材、接送 (那霸市內)、水下拍攝</li>
-        <li>費用不包括：午餐</li>
-      </ul>
-      <h3>參加條件 &amp; 注意事項</h3>
-      <ul>
-        <li>10歳以上60歳以下，未成年需監護者簽署</li>
-        <li>需通過健康自檢表，未通過者無法參加且不退費</li>
-        <li>因天候或海況，行程可能前日調整，請保持聯絡</li>
-        <li>活動當日請勿飲酒；因個人因素中斷課程無法退費</li>
-      </ul>
-      <h3>需自備物品</h3>
-      <p>泳衣、水母衣、拖鞋、換洗衣物、毛巾</p>
-    </div>
-  </div>
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <h2>PADI 美人魚課程｜PADI Mermaid</h2>
+                <img src="images/PADI 美人魚課程.JPG" alt="美人魚課程" style="width:100%; border-radius:8px; margin:1rem 0;" />
 
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-      <h2>PADI 基礎人魚課程｜PADI Basic Mermaid</h2>
-      <img src="images/PADI 基礎人魚課程1.JPG" alt="基礎人魚課程" style="width:100%; border-radius:8px; margin:1rem 0;" />
-      <p><strong>上課時間：</strong>半日<br>
-         <strong>上課地點：</strong>游泳池<br>
-         <strong>課程內容：</strong>人魚器材裝備使用、基礎安全、水中人魚技巧練習<br>
-         <strong>適合人群：</strong>享受飛翔、想取得正式證照者<br>
-         <strong>建議年齡：</strong>10–60歲<br>
-         <strong>教練比例：</strong>1:2
-      </p>
-<h3>參考行程表</h3>
-<table class="itinerary-table">
-  <tr><th>時間</th><th>內容</th></tr>
-  <tr><td>09:00</td><td>報到 &amp; 裝備說明</td></tr>
-  <tr><td>09:30</td><td>呼吸 &amp; 漂浮練習</td></tr>
-  <tr><td>10:00</td><td>擺尾推進技巧</td></tr>
-  <tr><td>11:00</td><td>簡易下潛體驗</td></tr>
-  <tr><td>11:30</td><td>結束 &amp; 分享</td></tr>
-</table>
+                <p>
+                    沖繩玻璃海成為你的專屬舞台，與 <strong>RiShima Dive</strong> 一起展現獨一無二的人魚風采！<br> 進階美人魚課程將帶你更深入水下世界，強化游動技巧，學習長距離擺尾、靜態停留與優雅轉身等高階動作，
+                    <br> 同時掌握在不同水域中自我保護與環境適應的能力。
+                    <br> 完成課程後，你將獲得 <strong>PADI Mermaid</strong> 國際認證，<br> 讓你不只是學會技巧，更能在沖繩這片絕美海域中，自信展現專屬於你的水下魅力。
+                    <br>
+                    <strong>RiShima Dive</strong>，助你蛻變成為最耀眼的人魚！
+                </p>
 
-      <p><strong>價格：</strong>￥29,800（含稅）</p>
-      <h3>報名須知</h3>
-      <ul>
-        <li>費用包括：認證費、保險、全套器材、接送(那霸市內)、水下攝影</li>
-        <li>費用不包括：午餐</li>
-      </ul>
-      <h3>參加條件 &amp; 注意事項</h3>
-      <ul>
-        <li>10–60歲，未成年需監護者簽署</li>
-        <li>需遵守健康自檢表＆取消政策，取消需扣￥21,000方可退款</li>
-        <li>當日請勿飲酒，中斷無法退費</li>
-      </ul>
-      <h3>需自備物品</h3>
-      <p>泳衣、水母衣、拖鞋、換洗衣物、毛巾</p>
-    </div>
-  </div>
+                <h3>課程資訊</h3>
+                <ul>
+                    <li><strong>上課時間：</strong>1日</li>
+                    <li><strong>上課地點：</strong>游泳池</li>
+                    <li><strong>課程內容：</strong>進階技巧、表現練習、環境適應能力</li>
+                    <li><strong>適合人群：</strong>已完成 Basic Mermaid、想要更進階的你</li>
+                    <li><strong>建議年齡：</strong>10–60歲</li>
+                    <li><strong>教練比例：</strong>1:4</li>
+                </ul>
 
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-      <h2>PADI 美人魚課程｜PADI Mermaid</h2>
-            <img src="images/PADI 美人魚課程.JPG" alt="美人魚課程" style="width:100%; border-radius:8px; margin:1rem 0;" />
-      <p><strong>上課時間：</strong>1日<br>
-         <strong>上課地點：</strong>游泳池<br>
-         <strong>課程內容：</strong>進階技巧、表現練習、環境適應能力<br>
-         <strong>適合人群：</strong>已完成 Basic Mermaid<br>
-         <strong>建議年齡：</strong>10–60歲<br>
-         <strong>教練比例：</strong>1:4
-      </p>
-<h3>參考行程表</h3>
-<table class="itinerary-table">
-  <tr><th>時間</th><th>內容</th></tr>
-  <tr><td>09:00</td><td>報到 &amp; 課程介紹</td></tr>
-  <tr><td>09:30</td><td>長距離擺尾練習</td></tr>
-  <tr><td>10:30</td><td>靜態停留技巧</td></tr>
-  <tr><td>12:00</td><td>午餐休息</td></tr>
-  <tr><td>13:00</td><td>優雅轉身 &amp; 環境適應</td></tr>
-  <tr><td>15:00</td><td>Fun Dive 體驗 (折扣¥4,000)</td></tr>
-  <tr><td>16:00</td><td>結業 &amp; 頒發 Mermaid 證照</td></tr>
-</table>
+                <h3>參考行程（全天）</h3>
+                <table class="itinerary-table">
+                    <tr>
+                        <th>時間</th>
+                        <th>內容</th>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>報到 & 課程介紹</td>
+                    </tr>
+                    <tr>
+                        <td>09:30</td>
+                        <td>長距離擺尾練習</td>
+                    </tr>
+                    <tr>
+                        <td>10:30</td>
+                        <td>靜態停留技巧</td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td>午餐休息</td>
+                    </tr>
+                    <tr>
+                        <td>13:00</td>
+                        <td>優雅轉身 & 環境適應</td>
+                    </tr>
+                    <tr>
+                        <td>15:00</td>
+                        <td>Fun Dive 體驗（行程折扣 ¥4,000）</td>
+                    </tr>
+                    <tr>
+                        <td>16:00</td>
+                        <td>結業 & 頒發 Mermaid 證照</td>
+                    </tr>
+                </table>
 
-      <p><strong>價格：</strong>￥46,800（含稅）</p>
-      <h3>報名須知</h3>
-      <ul>
-        <li>費用包括：認證費、保險、全套器材、接送(那霸市內)、水下攝影</li>
-        <li>費用不包括：午餐</li>
-      </ul>
-      <h3>參加條件 &amp; 注意事項</h3>
-      <ul>
-        <li>需完成 Basic Mermaid；未通過健康檢查者不參加不退費</li>
-        <li>取消需扣￥21,000後退費；中斷課程不退費</li>
-      </ul>
-      <h3>需自備物品</h3>
-      <p>泳衣、水母衣、拖鞋、換洗衣物、毛巾</p>
-    </div>
-  </div>
+                <h3>價格</h3>
+                <p><strong>￥46,800（含稅）</strong><br> 價格為最終含稅價，不另加費用
+                    <br>
+                    <em>追加預約人魚 Fun Dive 可享 ¥4,000 優惠折扣</em>
+                </p>
 
-  <div id="modal4" class="modal">
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-      <h2>PADI 進階美人魚課程｜PADI Advanced Mermaid</h2>
-      <img src="images/PADI 進階美人魚課程.JPG" alt="進階美人魚課程" style="width:100%; border-radius:8px; margin:1rem 0;" />
-      <p><strong>上課時間：</strong>2日<br>
-         <strong>上課地點：</strong>第一天游泳池、第二天開放水域<br>
-         <strong>課程內容：</strong>進階擺尾、水下編舞、團體協作、拍攝應對<br>
-         <strong>適合人群：</strong>已完成 Mermaid，追求專業者<br>
-         <strong>建議年齡：</strong>12–60歲<br>
-         <strong>教練比例：</strong>1:4
-      </p>
-<h3>參考行程表</h3>
-<table class="itinerary-table">
-  <tr><th>時間</th><th>內容</th></tr>
-  <tr><td>Day1 09:00‑12:00</td><td>泳池高階技巧</td></tr>
-  <tr><td>Day1 13:00‑16:00</td><td>水下編舞基礎</td></tr>
-  <tr><td>Day2 08:00‑11:00</td><td>海域實戰練習</td></tr>
-  <tr><td>Day2 11:30‑13:00</td><td>拍攝應對演練</td></tr>
-  <tr><td>Day2 14:00‑16:00</td><td>結業典禮 &amp; 進階證照頒發</td></tr>
-</table>
+                <h3>報名須知</h3>
+                <ul>
+                    <li>費用包括：認證費、保險、全套器材、接送（那霸市內）、水下攝影</li>
+                    <li>費用不包括：午餐</li>
+                </ul>
 
-      <p><strong>價格：</strong>￥68,000（含稅）<br>
-         <em>第二日改船潛加¥6,000／Fun Dive 折¥4,000</em>
-      </p>
-      <h3>報名須知</h3>
-      <ul>
-        <li>費用包括：認證費、保險、全套器材、接送(那霸市內)、水下攝影</li>
-        <li>費用不包括：午餐</li>
-      </ul>
-      <h3>參加條件 &amp; 注意事項</h3>
-      <ul>
-        <li>需完成 Mermaid；健康不符者不退費</li>
-        <li>取消需扣￥21,000後退費；中斷課程不退費</li>
-      </ul>
-      <h3>需自備物品</h3>
-      <p>泳衣、水母衣、拖鞋、換洗衣物、毛巾</p>
-    </div>
-  </div>
+                <h3>參加條件</h3>
+                <ul>
+                    <li>需完成 Basic Mermaid 課程</li>
+                    <li>10歲以上 60歲以下，未成年需監護者簽署</li>
+                    <li>需遵守<a href="/health.html">健康自檢表</a>與取消政策，未通過者無法參加且不退費</li>
+                </ul>
 
-   <script>
-    // Open modal
-    document.querySelectorAll('.open-modal').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-modal');
-        document.getElementById(id).style.display = 'block';
-      });
-    });
-    // Close modal
-    document.querySelectorAll('.modal-close').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.closest('.modal').style.display = 'none';
-      });
-    });
-    // Click outside to close
-    window.addEventListener('click', e => {
-      if (e.target.classList.contains('modal')) {
-        e.target.style.display = 'none';
-      }
-    });
-  </script>
-      <script>
-        $(function() {
-            $('.open-modal').on('click', function(e) {
-                e.preventDefault();
-                var modalId = $(this).data('modal');
-                $('#' + modalId).fadeIn(200);
+                <h3>注意事項</h3>
+                <ul>
+                    <li>因天氣與海況變化，課程與潛水區域可能前日調整，請保持聯絡</li>
+                    <li>活動當日請勿飲酒</li>
+                    <li>如因個人因素中斷課程，恕不退費</li>
+                    <li>取消行程將扣除￥21,000 後，計算需退費金額</li>
+                    <li>請預約前詳閱 <strong><a href="https://bluevistadive.com/reservation/#b">預約規則及取消政策</a></strong></li>
+                </ul>
+
+                <h3>需自備物品</h3>
+                <p>泳衣、水母衣、拖鞋、換洗衣物、毛巾</p>
+
+                <h3 style="text-align:center; margin-top:2rem;">人魚夢，不再只是幻想</h3>
+                <p style="text-align:center;">從現在開始，讓沖繩的海洋見證你的蛻變。</p>
+                <div style="text-align:center; margin-top:1rem;">
+                    <a href="#booking" class="button" style="padding: 0.75rem 1.5rem; background-color:#ff69b4; color:white; border:none; border-radius:6px; font-weight:bold;">立即預約，化身人魚</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <h2>PADI 進階美人魚課程｜PADI Advanced Mermaid</h2>
+                <img src="images/PADI 進階美人魚課程.JPG" alt="進階美人魚課程" style="width:100%; border-radius:8px; margin:1rem 0;" />
+
+                <p>
+                    以沖繩玻璃海為訓練場，與 <strong>RiShima Dive</strong> 一同邁向專業級人魚之路！<br> 這門專業進階課程專為追求卓越的你設計，
+                    <br> 涵蓋高階潛水姿勢、水下編舞創作、團體協作及拍攝應對技巧，
+                    <br> 全面提升體能與耐力，為教學、比賽或表演領域奠定堅實基礎。
+                    <br> 結訓後即可獲得 <strong>PADI Advanced Mermaid</strong> 國際證照，<br> 讓你不僅是人魚，更是水下的專業表演者與領航者。
+                </p>
+
+                <h3>課程資訊</h3>
+                <ul>
+                    <li><strong>上課時間：</strong>2日</li>
+                    <li><strong>上課地點：</strong>第一天游泳池，第二天開放水域</li>
+                    <li><strong>課程內容：</strong>進階擺尾、水下編舞、團體協作、拍攝應對</li>
+                    <li><strong>適合人群：</strong>已完成 Mermaid，追求專業者</li>
+                    <li><strong>建議年齡：</strong>12–60歲</li>
+                    <li><strong>教練比例：</strong>1:4</li>
+                </ul>
+
+                <h3>參考行程（兩日）</h3>
+                <table class="itinerary-table">
+                    <tr>
+                        <th>時間</th>
+                        <th>內容</th>
+                    </tr>
+                    <tr>
+                        <td>Day1 09:00‑12:00</td>
+                        <td>泳池高階技巧</td>
+                    </tr>
+                    <tr>
+                        <td>Day1 13:00‑16:00</td>
+                        <td>水下編舞基礎</td>
+                    </tr>
+                    <tr>
+                        <td>Day2 08:00‑11:00</td>
+                        <td>海域實戰練習</td>
+                    </tr>
+                    <tr>
+                        <td>Day2 11:30‑13:00</td>
+                        <td>拍攝應對演練</td>
+                    </tr>
+                    <tr>
+                        <td>Day2 14:00‑16:00</td>
+                        <td>結業典禮 & 進階證照頒發</td>
+                    </tr>
+                </table>
+
+                <h3>價格</h3>
+                <p>
+                    <strong>￥68,000（含稅）</strong><br> 價格為最終含稅價，不另加費用
+                    <br>
+                    <em>第二日如改為船潛，加價 ¥6,000</em><br>
+                    <em>追加預約人魚 Fun Dive 可享 ¥4,000 優惠折扣</em>
+                </p>
+
+                <h3>報名須知</h3>
+                <ul>
+                    <li>費用包括：認證費、保險、全套器材、接送（那霸市內）、水下攝影</li>
+                    <li>費用不包括：午餐</li>
+                </ul>
+
+                <h3>參加條件</h3>
+                <ul>
+                    <li>需完成 PADI Mermaid 課程</li>
+                    <li>12歲以上 60歲以下，未成年需監護者簽署</li>
+                    <li>如健康狀況不符將無法參加且不退費<a href="/health.html">請參考(健康自檢表)</a></li>
+                </ul>
+
+                <h3>注意事項</h3>
+                <ul>
+                    <li>天氣或海況變動可能導致行程調整，請保持聯絡</li>
+                    <li>活動當日請勿飲酒</li>
+                    <li>課程中途中斷恕不退費</li>
+                    <li>取消預約時，將扣除￥21,000 後辦理退費</li>
+                    <li>請務必詳閱 <strong><a href="https://bluevistadive.com/reservation/#b">預約規則及取消政策</a></strong></li>
+                </ul>
+
+                <h3>需自備物品</h3>
+                <p>泳衣、水母衣、拖鞋、換洗衣物、毛巾</p>
+
+                <h3 style="text-align:center; margin-top:2rem;">人魚夢，不再只是幻想</h3>
+                <p style="text-align:center;">從現在開始，讓沖繩的海洋見證你的蛻變。</p>
+                <div style="text-align:center; margin-top:1rem;">
+                    <a href="#booking" class="button" style="padding: 0.75rem 1.5rem; background-color:#ff69b4; color:white; border:none; border-radius:6px; font-weight:bold;">立即預約，化身人魚</a>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            // Open modal
+            document.querySelectorAll('.open-modal').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-modal');
+                    document.getElementById(id).style.display = 'block';
+                });
             });
-            $('.modal-close').on('click', function() {
-                $(this).closest('.modal').fadeOut(200);
+            // Close modal
+            document.querySelectorAll('.modal-close').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.closest('.modal').style.display = 'none';
+                });
             });
-            $('.modal').on('click', function(e) {
-                if (e.target === this) { $(this).fadeOut(200); }
+            // Click outside to close
+            window.addEventListener('click', e => {
+                if (e.target.classList.contains('modal')) {
+                    e.target.style.display = 'none';
+                }
             });
-        });
-    </script>
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/date.js"></script>
+        </script>
+        <script>
+            $(function() {
+                $('.open-modal').on('click', function(e) {
+                    e.preventDefault();
+                    var modalId = $(this).data('modal');
+                    $('#' + modalId).fadeIn(200);
+                });
+                $('.modal-close').on('click', function() {
+                    $(this).closest('.modal').fadeOut(200);
+                });
+                $('.modal').on('click', function(e) {
+                    if (e.target === this) {
+                        $(this).fadeOut(200);
+                    }
+                });
+            });
+        </script>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/date.js"></script>
 
 </body>
 
