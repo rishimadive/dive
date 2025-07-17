@@ -11,135 +11,170 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-      <style>
-    /* 布局微調 */
-    #main { padding: 3rem 1rem; }
-
-    /* 手風琴外層 */
-    .accordion {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* 每一項卡片 */
-    .accordion-item {
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      background: linear-gradient(135deg,#f0f9ff 0%,#e0f0ff 100%);
-      transition: transform .2s ease;
-    }
-    .accordion-item:hover { transform: translateY(-2px); }
-
-    /* 按鈕 (標題列) */
-    .accordion-button {
-      all: unset;               /* 移除預設 button 樣式 */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 1rem 1.4rem;
-      cursor: pointer;
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: .5px;
-      color: #003d55;
-      user-select: none;
-    }
-    /* 箭頭動畫 */
-    .accordion-button::after {
-      content: "▸";
-      font-size: 1.1rem;
-      transition: transform .3s ease;
-    }
-    .accordion-button.active::after { transform: rotate(90deg); }
-
-    /* 內容區 */
-    .accordion-content {
-      background: #ffffff;
-      color: #333;
-      padding: 0 1.4rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .4s ease, padding .4s ease;
-      line-height: 1.65;
-    }
-    .accordion-button.active + .accordion-content {
-      padding: 1rem 1.4rem 1.4rem;
-    }
-
-    /* 主要標題美化 */
-    .post header.major h1 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin-bottom: 0.5rem;
-    }
-    .post header.major .date {
-      color: #0077b6;
-      font-weight: 500;
-    }
-
-    /* 兩顆 CTA 按鈕對齊 */
-    .actions.stacked {
-      max-width: 320px;
-      margin: 1.5rem auto;
-    }
-    p{
-      padding-top: 0px !important;
-      margin-bottom: 10px !important;
-    }
-
-    /* 整行橫排，左邊文字、右邊圖示 */
-.contact-bar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0.5rem 0;
-  width:100%;
-}
-
-/* 圖示列 */
-.social-icons{
-  display:flex;
-  gap:0.75rem;   /* 圖示間距 */
-}
-
-/* 每個圖示基礎樣式 */
-.si{
-  display:inline-block;
-  width:1.8rem;
-  height:1.8rem;
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position:center;
-  filter:drop-shadow(0 0 3px rgba(0,0,0,.35));
-  transition:transform .25s, filter .25s;
-}
-.si:hover{
-  transform:scale(1.15);
-  filter:drop-shadow(0 0 6px rgba(0,0,0,.5));
-}
-
-/* 個別平台圖示（使用 simple‑icons CDN，可自行換成本地 SVG/PNG） */
-.si.line        { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg'); }
-.si.instagram   { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); }
-.si.xiaohongshu { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg'); }
-.si.wechat      { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg'); }
-.si.email       { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg'); }
-@media screen and (max-width: 736px) {
-  /* 隱藏「聯絡資訊」文字 */
-  .contact-bar h2 { display: none; }
-
-  /* 讓整條 contact-bar 變成置中的單行 */
-  .contact-bar {
-    justify-content: center !important;   /* 水平置中所有內容 */
-    align-items: center;                  /* 垂直置中（保險起見） */
-  }
-
-  /* 如果想確定圖示群本身也置中，可加上一行 */
-  .social-icons { margin: 0 auto; }
-}
-  </style>
+    <style>
+        /* 布局微調 */
+        
+        #main {
+            padding: 3rem 1rem;
+        }
+        /* 手風琴外層 */
+        
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* 每一項卡片 */
+        
+        .accordion-item {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f0ff 100%);
+            transition: transform .2s ease;
+        }
+        
+        .accordion-item:hover {
+            transform: translateY(-2px);
+        }
+        /* 按鈕 (標題列) */
+        
+        .accordion-button {
+            all: unset;
+            /* 移除預設 button 樣式 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1rem 1.4rem;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: .5px;
+            color: #003d55;
+            user-select: none;
+        }
+        /* 箭頭動畫 */
+        
+        .accordion-button::after {
+            content: "▸";
+            font-size: 1.1rem;
+            transition: transform .3s ease;
+        }
+        
+        .accordion-button.active::after {
+            transform: rotate(90deg);
+        }
+        /* 內容區 */
+        
+        .accordion-content {
+            background: #ffffff;
+            color: #333;
+            padding: 0 1.4rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease, padding .4s ease;
+            line-height: 1.65;
+        }
+        
+        .accordion-button.active+.accordion-content {
+            padding: 1rem 1.4rem 1.4rem;
+        }
+        /* 主要標題美化 */
+        
+        .post header.major h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin-bottom: 0.5rem;
+        }
+        
+        .post header.major .date {
+            color: #0077b6;
+            font-weight: 500;
+        }
+        /* 兩顆 CTA 按鈕對齊 */
+        
+        .actions.stacked {
+            max-width: 320px;
+            margin: 1.5rem auto;
+        }
+        
+        p {
+            padding-top: 0px !important;
+            margin-bottom: 10px !important;
+        }
+        /* 整行橫排，左邊文字、右邊圖示 */
+        
+        .contact-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            width: 100%;
+        }
+        /* 圖示列 */
+        
+        .social-icons {
+            display: flex;
+            gap: 0.75rem;
+            /* 圖示間距 */
+        }
+        /* 每個圖示基礎樣式 */
+        
+        .si {
+            display: inline-block;
+            width: 1.8rem;
+            height: 1.8rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, .35));
+            transition: transform .25s, filter .25s;
+        }
+        
+        .si:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 6px rgba(0, 0, 0, .5));
+        }
+        /* 個別平台圖示（使用 simple‑icons CDN，可自行換成本地 SVG/PNG） */
+        
+        .si.line {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg');
+        }
+        
+        .si.instagram {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+        }
+        
+        .si.xiaohongshu {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg');
+        }
+        
+        .si.wechat {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg');
+        }
+        
+        .si.email {
+            background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg');
+        }
+        
+        @media screen and (max-width: 736px) {
+            /* 隱藏「聯絡資訊」文字 */
+            .contact-bar h2 {
+                display: none;
+            }
+            /* 讓整條 contact-bar 變成置中的單行 */
+            .contact-bar {
+                justify-content: center !important;
+                /* 水平置中所有內容 */
+                align-items: center;
+                /* 垂直置中（保險起見） */
+            }
+            /* 如果想確定圖示群本身也置中，可加上一行 */
+            .social-icons {
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 
 <body class="is-preload">
@@ -156,7 +191,7 @@
         <nav id="nav">
             <ul class="links">
                 <li><a href="index.html">首頁</a></li>
-                <li ><a href="detail.html">關於我們</a></li>
+                <li><a href="detail.html">關於我們</a></li>
                 <li><a href="traffic.html">行程介紹</a></li>
                 <li><a href="check.html">PADI課程介紹</a></li>
                 <li class="active"><a href="question.html">常見問題</a></li>
@@ -171,155 +206,211 @@
             <!-- Post -->
             <section class="post">
                 <header class="major">
-                  <span class="date">前往讓心解開的海中</span>
-                  <h1>常見問題</h1>
+                    <span class="date">前往讓心解開的海中</span>
+                    <h1>常見問題</h1>
                 </header>
-              
 
-              
+
+
                 <div class="accordion">
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">📦 行程當天需要準備什麼？</button>
-                    <div class="accordion-content">
-                      <p>輕鬆的心情，出發前先換好泳衣，請自備毛巾、換洗衣物、防滑拖鞋及暈船藥（船潛）。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">📦 行程當天需要準備什麼？</button>
+                        <div class="accordion-content">
+                            <p>輕鬆的心情，出發前先換好泳衣，請自備毛巾、換洗衣物、防滑拖鞋及暈船藥（船潛）。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">🏊 不會游泳也可以參加體驗潛水行程嗎？</button>
-                    <div class="accordion-content">
-                      <p>可以。和潛導一起手牽手下水，專業潛導將保證您的安全。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">🏊 不會游泳也可以參加體驗潛水行程嗎？</button>
+                        <div class="accordion-content">
+                            <p>可以。和潛導一起手牽手下水，專業潛導將保證您的安全。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">🌊 教練們是如何選擇安全的潛水點？</button>
-                    <div class="accordion-content">
-                      <p>我們一般會依據當天的風向及浪況來決定最適合的浮潛和潛水點。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">🌊 教練們是如何選擇安全的潛水點？</button>
+                        <div class="accordion-content">
+                            <p>我們一般會依據當天的風向及浪況來決定最適合的浮潛和潛水點。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">☔ 下雨對潛水行程是否有影響？</button>
-                    <div class="accordion-content">
-                      <p>相較於雨勢，浪況才是影響行程的最大因素。非極端情況下，下雨還是可以正常舉行。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">☔ 下雨對潛水行程是否有影響？</button>
+                        <div class="accordion-content">
+                            <p>相較於雨勢，浪況才是影響行程的最大因素。非極端情況下，下雨還是可以正常舉行。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">📅 天氣惡劣時的安排</button>
-                    <div class="accordion-content">
-                      <p>根據風浪情況選擇適合潛水的地方，並會在前一天教練會通知大家潛點安排的變動。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">📅 天氣惡劣時的安排</button>
+                        <div class="accordion-content">
+                            <p>根據風浪情況選擇適合潛水的地方，並會在前一天教練會通知大家潛點安排的變動。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">🚿 上岸後可以使用淋浴乳、洗髮精嗎？</button>
-                    <div class="accordion-content">
-                      <p>為了保護海洋和各港區的水源免被污染，一般不提供淋浴乳與洗髮精。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">🚿 上岸後可以使用淋浴乳、洗髮精嗎？</button>
+                        <div class="accordion-content">
+                            <p>為了保護海洋和各港區的水源免被污染，一般不提供淋浴乳與洗髮精。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">👓 近視或遠視有配戴對策嗎？</button>
-                    <div class="accordion-content">
-                      <p>請使用拋棄式隱形眼鏡。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">👓 近視或遠視有配戴對策嗎？</button>
+                        <div class="accordion-content">
+                            <p>請使用拋棄式隱形眼鏡。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">⚠️ 是否有限制參加條件？</button>
-                    <div class="accordion-content">
-                      <p>需身體健康並符合健康問卷規範，部分行程有年齡限制，請參考各行程說明。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">⚠️ 是否有限制參加條件？</button>
+                        <div class="accordion-content">
+                            <p>需身體健康並符合健康問卷規範，部分行程有年齡限制，請參考各行程說明。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">💳 是否可當天付款？</button>
-                    <div class="accordion-content">
-                      <p>很抱歉需先完成線上支付才算完成預約手續。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">💳 是否可當天付款？</button>
+                        <div class="accordion-content">
+                            <p>很抱歉需先完成線上支付才算完成預約手續。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">✏️ 如何更改預約？</button>
-                    <div class="accordion-content">
-                      <p>請直接回覆預約確認信。依取消政策可能需支付取消費。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">✏️ 如何更改預約？</button>
+                        <div class="accordion-content">
+                            <p>請直接回覆預約確認信。依取消政策可能需支付取消費。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">📆 預約要提前多久？</button>
-                    <div class="accordion-content">
-                      <p>可接受半年至行程前3天之預約。旺季建議提早預約以確保名額。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">📆 預約要提前多久？</button>
+                        <div class="accordion-content">
+                            <p>可接受半年至行程前3天之預約。旺季建議提早預約以確保名額。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">📨 預約後多久收到通知？</button>
-                    <div class="accordion-content">
-                      <p>
-                        16:00（GMT+9）前預約，當天處理並電郵聯繫。流程如下：<br>
-                        1）確認空位<br>
-                        2）電郵付款連結<br>
-                        3）電郵預約確認<br>
-                        4）保持聯絡
-                      </p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">📨 預約後多久收到通知？</button>
+                        <div class="accordion-content">
+                            <p>
+                                16:00（GMT+9）前預約，當天處理並電郵聯繫。流程如下：<br> 1）確認空位
+                                <br> 2）電郵付款連結
+                                <br> 3）電郵預約確認
+                                <br> 4）保持聯絡
+                            </p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">🌪️ 活動中止會退款嗎？</button>
-                    <div class="accordion-content">
-                      <p>因天氣或海況不佳由本公司取消，將全額退款。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">🌪️ 活動中止會退款嗎？</button>
+                        <div class="accordion-content">
+                            <p>因天氣或海況不佳由本公司取消，將全額退款。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">💰 退款多久會收到？</button>
-                    <div class="accordion-content">
-                      <p>確認退款後，本公司將於 24 小時內處理。實際入帳時間依信用卡公司為準。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">💰 退款多久會收到？</button>
+                        <div class="accordion-content">
+                            <p>確認退款後，本公司將於 24 小時內處理。實際入帳時間依信用卡公司為準。</p>
+                        </div>
                     </div>
-                  </div>
-              
-                  <div class="accordion-item">
-                    <button class="accordion-button">🚐 是否有免費接送？</button>
-                    <div class="accordion-content">
-                      <p>原則上那霸市內提供免費接送，依潛點調整，請提前告知。</p>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">🚐 是否有免費接送？</button>
+                        <div class="accordion-content">
+                            <p>原則上那霸市內提供免費接送，依潛點調整，請提前告知。</p>
+                        </div>
                     </div>
-                  </div>
-              
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">🚌 接送資訊與集合地點</button>
+                        <div class="accordion-content">
+                            <p>凡參加本店行程，於那霸市區範圍內皆有免費接送服務。</p>
+                            <p>一個人參加也不需要擔心交通問題，也可以節省租車費用。</p>
+                            <p>如果您自行前往集合地點，客服將事先告知集合地點及時間。</p>
+                            <p>上班時間交通堵塞，敬請提前出發並保持聯絡。</p>
+                            <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="640" height="480"></iframe>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <a href="/health.html" target="_blank" rel="noopener noreferrer"><button class="accordion-button">🏥健康自檢表</button></a>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-button">🛡️ 潛水保險內容</button>
+                        <div class="accordion-content">
+                            <p>我們已加入以下保險，所有行程費用皆已包含，不需另行支付：</p>
+
+                            <h4>📌 指導者賠償責任保險</h4>
+                            <p>當本店員工在指導或引導潛水時，因失誤導致客戶發生死亡、後遺症等事故，提供以下補償：</p>
+                            <ul>
+                                <li>對人・對物：每次事故最高 10 億円</li>
+                            </ul>
+
+                            <h4>📌 管理下傷害保險</h4>
+                            <p>在活動進行期間，即便非本店過失，若因突發事故導致客戶受傷，也提供補償：</p>
+                            <ul>
+                                <li>死亡：1000 萬円</li>
+                                <li>後遺障礙：40 ～ 1000 萬円</li>
+                                <li>醫療費用補償：50 萬円</li>
+                                <li>救援者費用：100 萬円</li>
+                            </ul>
+
+                            <h4>📌 設施賠償責任保險</h4>
+                            <p>若因本店設施缺陷或管理失誤造成損害：</p>
+                            <ul>
+                                <li>對人（每人）：1 億円，單一事故最高 2 億円</li>
+                                <li>對物：每事故最高 1000 萬円，年限最高 1000 萬円</li>
+                            </ul>
+
+                            <h4>📌 受託者賠償責任保險</h4>
+                            <p>如在本店保管的客戶裝備發生火災、盜竊、污損等損失：</p>
+                            <ul>
+                                <li>對物（每事故）：500 萬円，年限最高 500 萬円</li>
+                            </ul>
+
+                            <h4>📌 生產物賠償責任保險</h4>
+                            <p>如本店販售、維修或出租之器材有缺陷導致事故，提供如下補償：</p>
+                            <ul>
+                                <li>對人（每人）：1 億円，單一事故最高 2 億円，年限最高 10 億円</li>
+                                <li>對物：每事故最高 1000 萬円</li>
+                            </ul>
+
+                            <p style="margin-top:1rem;"><strong>✅ 所有行程均包含上述保險，無需額外支付。</strong></p>
+                        </div>
+                    </div>
+
                 </div>
-              
+
                 <br>
                 <ul class="actions stacked">
-                  <li><a href="" class="button primary fit">聯絡我們</a></li>
+                    <li><a href="" class="button primary fit">聯絡我們</a></li>
                 </ul>
                 <ul class="actions stacked">
-                  <li><a href="" class="button primary fit">馬上報名</a></li>
+                    <li><a href="" class="button primary fit">馬上報名</a></li>
                 </ul>
-              
-<iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="640" height="480"></iframe>
+
+
 
                 <script>
-                  document.addEventListener("DOMContentLoaded", function () {
-                    const buttons = document.querySelectorAll(".accordion-button");
-                    buttons.forEach(btn => {
-                      btn.addEventListener("click", () => {
-                        btn.classList.toggle("active");
-                        const content = btn.nextElementSibling;
-                        if (btn.classList.contains("active")) {
-                          content.style.maxHeight = content.scrollHeight + "px";
-                        } else {
-                          content.style.maxHeight = null;
-                        }
-                      });
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const buttons = document.querySelectorAll(".accordion-button");
+                        buttons.forEach(btn => {
+                            btn.addEventListener("click", () => {
+                                btn.classList.toggle("active");
+                                const content = btn.nextElementSibling;
+                                if (btn.classList.contains("active")) {
+                                    content.style.maxHeight = content.scrollHeight + "px";
+                                } else {
+                                    content.style.maxHeight = null;
+                                }
+                            });
+                        });
                     });
-                  });
                 </script>
-              </section>
-              
+            </section>
+
 
 
 
@@ -330,19 +421,18 @@
 
         <!-- Footer -->
         <footer id="footer">
-  <div class="contact-bar" style="padding-top: 50px;">
-    <h2>　　聯絡資訊</h2>
+            <div class="contact-bar" style="padding-top: 50px;">
+                <h2>　　聯絡資訊</h2>
 
-    <div class="social-icons">
-      <a href="https://lin.ee/JWvtCOY"                  target="_blank" aria-label="LINE"       class="si line"></a>
-      <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram"  class="si instagram"></a>
-      <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource="
-                                                   target="_blank" aria-label="小紅書"     class="si xiaohongshu"></a>
-      <a href="weixin://dl/chat?YUNYUNDIVE"             aria-label="WeChat"                    class="si wechat"></a>
-      <a href="mailto:rishimadive@gmail.com"            aria-label="Email"                     class="si email"></a>
-      <span>　　</span>
-    </div>
-  </div>
+                <div class="social-icons">
+                    <a href="https://lin.ee/JWvtCOY" target="_blank" aria-label="LINE" class="si line"></a>
+                    <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram" class="si instagram"></a>
+                    <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource=" target="_blank" aria-label="小紅書" class="si xiaohongshu"></a>
+                    <a href="weixin://dl/chat?YUNYUNDIVE" aria-label="WeChat" class="si wechat"></a>
+                    <a href="mailto:rishimadive@gmail.com" aria-label="Email" class="si email"></a>
+                    <span>　　</span>
+                </div>
+            </div>
         </footer>
 
         <!-- Copyright -->
