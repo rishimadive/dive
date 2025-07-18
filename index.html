@@ -223,7 +223,7 @@
 .language-switcher{
     position:fixed;         /* 永遠吸附視窗 */
     top:1rem;
-    left:3.5rem;
+    left:1rem;
     z-index:2000;           /* 保證壓過 intro / 背景遮罩 */
     user-select:none;
 }
@@ -241,17 +241,19 @@
 }
 .lang-btn:hover{ background:rgba(255,255,255,.9); }
 
+/* ===== 語言選單：水平展開在按鈕右側 ===== */
 .lang-dropdown{
     position:absolute;
-    top:2.6rem;        /* 與按鈕間距 */
-    right:0;
+    top:0;                       /* 與按鈕頂齊 */
+    left:calc(100% + .4rem);     /* 0.4rem 間距，可自行調 */
     background:#fff;
     border-radius:6px;
     box-shadow:0 4px 12px rgba(0,0,0,.15);
     list-style:none;
     padding:.4rem 0;
-    display:none;      /* JS 打開 */
+    display:none;
 }
+
 
 .lang-dropdown a{
     display:block;
