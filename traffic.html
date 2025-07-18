@@ -206,6 +206,29 @@
                 margin: 0 auto;
             }
         }
+        
+        .modal-content .schedule-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-content .schedule-list .time {
+            flex: 0 0 4.5rem;
+            font-weight: 700;
+            color: #005abe;
+        }
+        
+        .modal-content .schedule-list .desc {
+            flex: 1;
+            margin-left: 0.5rem;
+        }
+        
+        .modal-content details summary {
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 
@@ -326,424 +349,473 @@
     <!-- Modals -->
     <!-- Modal Template: Duplicate and update content -->
     <!-- Modal1: 慶良間浮潛 詳細行程 -->
-    <!-- ─────────────  Modal 1｜慶良間浮潛  ───────────── -->
+    <!-- ─────────────  Modal 1｜慶良間浮潛 ───────────── -->
     <div id="modal1" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
+
+            <!-- 標題與導語 -->
             <h2>慶良間浮潛</h2>
             <p class="intro">「來沖繩，別錯過這片世界級藍色奇蹟！」</p>
+
+            <!-- 行程圖片 -->
             <center>
                 <img src="images/慶良間浮潛(行程).JPG" alt="慶良間浮潛行程示意" height="200" />
             </center>
+
+            <!-- 行程介紹 -->
             <p>
-                沖繩最令人屏息的海域就在這裡──慶良間國立海域公園，透明度高達 40 米，素有「玻璃海」與「天堂藍」之稱。<br /> 跟著 RiShima Dive 搭船出發，深入只有少數人才知道的秘境海域，與熱帶魚悠遊、在珊瑚花園間浮潛穿梭，
-                <br /> 不會游泳也能輕鬆享受！ 來沖繩，別只是看看海，要真正「走進海」裡。
-                <br /> 你會驚艷，原來自己也能在這片海中，自然地、優雅地、開心地閃耀！
+                沖繩最令人屏息的海域就在這裡──
+                <b>慶良間國立海域公園</b>，透明度高達 <b>40 米</b>，素有「玻璃海」與「天堂藍」之稱。<br> 跟著 <b>RiShima Dive</b> 搭船出發，深入秘境海域，與熱帶魚悠遊、在珊瑚花園間浮潛穿梭。<br> 不會游泳也能輕鬆享受──來沖繩，別只是看看海，要真正「走進海」裡。
             </p>
 
-            <h3>參考行程表</h3>
-            <!-- 價格下拉選單 -->
-            <select name="itinerary1" style="margin-bottom:.5rem">
-      <option>慶良間群島｜半日 2 潛｜船潛 ￥15,800</option>
-      <option>慶良間群島｜全日 3 潛｜船潛 ￥17,800</option>
+            <!-- 價格選擇 -->
+            <h3>價格選擇</h3>
+            <select name="itinerary1" style="margin-bottom: .5rem;">
+      <option>慶良間群島｜半日 2 潛｜船潛 ￥15,800</option>
+      <option>慶良間群島｜全日 3 潛｜船潛 ￥17,800</option>
     </select>
-            <small>價格為最終含稅價，不另加費用</small>
+            <p><small>價格為最終含稅價，不另加費用</small></p>
 
-            <!-- 行程時刻使用 details 折疊，避免一次顯示過長 -->
+            <!-- 行程時間表 -->
+            <h3>行程時間表</h3>
+
             <details>
-                <summary><strong>半日行程</strong>（上午 07:00 / 下午 12:00 集合）</summary>
+                <summary><strong>半日行程</strong>（<b>07:00</b> / <b>12:00</b> 集合）</summary>
                 <ul>
-                    <li><b>07:00</b> 港口集合（請至少提前 10 分鐘抵達）</li>
-                    <li><b>07:15</b> 資料登記／裝備確認</li>
-                    <li><b>07:30</b> 船上行前說明，前往慶良間國立海洋公園</li>
-                    <li><b>08:00</b>‑<b>11:00</b> 兩處潛點浮潛 &amp; 體驗</li>
-                    <li><b>11:00</b> 返回那霸（船上提供溫水淋浴與更衣室；為保護海洋，請勿使用洗髮精／沐浴乳）</li>
-                    <li><b>11:30</b> 行程結束，提供市區接送服務</li>
+                    <li><b>07:00</b> 港口集合（請提前 <b>10 分鐘</b>）</li>
+                    <li><b>07:15</b> 資料登記、裝備確認</li>
+                    <li><b>07:30</b> 船上說明，出發前往潛點</li>
+                    <li><b>08:00–11:00</b> 兩處潛點浮潛 & 體驗</li>
+                    <li><b>11:00</b> 返回那霸（附溫水淋浴與更衣室）</li>
+                    <li><b>11:30</b> 行程結束，市區接送</li>
                 </ul>
             </details>
 
             <details>
-                <summary><strong>全日行程</strong>（07:00‑15:00）</summary>
+                <summary><strong>全日行程</strong>（<b>07:00–15:00</b>）</summary>
                 <ul>
                     <li><b>07:00</b> 港口集合</li>
-                    <li><b>07:15</b> 資料登記／裝備確認</li>
-                    <li><b>07:30</b> 船上行前說明，出發前往慶良間海域</li>
-                    <li><b>08:00‑11:30</b> 第一、二潛點</li>
+                    <li><b>07:15</b> 資料登記、裝備確認</li>
+                    <li><b>07:30</b> 船上行前說明，出發</li>
+                    <li><b>08:00–11:30</b> 第一、二潛點浮潛</li>
                     <li><b>11:30</b> 船上午餐（自備輕食）</li>
-                    <li><b>12:30</b> 第三潛點</li>
+                    <li><b>12:30</b> 第三潛點體驗</li>
                     <li><b>14:00</b> 返回那霸</li>
-                    <li><b>15:00</b> 行程結束（時間依海況與交通狀況略有變動）</li>
+                    <li><b>15:00</b> 行程結束（依海況調整）</li>
                 </ul>
             </details>
 
+            <!-- 報名須知 -->
             <h3>報名須知</h3>
             <ul>
-                <li>費用包含：消費稅、乘船費、教練費、保險、全套器材、那霸市區接送、專業水中攝影（照片＋影片全檔案）</li>
+                <li>費用包含：消費稅、乘船費、教練費、保險、全套器材、那霸市接送、專業水中攝影（照片＋影片全檔案）</li>
                 <li>費用不包含：午餐</li>
             </ul>
 
+            <!-- 參加條件 -->
             <h3>參加條件</h3>
             <ul>
-                <li>10‑60 歲（未成年須監護人簽署）</li>
-                <li>報名者請詳閱並通過 <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">健康自檢表</a>，未通過者無法參加且無法退費</li>
+                <li><b>10–60 歲</b>（未成年須監護人簽署）</li>
+                <li>需通過 <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">健康自檢表</a>，未通過無法參加且無法退費</li>
             </ul>
 
+            <!-- 注意事項 -->
             <h3>注意事項</h3>
             <ul>
-                <li>行程及潛水區域可能因天候於前日調整，請保持聯絡暢通</li>
-                <li>活動當日請勿飲酒；中途退出恕無法退費</li>
-                <li>預約前請確認 <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">預約規則及取消政策</a></li>
+                <li>行程及潛點可能因海況變更，出發前聯絡確認</li>
+                <li>活動當日請勿飲酒；中途退出不退費</li>
+                <li>預約前請詳閱 <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">預約規則與取消政策</a></li>
             </ul>
 
+            <!-- 攜帶物品 -->
             <h3>需要攜帶</h3>
             <ul>
-                <li>泳衣、水母衣、拖鞋、換洗衣物、毛巾</li>
+                <li>泳衣、水母衣、拖鞋、毛巾、換洗衣物</li>
             </ul>
 
-            <center>
+            <!-- 預約按鈕 -->
+            <center style="margin-top: 2rem;">
                 <h4>不只是浮潛，是一場與沖繩玻璃海相遇的旅程紀錄</h4>
-
-                <a href="https://rishimadive.rezio.shop/widget/product/4KIEUJ/order?step=1" target="_blank" style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none">
+                <a href="https://rishimadive.rezio.shop/widget/product/4KIEUJ/order?step=1" target="_blank">
                     <div style="
-        padding: 8px 25px;
-        border: 0;
-        margin: 0;
-        outline: 0;
-        font-weight: inherit;
-        font-style: inherit;
-        font-family: inherit;
-        vertical-align: baseline;
-        background: #005abe;
-        color: #FFFFFF;
-        font-size: 14px;
-        width: fit-content;
-        border-radius: 5px;">
+          padding: 10px 25px;
+          background: #005abe;
+          color: #fff;
+          font-size: 16px;
+          font-weight: bold;
+          border-radius: 6px;
+          display: inline-block;
+          cursor: pointer;
+          text-decoration: none;">
                         立即預約
                     </div>
                 </a>
-
             </center>
+
         </div>
     </div>
 
     <!-- ─────────────  Modal 2｜美人魚換裝體驗  ───────────── -->
 
-    <!-- ─────────────  Modal 3｜美人魚潛水體驗  ───────────── -->
+    <!-- ─────────────  Modal 3｜美人魚潛水體驗 ───────────── -->
     <div id="modal3" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
+
+            <!-- 標題與導語 -->
             <h2>美人魚潛水體驗</h2>
             <p class="intro">「來沖繩的第一件事，就是變身美人魚！」</p>
+
+            <!-- 行程圖片 -->
             <center>
                 <img src="images/PADI 美人魚體驗行程(行程).JPG" alt="美人魚潛水體驗行程示意" height="200" />
             </center>
+
+            <!-- 體驗介紹 -->
             <p>
-                不需要任何經驗，零基礎也能輕鬆上手，立刻開啟夢幻水下旅程。<br /> RiShima Dive 揮動魔法，讓你穿上專屬人魚尾巴，學習擺尾與水中漂浮，感受身體在水中輕盈滑行。
-                <br /> 課程於可站立深度泳池進行，氣氛輕鬆、安全舒適，特別適合想要留下第一次人魚回憶的你！
+                不需要任何經驗，零基礎也能輕鬆上手，立刻開啟夢幻水下旅程。<br />
+                <b>RiShima Dive</b> 揮動魔法，讓你穿上專屬人魚尾巴，學習擺尾與水中漂浮，感受身體在水中輕盈滑行。<br /> 課程於可站立深度泳池進行，氣氛輕鬆、安全舒適，特別適合想要留下第一次人魚回憶的你！
             </p>
 
+            <!-- 課程資訊 -->
             <h3>課程資訊</h3>
             <ul>
                 <li>上課時間：半日</li>
                 <li>上課地點：泳池</li>
                 <li>課程內容：暖身指導、人魚尾體驗、專業水中寫真與影片</li>
-                <li>建議年齡：10‑60 歲</li>
-                <li>教練比例：1 : 2</li>
+                <li>建議年齡：<b>10–60 歲</b></li>
+                <li>教練比例：<b>1 : 2</b></li>
             </ul>
 
+            <!-- 價格資訊 -->
             <h3>價格</h3>
-            <p>￥22,800（最終含稅價，不另加費用）</p>
+            <p><b>￥22,800</b>（最終含稅價，不另加費用）</p>
 
+            <!-- 行程時間表 -->
             <h3>參考行程表</h3>
             <details>
-                <summary>半日行程（上午 08:00 / 下午 13:00 集合）</summary>
+                <summary><strong>半日行程（<b>08:00</b> / <b>13:00</b> 集合）</strong></summary>
                 <ul>
-                    <li><b>集合</b> 08:00／13:00 泳池集合（請提前 10 分鐘報到）</li>
-                    <li><b>08:15／13:15</b> 資料登記／裝備確認</li>
-                    <li><b>08:30‑11:30／13:30‑16:30</b> 教練指導＋體驗拍攝</li>
-                    <li>行程結束後可使用泳池淋浴與更衣室；提供市區接送</li>
+                    <li><b>08:00 / 13:00</b> 泳池集合（請提前 <b>10 分鐘</b> 報到）</li>
+                    <li><b>08:15 / 13:15</b> 資料登記／裝備確認</li>
+                    <li><b>08:30–11:30 / 13:30–16:30</b> 教練指導＋體驗拍攝</li>
+                    <li>結束後可使用泳池淋浴與更衣室，提供市區接送</li>
                 </ul>
             </details>
 
+            <!-- 報名須知 -->
             <h3>報名須知</h3>
             <ul>
-                <li>費用包含：消費稅、教練費、泳池費、保險、全套器材、那霸市區接送、專業攝影（照片＋影片全檔案）</li>
+                <li>費用包含：<br> 消費稅、教練費、泳池費、保險、全套器材、那霸市區接送、專業攝影（照片＋影片全檔案）
+                </li>
                 <li>費用不包含：午餐</li>
             </ul>
 
+            <!-- 參加條件 -->
             <h3>參加條件</h3>
             <ul>
-                <li>10‑60 歲（未成年須監護人簽署）</li>
-                <li>報名者請詳閱並通過 <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">健康自檢表</a>，未通過者無法參加且無法退費</li>
+                <li><b>10–60 歲</b>（未成年須監護人簽署）</li>
+                <li>
+                    報名者請詳閱並通過
+                    <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">健康自檢表</a>，未通過無法參加且無法退費
+                </li>
             </ul>
 
+            <!-- 注意事項 -->
             <h3>注意事項</h3>
             <ul>
-                <li>課程可能因天候調整，請保持聯絡</li>
+                <li>課程可能因天候調整，請保持聯絡暢通</li>
                 <li>活動當日請勿飲酒；中途退出恕無法退費</li>
-                <li>預約前請確認<a href="https://bluevistadive.com/reservation/#b">預約規則及取消政策</a></li>
+                <li>預約前請詳閱
+                    <a href="https://bluevistadive.com/reservation/#b" target="_blank">預約規則及取消政策</a>
+                </li>
             </ul>
 
+            <!-- 攜帶物品 -->
             <h3>需要攜帶</h3>
             <ul>
                 <li>泳衣、水母衣、拖鞋、換洗衣物、毛巾</li>
             </ul>
 
-            <center>
+            <!-- 預約按鈕 -->
+            <center style="margin-top: 2rem;">
                 <h4>人魚夢，不再只是幻想</h4>
-
-                <a href="https://rishimadive.rezio.shop/widget/product/Y8JKBS/order?step=1" target="_blank" style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none">
+                <a href="https://rishimadive.rezio.shop/widget/product/Y8JKBS/order?step=1" target="_blank">
                     <div style="
-        padding: 8px 25px;
-        border: 0;
-        margin: 0;
-        outline: 0;
-        font-weight: inherit;
-        font-style: inherit;
-        font-family: inherit;
-        vertical-align: baseline;
-        background: #005abe;
-        color: #FFFFFF;
-        font-size: 14px;
-        width: fit-content;
-        border-radius: 5px;">
+          padding: 10px 25px;
+          background: #005abe;
+          color: #fff;
+          font-size: 16px;
+          font-weight: bold;
+          border-radius: 6px;
+          display: inline-block;
+          cursor: pointer;
+          text-decoration: none;">
                         立即預約，化身人魚
                     </div>
                 </a>
-
             </center>
+
         </div>
     </div>
 
-    <!-- ─────────────  Modal 4｜美人魚水中攝影  ───────────── -->
+
+    <!-- ─────────────  Modal 4｜美人魚水中攝影 ───────────── -->
     <div id="modal4" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
+
             <h2>美人魚潛水水中攝影</h2>
             <p class="intro">「不只是潛水，更是表演與感官的融合」</p>
 
+            <!-- 圖片 -->
             <center>
                 <img src="images/美人魚水中攝影(行程).JPG" alt="美人魚水中攝影示意" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.2);" />
             </center>
 
+            <!-- 介紹 -->
             <p>
-                穿上魚尾，潛入沖繩玻璃般的湛藍海水，這次你是真正的主角。<br> RiShima Dive 為持證的你量身打造水中冒險，無論是光影交錯的青之洞窟、熱帶魚群環繞的砂邊，
-                <br> 或夢幻透明的慶良間離島， 都將留下獨一無二的海底影像。
+                穿上魚尾，潛入沖繩玻璃般的湛藍海水，這次你是真正的主角。<br />
+                <b>RiShima Dive</b> 為持證的你量身打造水中冒險，無論是光影交錯的青之洞窟、熱帶魚群環繞的砂邊， 或夢幻透明的慶良間離島， 都將留下獨一無二的海底影像。
             </p>
 
-            <h3>參考行程表</h3>
+            <!-- 價格 -->
+            <h3>價格選擇</h3>
             <select name="itinerary4" style="margin-bottom:0.5rem; padding:0.5rem;">
       <option>慶良間群島｜半日 2 潛｜船潛 ￥19,800</option>
       <option>慶良間群島｜全日 3 潛｜船潛 ￥22,800</option>
     </select>
             <p><small>價格為最終含稅價，不另加費用</small></p>
 
+            <!-- 半日行程 -->
             <details>
                 <summary><strong>半日行程時刻表</strong></summary>
                 <ul>
-                    <li>07:00 / 12:00 港口集合（請提前10分鐘抵達）</li>
-                    <li>07:15 / 12:15 登記資料、裝備確認</li>
-                    <li>07:30 出發前往潛點，船上說明行程與安全注意事項（中/英文）</li>
-                    <li>08:00‑11:00 兩處潛點水中拍攝（依體力狀況彈性調整）</li>
-                    <li>11:00 返回那霸，提供溫水淋浴與更衣室</li>
-                    <li>11:30 行程結束，預約接送者由專車送回指定飯店</li>
+                    <li><b>07:00 / 12:00</b> 港口集合（請提前 <b>10 分鐘</b> 抵達）</li>
+                    <li><b>07:15 / 12:15</b> 登記資料、裝備確認</li>
+                    <li><b>07:30</b> 出發前往潛點，船上說明行程與安全注意事項（中/英文）</li>
+                    <li><b>08:00–11:00</b> 兩處潛點水中拍攝（依體力狀況彈性調整）</li>
+                    <li><b>11:00</b> 返回那霸，提供溫水淋浴與更衣室</li>
+                    <li><b>11:30</b> 行程結束，專車接送回飯店</li>
                 </ul>
                 <p><em>＊船上不可使用洗髮精或沐浴乳等化學用品</em></p>
             </details>
 
+            <!-- 全日行程 -->
             <details>
                 <summary><strong>全日行程時刻表</strong></summary>
                 <ul>
-                    <li>07:00 港口集合（請提前10分鐘抵達）</li>
-                    <li>07:15 登記資料與裝備確認</li>
-                    <li>07:30 出發前往慶良間國立海洋公園海域，船上說明（中/英文）</li>
-                    <li>08:00–11:30 安排兩處潛點拍攝（依潛水員狀況調整）</li>
-                    <li>11:30 船上午餐（自備輕食，不登島）</li>
-                    <li>12:30 第三潛點拍攝</li>
-                    <li>14:00 返回那霸，船上附設溫水淋浴與更衣室</li>
-                    <li>15:00 行程結束，完成付款後由接送人員送回飯店</li>
+                    <li><b>07:00</b> 港口集合（請提前 <b>10 分鐘</b> 抵達）</li>
+                    <li><b>07:15</b> 登記資料與裝備確認</li>
+                    <li><b>07:30</b> 出發前往慶良間國立海洋公園海域，船上說明（中/英文）</li>
+                    <li><b>08:00–11:30</b> 安排兩處潛點拍攝（依潛水員狀況調整）</li>
+                    <li><b>11:30</b> 船上午餐（自備輕食，不登島）</li>
+                    <li><b>12:30</b> 第三潛點拍攝</li>
+                    <li><b>14:00</b> 返回那霸，船上附設溫水淋浴與更衣室</li>
+                    <li><b>15:00</b> 行程結束，接送回飯店</li>
                 </ul>
                 <p><em>＊實際時間依當日海況與交通狀況可能變動</em></p>
             </details>
 
+            <!-- 報名須知 -->
             <h3>報名須知</h3>
             <ul>
-                <li>費用包含：消費稅、乘船費、教練費、保險、全套器材、那霸市區接送、專業水中攝影（照片＋影片全檔案）</li>
+                <li>費用包含：<br> 消費稅、乘船費、教練費、保險、全套器材、那霸市區接送、專業水中攝影（照片＋影片全檔案）
+                </li>
                 <li>費用不包含：午餐</li>
             </ul>
 
+            <!-- 參加條件 -->
             <h3>參加條件</h3>
             <ul>
-                <li>持有自由潛水 A1 或 Mermaid 以上證照</li>
-                <li>10–60 歲（未成年者須監護人簽署）</li>
-                <li>須通過 <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">健康自檢表</a>，當日不通過無法參加且不退費</li>
+                <li>須持有 <b>自由潛水 A1</b> 或 <b>Mermaid</b> 以上證照</li>
+                <li><b>10–60 歲</b>（未成年需監護人簽署）</li>
+                <li>需通過
+                    <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">健康自檢表</a>，不通過恕無法參加亦不退費
+                </li>
             </ul>
 
+            <!-- 注意事項 -->
             <h3>注意事項</h3>
             <ul>
-                <li>行程與潛水區域可能因天氣海況變動，將提前通知，請保持聯絡暢通</li>
+                <li>行程與潛水區域可能因天候海況變動，請保持聯絡暢通</li>
                 <li>活動當日請勿飲酒</li>
-                <li>中途因個人原因退出，恕不退費</li>
-                <li>預約前請務必詳閱 <a href="https://bluevistadive.com/reservation/#b" target="_blank">預約規則與取消政策</a></li>
+                <li>個人原因中途退出恕不退費</li>
+                <li>預約前請詳閱
+                    <a href="https://bluevistadive.com/reservation/#b" target="_blank">預約規則與取消政策</a>
+                </li>
             </ul>
 
+            <!-- 攜帶物品 -->
             <h3>建議攜帶</h3>
             <ul>
                 <li>泳衣、水母衣</li>
                 <li>拖鞋、毛巾、換洗衣物</li>
             </ul>
 
-            <center style="margin-top:2rem;">
+            <!-- 預約按鈕 -->
+            <center style="margin-top: 2rem;">
                 <h4>人魚與沖繩海再次相遇</h4>
-
-                <a href="https://rishimadive.rezio.shop/widget/product/HE7VTN/order?step=1" target="_blank" style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none">
+                <a href="https://rishimadive.rezio.shop/widget/product/HE7VTN/order?step=1" target="_blank">
                     <div style="
-        padding: 8px 25px;
-        border: 0;
-        margin: 0;
-        outline: 0;
-        font-weight: inherit;
-        font-style: inherit;
-        font-family: inherit;
-        vertical-align: baseline;
-        background: #005abe;
-        color: #FFFFFF;
-        font-size: 14px;
-        width: fit-content;
-        border-radius: 5px;">
+          padding: 10px 25px;
+          background: #005abe;
+          color: #fff;
+          font-size: 16px;
+          font-weight: bold;
+          border-radius: 6px;
+          display: inline-block;
+          cursor: pointer;
+          text-decoration: none;">
                         立即預約
                     </div>
                 </a>
-
             </center>
+
         </div>
     </div>
 
-    <!-- ─────────────  Modal 5｜自由潛水體驗  ───────────── -->
+    <!-- ─────────────  Modal 5｜自由潛水體驗 ───────────── -->
     <div id="modal5" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
+
             <h2>自由潛水體驗</h2>
             <p class="intro">「用一口氣，遇見最純粹的自己」</p>
 
+            <!-- 圖片 -->
             <center>
                 <img src="images/schedule5.jpg" alt="自由潛水體驗示意" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.2);" />
             </center>
 
+            <!-- 課程介紹 -->
             <p>
-                自由潛水，不是比憋氣，也不是比距離，<br> 而是用身體與呼吸，與大海展開一場靜謐對話。
-                <br> 這是一段讓心靈沉靜下來的旅程，無需潛水經驗、不必擅長游泳，
-                <br> 只需放下焦慮，讓身體交給海水，學習相信當下。
-                <br> 在 RiShima Dive，從浮潛開始，一步步走向自由，<br> 透過溫柔細緻的引導，體驗與海龜共舞、隨陽光沉降的魔法時刻。
+                自由潛水，不是比憋氣，也不是比距離，<br /> 而是用身體與呼吸，與大海展開一場靜謐對話。
+                <br /> 這是一段讓心靈沉靜下來的旅程，無需潛水經驗、不必擅長游泳，
+                <br /> 只需放下焦慮，讓身體交給海水，學習相信當下。
+                <br /> 在 <b>RiShima Dive</b>，從浮潛開始，一步步走向自由，<br /> 透過溫柔細緻的引導，體驗與海龜共舞、隨陽光沉降的魔法時刻。
             </p>
 
-            <h3>參考行程表</h3>
+            <!-- 價格選擇 -->
+            <h3>價格選擇</h3>
             <select name="itinerary5" style="margin-bottom:.5rem; padding:0.5rem;">
       <option>慶良間群島｜半日 2 潛｜船潛 ￥18,800</option>
       <option>慶良間群島｜全日 3 潛｜船潛 ￥20,800</option>
     </select>
             <p><small>價格為最終含稅價，不另加費用</small></p>
 
+            <!-- 半日行程 -->
             <details>
                 <summary><strong>半日行程時刻表</strong></summary>
                 <ul>
-                    <li>07:00 / 12:00 港口集合（請提前10分鐘抵達）</li>
-                    <li>07:15 / 12:15 資料登記與裝備確認</li>
-                    <li>07:30 / 12:30 出發前往潛點（船上解說，中/英文）</li>
-                    <li>08:00 / 13:00 兩處潛點自由潛水體驗</li>
-                    <li>11:00 / 16:00 返回那霸，提供溫水淋浴與更衣室</li>
-                    <li>11:30 / 16:30 行程結束（有接送者將送至指定飯店）</li>
+                    <li><b>07:00 / 12:00</b> 港口集合（請提前 <b>10 分鐘</b> 抵達）</li>
+                    <li><b>07:15 / 12:15</b> 資料登記與裝備確認</li>
+                    <li><b>07:30 / 12:30</b> 出發前往潛點（船上解說，中/英文）</li>
+                    <li><b>08:00 / 13:00</b> 兩處潛點自由潛水體驗</li>
+                    <li><b>11:00 / 16:00</b> 返回那霸，提供溫水淋浴與更衣室</li>
+                    <li><b>11:30 / 16:30</b> 行程結束（如有接送將送至指定飯店）</li>
                 </ul>
                 <p><em>＊船上不可使用洗髮精或沐浴乳等化學用品</em></p>
             </details>
 
+            <!-- 全日行程 -->
             <details>
                 <summary><strong>全日行程時刻表</strong></summary>
                 <ul>
-                    <li>07:00 港口集合（請提前10分鐘抵達）</li>
-                    <li>07:15 資料登記與裝備確認</li>
-                    <li>07:30 出發前往慶良間海域（船上解說，中/英文）</li>
-                    <li>08:00 兩處潛點體驗（依狀況調整）</li>
-                    <li>11:30 船上午餐（自備輕食，不登島）</li>
-                    <li>12:30 第三潛點自由潛水體驗</li>
-                    <li>14:00 返回那霸，附設溫水淋浴與更衣室</li>
-                    <li>15:00 行程結束，完成付款／送至指定飯店</li>
+                    <li><b>07:00</b> 港口集合（請提前 <b>10 分鐘</b> 抵達）</li>
+                    <li><b>07:15</b> 資料登記與裝備確認</li>
+                    <li><b>07:30</b> 出發前往慶良間海域（船上解說，中/英文）</li>
+                    <li><b>08:00</b> 兩處潛點體驗（依狀況調整）</li>
+                    <li><b>11:30</b> 船上午餐（自備輕食，不登島）</li>
+                    <li><b>12:30</b> 第三潛點自由潛水體驗</li>
+                    <li><b>14:00</b> 返回那霸，附設溫水淋浴與更衣室</li>
+                    <li><b>15:00</b> 行程結束，完成付款後送至指定飯店</li>
                 </ul>
                 <p><em>＊實際時間依海況與交通狀況可能變動</em></p>
             </details>
 
+            <!-- 報名須知 -->
             <h3>報名須知</h3>
             <ul>
-                <li>費用包含：消費稅、乘船費、教練費、保險、全套器材、那霸市接送、專業攝影（照片＋影片全檔案）</li>
+                <li>費用包含：<br> 消費稅、乘船費、教練費、保險、全套器材、那霸市接送、專業攝影（照片＋影片全檔案）
+                </li>
                 <li>費用不包含：午餐</li>
             </ul>
 
+            <!-- 參加條件 -->
             <h3>參加條件</h3>
             <ul>
-                <li>10–60 歲（未成年需監護人簽署）</li>
+                <li><b>10–60 歲</b>（未成年需監護人簽署）</li>
                 <li>需通過 <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">健康自檢表</a>，不通過者無法參加亦不退費</li>
             </ul>
 
+            <!-- 注意事項 -->
             <h3>注意事項</h3>
             <ul>
                 <li>行程可能因天候與海況調整，請保持聯絡暢通</li>
                 <li>活動當日請勿飲酒</li>
-                <li>因個人因素中斷行程無法退費</li>
-                <li>預約前請務必確認 <a href="https://bluevistadive.com/reservation/#b" target="_blank">預約規則及取消政策</a></li>
+                <li>因個人因素中斷行程恕不退費</li>
+                <li>預約前請確認
+                    <a href="https://bluevistadive.com/reservation/#b" target="_blank">預約規則及取消政策</a>
+                </li>
             </ul>
 
+            <!-- 攜帶物品 -->
             <h3>建議攜帶</h3>
             <ul>
                 <li>泳衣、水母衣、拖鞋、毛巾、換洗衣物</li>
             </ul>
 
-            <center style="margin-top:2rem;">
+            <!-- 預約按鈕 -->
+            <center style="margin-top: 2rem;">
                 <h4>張開雙手，我們帶你體驗</h4>
-
-                <a href="https://rishimadive.rezio.shop/widget/product/MILXQB/order?step=1" target="_blank" style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none">
+                <a href="https://rishimadive.rezio.shop/widget/product/MILXQB/order?step=1" target="_blank">
                     <div style="
-        padding: 8px 25px;
-        border: 0;
-        margin: 0;
-        outline: 0;
-        font-weight: inherit;
-        font-style: inherit;
-        font-family: inherit;
-        vertical-align: baseline;
-        background: #005abe;
-        color: #FFFFFF;
-        font-size: 14px;
-        width: fit-content;
-        border-radius: 5px;">
+          padding: 10px 25px;
+          background: #005abe;
+          color: #fff;
+          font-size: 16px;
+          font-weight: bold;
+          border-radius: 6px;
+          display: inline-block;
+          cursor: pointer;
+          text-decoration: none;">
                         立即預約
                     </div>
                 </a>
-
             </center>
+
         </div>
     </div>
 
-    <!-- ─────────────  Modal 6｜自由潛水水中攝影  ───────────── -->
+
+    <!-- ─────────────  Modal 6｜自由潛水水中攝影 ───────────── -->
     <div id="modal6" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
+
             <h2>自由潛水水中攝影</h2>
             <p class="intro">「不只是潛水，而是與沖繩海洋的深度連結。」</p>
 
+            <!-- 圖片 -->
             <center>
                 <img src="images/自由潛水水中攝影(行程).JPEG" alt="自由潛水水中攝影示意" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.2);" />
             </center>
 
+            <!-- 介紹 -->
             <p>
-                曾經，靜靜潛入深藍，感受時間放慢、心跳與海水同步。<br> 這一次，讓 RiShima Dive 帶領你回到那個純粹的瞬間。<br> 從岸潛秘境「砂邊」、光影流轉的「青之洞窟」，到夢幻透明的「慶良間群島」，
-                <br> 每一口氣，都是與海洋重新連結的旅程。
-                <br> 有時，是為了突破自我；有時，只想靜靜待在水裡片刻。
-                <br> 這趟旅程，不為考試、不為證照，只為了自己而潛。
+                曾經，靜靜潛入深藍，感受時間放慢、心跳與海水同步。<br /> 這一次，讓 <b>RiShima Dive</b> 帶領你回到那個純粹的瞬間。<br /> 從岸潛秘境「砂邊」、光影流轉的「青之洞窟」，到夢幻透明的「慶良間群島」，
+                <br /> 每一口氣，都是與海洋重新連結的旅程。
+                <br /> 有時為了突破自我，有時只想靜靜待在水裡片刻。
+                <br /> 這趟旅程，不為考試、不為證照，只為了自己而潛。
             </p>
 
+            <!-- 引言 -->
             <h3>RiShima Dive 相信</h3>
             <blockquote>當自由潛水回歸初衷，自由，也就真正回來了。</blockquote>
 
+            <!-- 價格選擇 -->
             <h3>參考行程表</h3>
             <select name="itinerary6" style="margin-bottom:.5rem; padding:0.5rem;">
       <option>慶良間群島｜半日 2 潛｜船潛 ￥17,800</option>
@@ -751,63 +823,72 @@
     </select>
             <p><small>價格為最終含稅價，不另加費用</small></p>
 
+            <!-- 半日行程 -->
             <details>
                 <summary><strong>半日行程時刻表</strong></summary>
                 <ul>
-                    <li>07:00 / 12:00 港口集合（請提前10分鐘抵達）</li>
-                    <li>07:15 / 12:15 登記資料與裝備確認</li>
-                    <li>07:30 / 12:30 出發前往慶良間國立海洋公園（船上行程解說，附中/英文）</li>
-                    <li>08:00 / 13:00 第一、第二潛點體驗（依顧客狀況調整）</li>
-                    <li>11:00 / 16:00 返回那霸，提供溫水淋浴與更衣室</li>
-                    <li>11:30 / 16:30 行程結束，如有接送將送回指定飯店</li>
+                    <li><b>07:00 / 12:00</b> 港口集合（請提前 <b>10 分鐘</b> 抵達）</li>
+                    <li><b>07:15 / 12:15</b> 登記資料與裝備確認</li>
+                    <li><b>07:30 / 12:30</b> 出發前往慶良間國立海洋公園（船上解說，附中/英文）</li>
+                    <li><b>08:00 / 13:00</b> 第一、第二潛點體驗（依顧客狀況調整）</li>
+                    <li><b>11:00 / 16:00</b> 返回那霸，提供溫水淋浴與更衣室</li>
+                    <li><b>11:30 / 16:30</b> 行程結束，如有接送將送回指定飯店</li>
                 </ul>
                 <p><em>＊為保護海洋，船上禁止使用洗髮精及沐浴乳等化學用品</em></p>
             </details>
 
+            <!-- 全日行程 -->
             <details>
                 <summary><strong>全日行程時刻表</strong></summary>
                 <ul>
-                    <li>07:00 港口集合（請提前10分鐘抵達）</li>
-                    <li>07:15 登記資料 / 裝備確認</li>
-                    <li>07:30 出發前往慶良間國立海洋公園（船上解說，附中/英文）</li>
-                    <li>08:00 第一、第二潛點體驗（依顧客狀況調整）</li>
-                    <li>11:30 船上午餐（自備輕食）</li>
-                    <li>12:30 第三潛點自由潛水攝影體驗</li>
-                    <li>14:00 返回那霸，船上附設淋浴與更衣室</li>
-                    <li>15:00 行程結束（接送至指定飯店，視海況與交通調整）</li>
+                    <li><b>07:00</b> 港口集合（請提前 <b>10 分鐘</b> 抵達）</li>
+                    <li><b>07:15</b> 登記資料 / 裝備確認</li>
+                    <li><b>07:30</b> 出發前往慶良間國立海洋公園（船上解說，附中/英文）</li>
+                    <li><b>08:00</b> 第一、第二潛點體驗（依顧客狀況調整）</li>
+                    <li><b>11:30</b> 船上午餐（自備輕食）</li>
+                    <li><b>12:30</b> 第三潛點自由潛水攝影體驗</li>
+                    <li><b>14:00</b> 返回那霸，船上附設淋浴與更衣室</li>
+                    <li><b>15:00</b> 行程結束（接送至指定飯店，視海況與交通調整）</li>
                 </ul>
                 <p><em>＊實際時間依天氣與交通可能有所變動</em></p>
             </details>
 
+            <!-- 報名須知 -->
             <h3>報名須知</h3>
             <ul>
                 <li>費用包含：消費稅、乘船費、教練費、保險、全套器材、那霸市內接送、專業水中攝影（照片＋影片全檔案）</li>
                 <li>費用不包含：午餐</li>
             </ul>
 
+            <!-- 參加條件 -->
             <h3>參加條件</h3>
             <ul>
                 <li>持有 AIDA / PADI / Molchanovs 自由潛水證照</li>
-                <li>10–60 歲（未成年須監護人簽署）</li>
-                <li>參加者全員需通過 <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">健康自檢表</a>，未通過無法參加亦不退費</li>
+                <li><b>10–60 歲</b>（未成年須監護人簽署）</li>
+                <li>參加者需通過 <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">健康自檢表</a>，未通過無法參加亦不退費</li>
             </ul>
 
+            <!-- 注意事項 -->
             <h3>注意事項</h3>
             <ul>
-                <li>行程及潛水區域可能因海況調整，請保持聯絡暢通</li>
+                <li>行程與潛水區域可能因海況調整，請保持聯絡暢通</li>
                 <li>活動當日請勿飲酒；中途退出行程恕不退費</li>
-                <li>預約前請確認 <a href="https://bluevistadive.com/reservation/#b" target="_blank">預約規則與取消政策</a></li>
+                <li>預約前請詳閱
+                    <a href="https://bluevistadive.com/reservation/#b" target="_blank">預約規則與取消政策</a>
+                </li>
             </ul>
 
+            <!-- 攜帶物品 -->
             <h3>建議攜帶</h3>
             <ul>
                 <li>泳衣、水母衣、拖鞋、毛巾、換洗衣物</li>
             </ul>
 
+            <!-- 預約按鈕 -->
             <center style="margin-top:2rem;">
                 <h4>讓身體與大海同步，再次與自己相遇</h4>
 
-                <a href="https://rishimadive.rezio.shop/widget/product/MILXQB/order?step=1" target="_blank" style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none">
+                <a href="https://rishimadive.rezio.shop/widget/product/KODEOQ/order?step=1" target="_blank" style="cursor: pointer; text-decoration-line: none; -webkit-appearance: none">
                     <div style="
         padding: 8px 25px;
         border: 0;
@@ -827,8 +908,10 @@
                 </a>
 
             </center>
+
         </div>
     </div>
+
 
 
 
