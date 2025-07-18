@@ -219,6 +219,50 @@
                 margin: 0 auto;
             }
         }
+        /* ========= 語言切換固定在右上 ========= */
+.language-switcher{
+    position:fixed;         /* 永遠吸附視窗 */
+    top:1rem;
+    right:1rem;
+    z-index:2000;           /* 保證壓過 intro / 背景遮罩 */
+    user-select:none;
+}
+
+.lang-btn{
+    background:rgba(255,255,255,.6);
+    border:none;
+    font-size:1.4rem;
+    padding:.20rem .65rem;
+    border-radius:50%;
+    cursor:pointer;
+    backdrop-filter:blur(4px);
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .25s;
+}
+.lang-btn:hover{ background:rgba(255,255,255,.9); }
+
+.lang-dropdown{
+    position:absolute;
+    top:2.6rem;        /* 與按鈕間距 */
+    right:0;
+    background:#fff;
+    border-radius:6px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    list-style:none;
+    padding:.4rem 0;
+    display:none;      /* JS 打開 */
+}
+
+.lang-dropdown a{
+    display:block;
+    padding:.45rem 1.25rem;
+    color:#333;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:background .2s;
+}
+.lang-dropdown a:hover{ background:#f2f2f2; }
+
     </style>
 
     <noscript>
@@ -245,6 +289,16 @@
         <header id="header">
             <a href="index.html" class="logo">RiShima Dive</a>
         </header>
+<!-- ──── 語言切換：右上角固定 ──── -->
+<div class="language-switcher">
+  <button class="lang-btn" aria-label="切換語言">🌐</button>
+  <ul class="lang-dropdown">
+    <li><a href="/">繁體中文</a></li>
+    <li><a href="/index_en.html">English</a></li>
+    <li><a href="/index_jp.html">日本語</a></li>
+  </ul>
+</div>
+<!-- ─────────────────────────── -->
 
         <!-- Nav -->
         <nav id="nav">
@@ -384,6 +438,24 @@
                 timer = setInterval(() => go((current + 1) % total), 3000);
             });
         })();
+
+        /* === 語言切換下拉 === */
+(function(){
+  const switcher=document.querySelector('.language-switcher');
+  if(!switcher) return;
+
+  const btn=switcher.querySelector('.lang-btn');
+  const dropdown=switcher.querySelector('.lang-dropdown');
+
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    dropdown.style.display = dropdown.style.display==='block' ? 'none' : 'block';
+  });
+
+  /* 點畫面其他地方自動收合 */
+  document.addEventListener('click',()=>{ dropdown.style.display='none'; });
+})();
+
     </script>
 
 
