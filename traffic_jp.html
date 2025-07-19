@@ -1,0 +1,543 @@
+<!-- traffic_jp.html -->
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <title>RiShima Dive</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        html { scroll-behavior:smooth; }
+        .quick-nav { padding:10px; text-align:center; border-bottom:none !important; }
+        .quick-nav a { color:#aacbe2 !important; font-weight:bold !important; font-size:1rem !important; }
+        .quick-nav .button:hover { background-color:#005fa3 !important; }
+        .post { border-top:white !important; padding-top:100px !important; }
+        .date { margin-bottom:0 !important; }
+        .modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,.6); }
+        .modal-content { background:#fff; margin:8% auto; padding:30px 40px; border-radius:12px; width:90%; max-width:600px; box-shadow:0 8px 24px rgba(0,0,0,.2); font-family:'Helvetica Neue', Arial, sans-serif; color:#333; line-height:1.6; position:relative; }
+        .modal-content h2 { font-size:1.8rem; margin-bottom:.5em; color:#005fa3; border-bottom:2px solid #aacbe2; padding-bottom:.3em; }
+        .modal-content p.intro { font-style:italic; margin-bottom:1em; color:#555; }
+        .modal-content h3 { font-size:1.2rem; margin-top:1.5em; margin-bottom:.5em; color:#005fa3; }
+        .modal-content ul { margin-left:1.2em; list-style:disc; }
+        .modal-content select { width:100%; padding:10px; margin-bottom:.5em; border:1px solid #ccc; border-radius:6px; font-size:1rem; }
+        .modal-content small { display:block; margin-bottom:1em; color:#777; }
+        .modal-content .button { display:inline-block; margin-top:1em; padding:10px 20px; background:linear-gradient(135deg,#0077c8,#00aaff); color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; transition:background .3s; }
+        .modal-content .button:hover { background:linear-gradient(135deg,#005fa3,#0088dd); }
+        .modal-close { font-size:1.5rem; color:#aaa; position:absolute; top:16px; right:20px; cursor:pointer; }
+        .modal-close:hover { color:#333; }
+        .contact-bar { display:flex; justify-content:space-between; align-items:center; padding:.5rem 0; width:100%; }
+        .social-icons { display:flex; gap:.75rem; }
+        .si { display:inline-block; width:1.8rem; height:1.8rem; background-size:contain; background-repeat:no-repeat; background-position:center; filter:drop-shadow(0 0 3px rgba(0,0,0,.35)); transition:transform .25s, filter .25s; }
+        .si:hover { transform:scale(1.15); filter:drop-shadow(0 0 6px rgba(0,0,0,.5)); }
+        .si.line { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg'); }
+        .si.instagram { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); }
+        .si.xiaohongshu { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg'); }
+        .si.wechat { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg'); }
+        .si.email { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg'); }
+        @media screen and (max-width:736px){ .contact-bar h2 { display:none; } .contact-bar { justify-content:center !important; } .social-icons { margin:0 auto; } }
+        .modal-content .schedule-list li { display:flex; align-items:flex-start; margin-bottom:.5rem; }
+        .modal-content .schedule-list .time { flex:0 0 4.5rem; font-weight:700; color:#005abe; }
+        .modal-content .schedule-list .desc { flex:1; margin-left:.5rem; }
+        .modal-content details summary { cursor:pointer; font-weight:600; margin-bottom:.5rem; }
+        .modal-content img { max-width:100%; height:auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.2); }
+        #pickup-toggle { color:#005abe; font-weight:bold; cursor:pointer; text-decoration:underline; }
+        #pickup-toggle:hover { color:#003d80; }
+        .pickup-toggle { text-decoration:underline; }
+    </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+    <header id="header">
+        <a href="index_jp.html" class="logo">RiShima Dive</a>
+    </header>
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="index_jp.html">ホーム</a></li>
+            <li><a href="detail_jp.html">私たちについて</a></li>
+            <li class="active"><a href="traffic_jp.html">ツアー紹介</a></li>
+            <li><a href="check_jp.html">PADIコース</a></li>
+            <li><a href="question_jp.html">よくある質問</a></li>
+            <li><a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank" rel="noopener noreferrer">予約規約・予約</a></li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <section class="post">
+            <header class="major">
+                <h1>ツアー紹介</h1>
+                <span class="date">蒼へ溶け込むひととき</span>
+                <div class="quick-nav" style="padding-top:0; padding-bottom:10px;">
+                    <a href="#card1">慶良間シュノーケリング</a>
+                    <a href="#card3">マーメイド体験</a>
+                    <a href="#card4">マーメイド水中撮影</a>
+                    <a href="#card5">フリーダイビング体験</a>
+                    <a href="#card6">フリーダイビング水中撮影</a>
+                </div>
+            </header>
+
+            <div class="card-container">
+                <div id="card1" class="card">
+                    <h3>慶良間シュノーケリング</h3>
+                    <h4>沖縄に来たら、世界屈指の“慶良間ブルー”へ！</h4>
+                    <p>国立海域公園である慶良間は透明度最大40m。「ガラスの海」「天国の青」と呼ばれる奇跡のブルー。<br> RiShima Dive のボートで秘境スポットへ。熱帯魚と泳ぎ、サンゴガーデンを気軽に散策。泳げない方も安心して参加できます。<br> “海を見る”旅から“海の中へ入る”旅へ。</p>
+                    <a href="#" class="open-modal" data-modal="modal1">→ 詳細を見る</a>
+                </div>
+
+                <div id="card3" class="card">
+                    <h3>マーメイド体験</h3>
+                    <h4>沖縄でしたい最初のこと――それは人魚になること。</h4>
+                    <p>未経験歓迎。インストラクターが浮き姿勢とテールのキック動作をサポート。<br> 浅いプールで安心・快適。人魚の世界を覗いてみたいあなたの“最初の1枚”を残します。</p>
+                    <a href="#" class="open-modal" data-modal="modal3">→ 詳細を見る</a>
+                </div>
+
+                <div id="card4" class="card">
+                    <h3>マーメイド水中撮影</h3>
+                    <h4>潜るだけじゃない。海のステージで魅せる時間。</h4>
+                    <p>テールをまとい、透明な沖縄の海で舞う。唯一無二の水中イメージを創り上げます。</p>
+                    <a href="#" class="open-modal" data-modal="modal4">→ 詳細を見る</a>
+                </div>
+
+                <div id="card5" class="card">
+                    <h3>フリーダイビング体験</h3>
+                    <h4>一呼吸で、一番ピュアな自分に出会う。</h4>
+                    <p>身体と海が対話する感覚。シュノーケルから自由潜水へ、海ガメと出会い光が沈む魔法を感じる。</p>
+                    <a href="#" class="open-modal" data-modal="modal5">→ 詳細を見る</a>
+                </div>
+
+                <div id="card6" class="card">
+                    <h3>フリーダイビング水中撮影</h3>
+                    <h4>沖縄の海と深くつながる自由の旅。</h4>
+                    <p>ライセンス取得目的ではなく“純粋に潜る喜び”と“心が静まる青”を体感。</p>
+                    <a href="#" class="open-modal" data-modal="modal6">→ 詳細を見る</a>
+                </div>
+
+                <br><br>
+                <center>
+                    <div>
+                        <h3>RiShima Dive が信じること</h3>
+                        <h4>ダイビングが本来の想いに戻ったとき、自由は還ってくる。</h4>
+                    </div>
+                </center>
+            </div>
+        </section>
+    </div>
+
+    <footer id="footer">
+        <div class="contact-bar" style="padding-top:50px;">
+            <h2>　　お問い合わせ</h2>
+            <div class="social-icons">
+                <a href="https://lin.ee/JWvtCOY" target="_blank" aria-label="LINE" class="si line"></a>
+                <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram" class="si instagram"></a>
+                <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource=" target="_blank" aria-label="小紅書" class="si xiaohongshu"></a>
+                <a href="weixin://dl/chat?YUNYUNDIVE" aria-label="WeChat" class="si wechat"></a>
+                <a href="mailto:rishimadive@gmail.com" aria-label="Email" class="si email"></a>
+                <span>　　</span>
+            </div>
+        </div>
+    </footer>
+
+    <div id="copyright">
+        <ul><li>&copy; RiShima Dive 2025</li></ul>
+    </div>
+</div>
+
+<!-- ▼▼▼ モーダル ▼▼▼ -->
+
+<!-- Modal1 慶良間シュノーケリング -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>慶良間シュノーケリング</h2>
+    <p class="intro">「沖縄に来たなら、この“世界級ブルー”を見逃さないで！」</p>
+    <center><img src="images/慶良間浮潛(行程).JPG" alt="慶良間シュノーケル行程イメージ"></center>
+    <p>息を呑む沖縄の蒼 —— <b>慶良間国立海域公園</b>。最大<b>40m</b>の透明度は“ガラスの海”“ヘブンブルー”と称賛。<br> <b>RiShima Dive</b> のボートで秘境エリアへ。熱帯魚やサンゴの庭を漂いながら気軽に海中世界へ。<br> 泳げない方も楽しめる —— 見るだけの旅から、海の中へ“入る”旅へ。</p>
+    <h3>料金プラン</h3>
+    <select name="itinerary1">
+      <option>慶良間諸島｜半日 2 ポイント（ボート） ￥15,800</option>
+      <option>慶良間諸島｜終日 3 ポイント（ボート） ￥17,800</option>
+    </select>
+    <p><small>表示は税込・追加料金なし</small></p>
+    <h3>スケジュール</h3>
+    <details>
+      <summary><strong>半日コース</strong>（<b>07:00</b> / <b>12:00</b> 集合）</summary>
+      <ul>
+        <li><b>07:00</b> 港集合（<b>10分前</b>にお越しください）</li>
+        <li><b>07:15</b> 受付・器材チェック</li>
+        <li><b>07:30</b> 出港／船上ブリーフィング</li>
+        <li><b>08:00–11:00</b> 2スポットでシュノーケリング</li>
+        <li><b>11:00</b> 那覇へ帰港（温水シャワー・更衣室あり）</li>
+        <li><b>11:30</b> 解散／那覇市内送迎</li>
+      </ul>
+    </details>
+    <details>
+      <summary><strong>終日コース</strong>（<b>07:00–15:00</b>）</summary>
+      <ul>
+        <li><b>07:00</b> 港集合</li>
+        <li><b>07:15</b> 受付・器材チェック</li>
+        <li><b>07:30</b> 出港</li>
+        <li><b>08:00–11:30</b> 2スポットシュノーケリング</li>
+        <li><b>11:30</b> 船上ランチ（軽食持参）</li>
+        <li><b>12:30</b> 3スポット目</li>
+        <li><b>14:00</b> 帰港</li>
+        <li><b>15:00</b> 解散</li>
+      </ul>
+    </details>
+    <h3>料金に含まれるもの</h3>
+    <ul>
+      <li>消費税・乗船料・インストラクター料・保険・フル器材・<a href="#" class="pickup-toggle" data-target="pickup-info-1">那覇市内送迎</a>・プロ水中撮影（写真＋動画全データ）</li>
+      <li>含まれないもの：昼食</li>
+    </ul>
+    <h3>参加条件</h3>
+    <ul>
+      <li><b>10〜60歳</b>（未成年は保護者同意）</li>
+      <li><a href="health_jp.html" target="_blank">健康セルフチェック</a>通過が必要（不合格は参加・返金不可）</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>海況によりポイント変更あり／前日に最終連絡</li>
+      <li>当日の飲酒不可・途中離脱は返金なし</li>
+      <li>予約前に<a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">取消規定</a>をご確認ください</li>
+    </ul>
+    <h3>持ち物</h3>
+    <ul><li>水着・ラッシュガード・サンダル・タオル・着替え</li></ul>
+    <center style="margin-top:2rem;">
+      <h4>“見る”から“一緒に漂う”へ。慶良間ブルーを記録しよう。</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/4KIEUJ/order?step=1" target="_blank" rel="noopener">
+        <div style="padding:10px 25px; background:#005abe; color:#fff; font-size:16px; font-weight:bold; border-radius:6px; display:inline-block;">今すぐ予約</div>
+      </a>
+    </center>
+    <div id="pickup-info-1" style="display:none; margin-top:1rem;">
+      <h3>送迎案内</h3>
+      <p>那覇市内は無料送迎あり（範囲はお問い合わせください）。</p>
+      <p>1名参加でも交通の心配不要・レンタカー費用節約。</p>
+      <p>自力集合の場合は事前に集合時間と場所をお知らせします。</p>
+      <p>通勤時間帯は渋滞のため余裕をもって出発してください。</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal3 マーメイド体験 -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>マーメイド体験</h2>
+    <p class="intro">「沖縄での第一歩――人魚になる瞬間。」</p>
+    <center><img src="images/PADI 美人魚體驗行程(行程).JPG" alt="マーメイド体験プール" /></center>
+    <p>経験ゼロでも大丈夫。<b>RiShima Dive</b> があなたにフィンワークと水中姿勢を丁寧にガイド。<br> 足が着く浅いプールで安全・リラックス。初めての“人魚写真”を残したい方に最適。</p>
+    <h3>コース情報</h3>
+    <ul>
+      <li>所要：半日</li>
+      <li>場所：プール（足が着く水深）</li>
+      <li>内容：ウォーミングアップ／テール体験／プロ撮影（写真＋動画）</li>
+      <li>推奨年齢：<b>10〜60歳</b></li>
+      <li>インストラクター比率：<b>1 : 2</b></li>
+    </ul>
+    <h3>料金</h3>
+    <p><b>￥22,800</b>（税込／追加費用なし）</p>
+    <h3>参考スケジュール</h3>
+    <details>
+      <summary><strong>半日（<b>08:00</b> / <b>13:00</b> 集合）</strong></summary>
+      <ul>
+        <li><b>08:00 / 13:00</b> 集合（10分前到着推奨）</li>
+        <li><b>08:15 / 13:15</b> 受付・器材確認</li>
+        <li><b>08:30–11:30 / 13:30–16:30</b> インストラクション＋撮影</li>
+        <li>終了後：シャワー更衣／那覇市内送迎</li>
+      </ul>
+    </details>
+    <h3>料金に含まれるもの</h3>
+    <ul>
+      <li>消費税・インストラクター料・プール利用料・保険・フル器材・<a href="#" class="pickup-toggle" data-target="pickup-info-2">那覇市内送迎</a>・プロ撮影（写真＋動画全データ）</li>
+      <li>含まれないもの：昼食</li>
+    </ul>
+    <h3>参加条件</h3>
+    <ul>
+      <li>10〜60歳（未成年は保護者同意）</li>
+      <li><a href="health_jp.html" target="_blank">健康セルフチェック</a>通過必須（不通過は参加・返金不可）</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>天候により時間調整あり・連絡可能な状態にしてください</li>
+      <li>当日の飲酒不可／途中退室返金なし</li>
+      <li>予約前に<a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">取消規定</a>確認</li>
+    </ul>
+    <h3>持ち物</h3>
+    <ul><li>水着・ラッシュガード・サンダル・タオル・着替え</li></ul>
+    <center style="margin-top:2rem;">
+      <h4>人魚の夢を“最初の体験”として形に。</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/Y8JKBS/order?step=1" target="_blank" rel="noopener">
+        <div style="padding:10px 25px; background:#005abe; color:#fff; font-size:16px; font-weight:bold; border-radius:6px; display:inline-block;">今すぐ予約（人魚になる）</div>
+      </a>
+    </center>
+    <div id="pickup-info-2" style="display:none; margin-top:1rem;">
+      <h3>送迎案内</h3>
+      <p>那覇市内は無料送迎サービス。</p>
+      <p>1名参加でも移動の不安なし・レンタカー不要。</p>
+      <p>自力集合の場合は場所と時間を事前にご案内。</p>
+      <p>渋滞時間帯は余裕を持ってご出発ください。</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal4 マーメイド水中撮影 -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>マーメイド水中撮影</h2>
+    <p class="intro">「潜る“だけ”では終わらない。演じる海のアート。」</p>
+    <center><img src="images/美人魚水中攝影(行程).JPG" alt="マーメイド水中撮影" /></center>
+    <p>テールを纏いクリスタルな沖縄の海へ。<b>RiShima Dive</b> がライセンス保持者向けに、光差す洞窟・カラフルな魚影・慶良間の透明世界で唯一無二の作品を残します。</p>
+    <h3>料金プラン</h3>
+    <select name="itinerary4">
+      <option>慶良間諸島｜半日 2 ダイブ（ボート） ￥19,800</option>
+      <option>慶良間諸島｜終日 3 ダイブ（ボート） ￥22,800</option>
+    </select>
+    <p><small>税込／追加費用なし</small></p>
+    <details>
+      <summary><strong>半日スケジュール</strong></summary>
+      <ul>
+        <li><b>07:00 / 12:00</b> 港集合（10分前）</li>
+        <li><b>07:15 / 12:15</b> 受付・器材確認</li>
+        <li><b>07:30</b> 出港・安全ブリーフィング（中/英）</li>
+        <li><b>08:00–11:00</b> 2ポイント撮影</li>
+        <li><b>11:00</b> 帰港・シャワー</li>
+        <li><b>11:30</b> 解散／送迎</li>
+      </ul>
+      <p><em>＊船上でのシャンプー等化学製品使用不可</em></p>
+    </details>
+    <details>
+      <summary><strong>終日スケジュール</strong></summary>
+      <ul>
+        <li><b>07:00</b> 港集合</li>
+        <li><b>07:15</b> 受付・器材確認</li>
+        <li><b>07:30</b> 出港（中/英説明）</li>
+        <li><b>08:00–11:30</b> 2ポイント撮影</li>
+        <li><b>11:30</b> 船上ランチ（軽食持参・上陸なし）</li>
+        <li><b>12:30</b> 3ポイント目撮影</li>
+        <li><b>14:00</b> 帰港</li>
+        <li><b>15:00</b> 解散</li>
+      </ul>
+      <p><em>＊海況により時間変動あり</em></p>
+    </details>
+    <h3>料金に含まれるもの</h3>
+    <ul>
+      <li>消費税・乗船料・インストラクター料・保険・器材一式・<a href="#" class="pickup-toggle" data-target="pickup-info-3">那覇市内送迎</a>・水中撮影（写真＋動画全データ）</li>
+      <li>含まれない：昼食</li>
+    </ul>
+    <h3>参加条件</h3>
+    <ul>
+      <li><b>Mermaid / 自由潜水 A1</b> 以上ライセンス</li>
+      <li>10〜60歳（未成年は保護者同意）</li>
+      <li><a href="health_jp.html" target="_blank">健康セルフチェック</a>通過</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>ポイントは海況で変更の可能性</li>
+      <li>当日飲酒不可／途中離脱返金なし</li>
+      <li><a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">取消規定</a>事前確認</li>
+    </ul>
+    <h3>持ち物</h3>
+    <ul><li>水着・ラッシュガード・サンダル・タオル・着替え</li></ul>
+    <center style="margin-top:2rem;">
+      <h4>海のステージで“もう一人の自分”を表現。</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/HE7VTN/order?step=1" target="_blank" rel="noopener">
+        <div style="padding:10px 25px; background:#005abe; color:#fff; font-size:16px; font-weight:bold; border-radius:6px; display:inline-block;">今すぐ予約</div>
+      </a>
+    </center>
+    <div id="pickup-info-3" style="display:none; margin-top:1rem;">
+      <h3>送迎案内</h3>
+      <p>那覇市内ホテルへの無料送迎あり。</p>
+      <p>自力集合希望の場合は前日までに場所を案内。</p>
+      <p>渋滞時間帯は早めの出発を。</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal5 フリーダイビング体験 -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>フリーダイビング体験</h2>
+    <p class="intro">「一呼吸で、本来の自分へ。」</p>
+    <center><img src="images/schedule5.jpg" alt="フリーダイビング体験" /></center>
+    <p>フリーダイビングは息止め競争でも距離の勝負でもない。<br> 呼吸と身体で海と対話する静かな旅。<br> 経験不要・泳力不問。焦りを手放し、水に委ね“信じる”感覚を学ぶ。<br> <b>RiShima Dive</b> ではシュノーケルから一歩ずつ自由潜水へ。<br> 海ガメと舞い、光が沈む瞬間を味わう穏やかな時間。</p>
+    <h3>料金プラン</h3>
+    <select name="itinerary5">
+      <option>慶良間諸島｜半日 2 ダイブ（ボート） ￥18,800</option>
+      <option>慶良間諸島｜終日 3 ダイブ（ボート） ￥20,800</option>
+    </select>
+    <p><small>税込／追加料金なし</small></p>
+    <details>
+      <summary><strong>半日スケジュール</strong></summary>
+      <ul>
+        <li><b>07:00 / 12:00</b> 港集合（10分前）</li>
+        <li><b>07:15 / 12:15</b> 受付・器材確認</li>
+        <li><b>07:30 / 12:30</b> 出港（ブリーフィング 中/英）</li>
+        <li><b>08:00 / 13:00</b> 2ポイント自由潜水体験</li>
+        <li><b>11:00 / 16:00</b> 帰港・シャワー</li>
+        <li><b>11:30 / 16:30</b> 解散／送迎</li>
+      </ul>
+      <p><em>* 船上でのシャンプー等化学製品使用不可</em></p>
+    </details>
+    <details>
+      <summary><strong>終日スケジュール</strong></summary>
+      <ul>
+        <li><b>07:00</b> 港集合</li>
+        <li><b>07:15</b> 受付・器材確認</li>
+        <li><b>07:30</b> 慶良間海域へ（説明あり）</li>
+        <li><b>08:00</b> 2ポイント体験</li>
+        <li><b>11:30</b> 船上ランチ（軽食）</li>
+        <li><b>12:30</b> 3ポイント目自由潜水</li>
+        <li><b>14:00</b> 帰港</li>
+        <li><b>15:00</b> 解散（送迎）</li>
+      </ul>
+      <p><em>* 海況・交通で変動の可能性</em></p>
+    </details>
+    <h3>料金に含まれるもの</h3>
+    <ul>
+      <li>消費税・乗船料・インストラクター料・保険・器材一式・<a href="#" class="pickup-toggle" data-target="pickup-info-4">那覇市内送迎</a>・プロ撮影（写真＋動画全データ）</li>
+      <li>含まれない：昼食</li>
+    </ul>
+    <h3>参加条件</h3>
+    <ul>
+      <li>10〜60歳（未成年は保護者同意）</li>
+      <li><a href="health_jp.html" target="_blank">健康セルフチェック</a>通過必須</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>海況でポイント変更あり</li>
+      <li>当日飲酒不可・途中離脱返金なし</li>
+      <li>予約前に<a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">取消規定</a>確認</li>
+    </ul>
+    <h3>持ち物</h3>
+    <ul><li>水着・ラッシュガード・サンダル・タオル・着替え</li></ul>
+    <center style="margin-top:2rem;">
+      <h4>手を広げ、海と同調する一歩。</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/MILXQB/order?step=1" target="_blank" rel="noopener">
+        <div style="padding:10px 25px; background:#005abe; color:#fff; font-size:16px; font-weight:bold; border-radius:6px; display:inline-block;">今すぐ予約</div>
+      </a>
+    </center>
+    <div id="pickup-info-4" style="display:none; margin-top:1rem;">
+      <h3>送迎案内</h3>
+      <p>那覇市内ホテル無料送迎。</p>
+      <p>自力集合も可（事前に場所共有）。</p>
+      <p>渋滞時間帯は余裕を持って。</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal6 フリーダイビング水中撮影 -->
+<div id="modal6" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>フリーダイビング水中撮影</h2>
+    <p class="intro">「潜ることは、沖縄の海と深く結び直すこと。」</p>
+    <center><img src="images/自由潛水水中攝影(行程).JPEG" alt="フリーダイビング水中撮影" /></center>
+    <p>静かに沈むと、時間が緩み鼓動が海と同期する。<br> 今回は<b>RiShima Dive</b>とともにその“純度の高い瞬間”へ還る旅。<br> 砂辺の岸潜り、光が織りなす青の洞窟、澄み渡る慶良間——一呼吸ごとに再接続していく。
+    <br> 記録や試験のためではなく、“自分のために潜る”時間。</p>
+    <h3>信念</h3>
+    <blockquote>自由潜水が原点へ戻るとき、自由もまた戻ってくる。</blockquote>
+    <h3>料金プラン</h3>
+    <select name="itinerary6">
+      <option>慶良間諸島｜半日 2 ダイブ（ボート） ￥17,800</option>
+      <option>慶良間諸島｜終日 3 ダイブ（ボート） ￥19,800</option>
+    </select>
+    <p><small>税込／追加料金なし</small></p>
+    <details>
+      <summary><strong>半日スケジュール</strong></summary>
+      <ul>
+        <li><b>07:00 / 12:00</b> 港集合（10分前）</li>
+        <li><b>07:15 / 12:15</b> 受付・器材確認</li>
+        <li><b>07:30 / 12:30</b> 慶良間国立海域へ（船上ブリーフィング 中/英）</li>
+        <li><b>08:00 / 13:00</b> 1・2ポイント撮影／潜行</li>
+        <li><b>11:00 / 16:00</b> 帰港・シャワー</li>
+        <li><b>11:30 / 16:30</b> 解散／送迎</li>
+      </ul>
+      <p><em>* 海洋保全のためシャンプー等使用不可</em></p>
+    </details>
+    <details>
+      <summary><strong>終日スケジュール</strong></summary>
+      <ul>
+        <li><b>07:00</b> 港集合</li>
+        <li><b>07:15</b> 受付・器材チェック</li>
+        <li><b>07:30</b> 慶良間国立海域へ（説明 中/英）</li>
+        <li><b>08:00</b> 1・2ポイント潜行</li>
+        <li><b>11:30</b> 船上ランチ（軽食持参）</li>
+        <li><b>12:30</b> 3ポイント目撮影</li>
+        <li><b>14:00</b> 帰港</li>
+        <li><b>15:00</b> 解散（送迎）</li>
+      </ul>
+      <p><em>* 海況・交通事情で変動あり</em></p>
+    </details>
+    <h3>料金に含まれるもの</h3>
+    <ul>
+      <li>消費税・乗船料・インストラクター料・保険・器材一式・<a href="#" class="pickup-toggle" data-target="pickup-info-5">那覇市内送迎</a>・撮影（写真＋動画全データ）</li>
+      <li>含まれない：昼食</li>
+    </ul>
+    <h3>参加条件</h3>
+    <ul>
+      <li>AIDA / PADI / Molchanovs 等フリーダイビング認定保持</li>
+      <li>10〜60歳（未成年は保護者同意）</li>
+      <li><a href="health_jp.html" target="_blank">健康セルフチェック</a>通過</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>海況でエリア変更可</li>
+      <li>当日飲酒不可／途中離脱返金なし</li>
+      <li><a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">取消規定</a>要確認</li>
+    </ul>
+    <h3>持ち物</h3>
+    <ul><li>水着・ラッシュガード・サンダル・タオル・着替え</li></ul>
+    <center style="margin-top:2rem;">
+      <h4>海と呼吸が合う瞬間、本当の静けさに触れる。</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/KODEOQ/order?step=1" target="_blank" rel="noopener">
+        <div style="padding:10px 25px; background:#005abe; color:#fff; font-size:16px; font-weight:bold; border-radius:6px; display:inline-block;">今すぐ予約</div>
+      </a>
+    </center>
+    <div id="pickup-info-5" style="display:none; margin-top:1rem;">
+      <h3>送迎案内</h3>
+      <p>那覇市内ホテル無料送迎。</p>
+      <p>1名参加歓迎。交通の不安軽減。</p>
+      <p>自力集合可：事前に集合場所を共有。</p>
+      <p>渋滞時間帯は早めに出発してください。</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ▲▲▲ モーダル終わり ▲▲▲ -->
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+// 送迎トグル
+ document.querySelectorAll('.pickup-toggle').forEach(function(t){
+   t.addEventListener('click', function(e){
+     e.preventDefault();
+     const targetId = this.dataset.target;
+     const el = document.getElementById(targetId);
+     if(el){
+       el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+       el.scrollIntoView({behavior:'smooth', block:'start'});
+     }
+   });
+ });
+// モーダル
+ $(function(){
+   $('.open-modal').on('click', function(e){ e.preventDefault(); $('#'+$(this).data('modal')).fadeIn(200); });
+   $('.modal-close').on('click', function(){ $(this).closest('.modal').fadeOut(200); });
+   $('.modal').on('click', function(e){ if(e.target === this){ $(this).fadeOut(200); } });
+ });
+</script>
+</body>
+</html>

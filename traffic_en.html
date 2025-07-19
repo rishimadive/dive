@@ -1,0 +1,554 @@
+<!-- traffic_en.html -->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>RiShima Dive</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        html { scroll-behavior: smooth; }
+        .quick-nav { padding:10px; text-align:center; border-bottom:none !important; }
+        .quick-nav a { color:#aacbe2 !important; font-weight:bold !important; font-size:1rem !important; }
+        .quick-nav .button:hover { background-color:#005fa3 !important; }
+        .post { border-top:white !important; padding-top:100px !important; }
+        .date { margin-bottom:0 !important; }
+        /* Modal */
+        .modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.6); }
+        .modal-content { background:#fff; margin:8% auto; padding:30px 40px; border-radius:12px; width:90%; max-width:600px; box-shadow:0 8px 24px rgba(0,0,0,0.2); font-family:'Helvetica Neue', Arial, sans-serif; color:#333; line-height:1.6; position:relative; }
+        .modal-content h2 { font-size:1.8rem; margin-bottom:.5em; color:#005fa3; border-bottom:2px solid #aacbe2; padding-bottom:.3em; }
+        .modal-content p.intro { font-style:italic; margin-bottom:1em; color:#555; }
+        .modal-content h3 { font-size:1.2rem; margin-top:1.5em; margin-bottom:.5em; color:#005fa3; }
+        .modal-content ul { margin-left:1.2em; list-style:disc; }
+        .modal-content select { width:100%; padding:10px; margin-bottom:.5em; border:1px solid #ccc; border-radius:6px; font-size:1rem; }
+        .modal-content small { display:block; margin-bottom:1em; color:#777; }
+        .modal-content .button { display:inline-block; margin-top:1em; padding:10px 20px; background:linear-gradient(135deg,#0077c8,#00aaff); color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; transition:background .3s; }
+        .modal-content .button:hover { background:linear-gradient(135deg,#005fa3,#0088dd); }
+        .modal-close { font-size:1.5rem; color:#aaa; position:absolute; top:16px; right:20px; cursor:pointer; }
+        .modal-close:hover { color:#333; }
+        /* Contact / social */
+        .contact-bar { display:flex; justify-content:space-between; align-items:center; padding:.5rem 0; width:100%; }
+        .social-icons { display:flex; gap:.75rem; }
+        .si { display:inline-block; width:1.8rem; height:1.8rem; background-size:contain; background-repeat:no-repeat; background-position:center; filter:drop-shadow(0 0 3px rgba(0,0,0,.35)); transition:transform .25s, filter .25s; }
+        .si:hover { transform:scale(1.15); filter:drop-shadow(0 0 6px rgba(0,0,0,.5)); }
+        .si.line { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg'); }
+        .si.instagram { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); }
+        .si.xiaohongshu { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg'); }
+        .si.wechat { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg'); }
+        .si.email { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg'); }
+        @media screen and (max-width:736px){ .contact-bar h2 { display:none; } .contact-bar { justify-content:center !important; } .social-icons { margin:0 auto; } }
+        .modal-content .schedule-list li { display:flex; align-items:flex-start; margin-bottom:.5rem; }
+        .modal-content .schedule-list .time { flex:0 0 4.5rem; font-weight:700; color:#005abe; }
+        .modal-content .schedule-list .desc { flex:1; margin-left:.5rem; }
+        .modal-content details summary { cursor:pointer; font-weight:600; margin-bottom:.5rem; }
+        .modal-content img { max-width:100%; height:auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+        #pickup-toggle, .pickup-toggle { color:#005abe; font-weight:bold; cursor:pointer; text-decoration:underline; }
+        #pickup-toggle:hover, .pickup-toggle:hover { color:#003d80; }
+        /* Remove top borders spacing in main */
+        #main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main p, #main br, #main center { border-top:none !important; }
+        #main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main p { padding-top:0 !important; }
+    </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+        <a href="index_en.html" class="logo">RiShima Dive</a>
+    </header>
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="index_en.html">Home</a></li>
+            <li><a href="detail_en.html">About Us</a></li>
+            <li class="active"><a href="traffic_en.html">Programs</a></li>
+            <li><a href="check_en.html">PADI Courses</a></li>
+            <li><a href="question_en.html">FAQ</a></li>
+            <li><a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank" rel="noopener noreferrer">Booking & Policy</a></li>
+        </ul>
+    </nav>
+    <!-- Main -->
+    <div id="main">
+        <section class="post">
+            <header class="major">
+                <h1>Program Overview</h1>
+                <span class="date">Moments of blending into the deep blue</span>
+                <div class="quick-nav" style="padding-top:0; padding-bottom:10px;">
+                    <a href="#card1">Kerama Snorkeling</a>
+                    <a href="#card3">Mermaid Experience</a>
+                    <a href="#card4">Mermaid Underwater Photo</a>
+                    <a href="#card5">Freedive Experience</a>
+                    <a href="#card6">Freedive Underwater Photo</a>
+                </div>
+            </header>
+
+            <div class="card-container">
+                <!-- Card 1 -->
+                <div id="card1" class="card">
+                    <h3>Kerama Snorkeling</h3>
+                    <h4>Explore Okinawa’s world‑class turquoise miracle!</h4>
+                    <p>The Kerama National Marine Park boasts visibility up to <strong>40 m</strong>, nicknamed the “Glass Sea” and “Heavenly Blue.”<br> Join RiShima Dive by boat into pristine reef gardens, drifting above corals among tropical fish. No swimming experience required—simply relax and shine in your own natural way.</p>
+                    <a href="#" class="open-modal" data-modal="modal1">→ View detailed itinerary</a>
+                </div>
+                <!-- Card 3 -->
+                <div id="card3" class="card">
+                    <h3>Mermaid Experience</h3>
+                    <h4>The very first thing in Okinawa—become a mermaid!</h4>
+                    <p>Zero experience needed. Our professional instructor guides you through buoyancy and graceful tail movement in a shallow training pool for your very first mermaid memory.</p>
+                    <a href="#" class="open-modal" data-modal="modal3">→ View detailed itinerary</a>
+                </div>
+                <!-- Card 4 -->
+                <div id="card4" class="card">
+                    <h3>Mermaid Underwater Photography</h3>
+                    <h4>More than diving—an aquatic performance.</h4>
+                    <p>Put on a tail and descend into crystal Okinawan water to create one‑of‑a‑kind underwater imagery.</p>
+                    <a href="#" class="open-modal" data-modal="modal4">→ View detailed itinerary</a>
+                </div>
+                <!-- Card 5 -->
+                <div id="card5" class="card">
+                    <h3>Freediving Experience</h3>
+                    <h4>With a single breath, meet your purest self.</h4>
+                    <p>Learn to converse with the ocean—progress from surface relaxation to your first descent, perhaps encountering sea turtles beneath shafts of sunlight.</p>
+                    <a href="#" class="open-modal" data-modal="modal5">→ View detailed itinerary</a>
+                </div>
+                <!-- Card 6 -->
+                <div id="card6" class="card">
+                    <h3>Freedive Underwater Photography</h3>
+                    <h4>A journey of deep connection.</h4>
+                    <p>No certification goals—just the pure joy of breath‑hold immersion and the calm dialogue of the blue.</p>
+                    <a href="#" class="open-modal" data-modal="modal6">→ View detailed itinerary</a>
+                </div>
+                <br><br>
+                <center>
+                    <div>
+                        <h3>RiShima Dive Believes</h3>
+                        <h4>When diving returns to its heart, freedom truly returns.</h4>
+                    </div>
+                </center>
+            </div>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="contact-bar" style="padding-top:50px;">
+            <h2>　　Contact</h2>
+            <div class="social-icons">
+                <a href="https://lin.ee/JWvtCOY" target="_blank" aria-label="LINE" class="si line"></a>
+                <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram" class="si instagram"></a>
+                <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource=" target="_blank" aria-label="Xiaohongshu" class="si xiaohongshu"></a>
+                <a href="weixin://dl/chat?YUNYUNDIVE" aria-label="WeChat" class="si wechat"></a>
+                <a href="mailto:rishimadive@gmail.com" aria-label="Email" class="si email"></a>
+                <span>　　</span>
+            </div>
+        </div>
+    </footer>
+    <div id="copyright">
+        <ul><li>&copy; RiShima Dive 2025</li></ul>
+    </div>
+</div>
+
+<!-- ================= MODALS ================= -->
+<!-- Modal 1: Kerama Snorkeling -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" aria-label="Close">&times;</span>
+    <h2>Kerama Snorkeling</h2>
+    <p class="intro">“In Okinawa, don’t miss this world‑class shade of blue!”</p>
+    <center>
+      <img src="images/慶良間浮潛(行程).JPG" alt="Kerama snorkeling sample" />
+    </center>
+    <p>The most breathtaking waters of Okinawa—<b>Kerama National Marine Park</b>, with visibility up to <b>40 m</b>, celebrated as the “Glass Sea” and “Heavenly Blue.”<br> Board with <b>RiShima Dive</b> and journey across vibrant reefs, drifting over coral gardens among dazzling tropical fish.<br> No swimming skills? No problem. Don’t just look at the sea—<em>enter</em> it.</p>
+    <h3>Pricing Options</h3>
+    <select name="itinerary1" style="margin-bottom:.5rem;">
+      <option>Kerama Islands | Half Day 2 Sites | Boat ¥15,800</option>
+      <option>Kerama Islands | Full Day 3 Sites | Boat ¥17,800</option>
+    </select>
+    <p><small>Final tax‑inclusive price. No hidden fees.</small></p>
+    <h3>Schedule</h3>
+    <details>
+      <summary><strong>Half Day</strong> (Meet <b>07:00</b> / <b>12:00</b>)</summary>
+      <ul>
+        <li><b>07:00</b> Port meet (arrive 10 min early)</li>
+        <li><b>07:15</b> Registration & gear check</li>
+        <li><b>07:30</b> Boat briefing & depart</li>
+        <li><b>08:00–11:00</b> Two snorkeling sites</li>
+        <li><b>11:00</b> Return to Naha (hot shower & changing)</li>
+        <li><b>11:30</b> Finish / hotel drop (if arranged)</li>
+      </ul>
+    </details>
+    <details>
+      <summary><strong>Full Day</strong> (07:00–15:00)</summary>
+      <ul>
+        <li><b>07:00</b> Port meet</li>
+        <li><b>07:15</b> Registration & gear check</li>
+        <li><b>07:30</b> Depart / boat briefing</li>
+        <li><b>08:00–11:30</b> First & second reef sites</li>
+        <li><b>11:30</b> Light lunch on boat (bring your own)</li>
+        <li><b>12:30</b> Third site</li>
+        <li><b>14:00</b> Cruise back</li>
+        <li><b>15:00</b> Finish (subject to sea conditions)</li>
+      </ul>
+    </details>
+    <h3>Included</h3>
+    <ul>
+      <li>Tax, boat fee, instructor, insurance, full gear, <a href="#" class="pickup-toggle" data-target="pickup-info-1">Naha city transfer</a>, professional photography (all photos + video)</li>
+      <li>Not included: Lunch</li>
+    </ul>
+    <h3>Participant Requirements</h3>
+    <ul>
+      <li><b>Age 10–60</b> (minors need guardian signature)</li>
+      <li>Must pass <a href="https://hank0729.github.io/dive2025/health.html" target="_blank">Health Self‑Check</a> (fail = cannot join / no refund)</li>
+    </ul>
+    <h3>Notes</h3>
+    <ul>
+      <li>Sites may change based on sea conditions—stay reachable.</li>
+      <li>No alcohol on activity day; no refund for early withdrawal.</li>
+      <li>Please read <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">Booking & Cancellation Policy</a> before reserving.</li>
+    </ul>
+    <h3>Bring</h3>
+    <ul><li>Swimsuit, rash guard, sandals, towel, change of clothes</li></ul>
+    <center style="margin-top:2rem;">
+      <h4>Not just snorkeling—a personal encounter with Okinawa’s glassy blue.</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/4KIEUJ/order?step=1" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div style="padding:10px 25px; background:#005abe; color:#fff; font-size:16px; font-weight:bold; border-radius:6px; display:inline-block;">Book Now</div>
+      </a>
+    </center>
+    <div id="pickup-info-1" style="display:none; margin-top:1rem;">
+      <h3>Transfer Info</h3>
+      <p>Complimentary pick‑up within Naha city for all participants.</p>
+      <p>Solo travelers welcome—no need to rent a car.</p>
+      <p>If coming directly, we will inform you of the exact port & time in advance.</p>
+      <p>Allow extra time for weekday traffic; keep your phone reachable.</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3: Mermaid Experience -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" aria-label="Close">&times;</span>
+    <h2>Mermaid Experience</h2>
+    <p class="intro">“The first thing to do in Okinawa—transform into a mermaid.”</p>
+    <center><img src="images/PADI 美人魚體驗行程(行程).JPG" alt="Mermaid pool session" /></center>
+    <p>No prior skills required—your dreamy underwater journey begins now.<br><b>RiShima Dive</b> helps you into a fitted mermaid tail, teaching tail undulation & neutral floating. Conducted in a pool at standing depth—relaxed, safe, memorable.</p>
+    <h3>Course Info</h3>
+    <ul>
+      <li>Duration: Half day</li>
+      <li>Location: Pool</li>
+      <li>Includes: Warm‑up, tail fitting, movement drills, professional photos & video</li>
+      <li>Recommended Age: <b>10–60</b></li>
+      <li>Instructor Ratio: <b>1:2</b></li>
+    </ul>
+    <h3>Price</h3>
+    <p><b>¥22,800</b> (tax‑inclusive)</p>
+    <h3>Sample Schedule</h3>
+    <details>
+      <summary><strong>Half Day (Meet 08:00 / 13:00)</strong></summary>
+      <ul>
+        <li><b>08:00 / 13:00</b> Pool meet (arrive 10 min early)</li>
+        <li><b>08:15 / 13:15</b> Registration / gear check</li>
+        <li><b>08:30–11:30 / 13:30–16:30</b> Instruction + photo session</li>
+        <li>Showers & changing available. City transfer included.</li>
+      </ul>
+    </details>
+    <h3>Included</h3>
+    <ul>
+      <li>Tax, instructor, pool fee, insurance, full gear, <a href="#" class="pickup-toggle" data-target="pickup-info-2">Naha transfer</a>, professional photo & video (all files)</li>
+      <li>Not included: Lunch</li>
+    </ul>
+    <h3>Requirements</h3>
+    <ul>
+      <li>Age 10–60 (guardian signature if minor)</li>
+      <li>Must pass <a href="https://hank0729.github.io/dive2025/health.html" target="_blank">Health Self‑Check</a></li>
+    </ul>
+    <h3>Notes</h3>
+    <ul>
+      <li>Schedule may adjust for weather—stay reachable.</li>
+      <li>No alcohol; no refund for early withdrawal.</li>
+      <li>Read the <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">Booking & Cancellation Policy</a>.</li>
+    </ul>
+    <h3>Bring</h3>
+    <ul><li>Swimsuit, rash guard, sandals, towel, change of clothes</li></ul>
+    <center style="margin-top:2rem;">
+      <h4>Your mermaid dream starts here.</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/Y8JKBS/order?step=1" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div style="padding:10px 25px; background:#005abe; color:#fff; font-size:16px; font-weight:bold; border-radius:6px; display:inline-block;">Book & Transform</div>
+      </a>
+    </center>
+    <div id="pickup-info-2" style="display:none; margin-top:1rem;">
+      <h3>Transfer Info</h3>
+      <p>Complimentary pick‑up within Naha city.</p>
+      <p>Solo travelers welcome—no rental car needed.</p>
+      <p>If you self‑arrive we provide precise map & time.</p>
+      <p>Please allow for traffic & stay reachable.</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4: Mermaid Underwater Photography -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" aria-label="Close">&times;</span>
+    <h2>Mermaid Underwater Photography</h2>
+    <p class="intro">“More than diving—an expressive visual performance.”</p>
+    <center><img src="images/美人魚水中攝影(行程).JPG" alt="Mermaid ocean photography" /></center>
+    <p>Slip into a tail and glide through Okinawa’s crystalline blue—you are the star.<br><b>RiShima Dive</b> curates bespoke underwater scenes for certified mermaids: from the lightbeams of the Blue Cave to fish‑filled coastal sites or the translucent Kerama reefs—each frame uniquely yours.</p>
+    <h3>Pricing Options</h3>
+    <select name="itinerary4" style="margin-bottom:.5rem; padding:.5rem;">
+      <option>Kerama Islands | Half Day 2 Dives | Boat ¥19,800</option>
+      <option>Kerama Islands | Full Day 3 Dives | Boat ¥22,800</option>
+    </select>
+    <p><small>Tax‑inclusive. No extra fees.</small></p>
+    <details>
+      <summary><strong>Half‑Day Schedule</strong></summary>
+      <ul>
+        <li><b>07:00 / 12:00</b> Port meet (arrive 10 min early)</li>
+        <li><b>07:15 / 12:15</b> Registration & gear check</li>
+        <li><b>07:30</b> Depart; multilingual briefing</li>
+        <li><b>08:00–11:00</b> Two underwater photo sessions</li>
+        <li><b>11:00</b> Return to Naha (hot shower)</li>
+        <li><b>11:30</b> Finish (hotel drop if arranged)</li>
+      </ul>
+      <p><em>* No shampoo/body wash onboard (reef safety)</em></p>
+    </details>
+    <details>
+      <summary><strong>Full‑Day Schedule</strong></summary>
+      <ul>
+        <li><b>07:00</b> Port meet</li>
+        <li><b>07:15</b> Registration & gear check</li>
+        <li><b>07:30</b> Depart to Kerama marine park</li>
+        <li><b>08:00–11:30</b> Two photo dive sites</li>
+        <li><b>11:30</b> Light lunch onboard (bring your own)</li>
+        <li><b>12:30</b> Third photo session</li>
+        <li><b>14:00</b> Cruise back</li>
+        <li><b>15:00</b> Finish (sea conditions may alter timing)</li>
+      </ul>
+      <p><em>* Actual timing may shift with weather & traffic</em></p>
+    </details>
+    <h3>Included</h3>
+    <ul>
+      <li>Tax, boat, instructor, insurance, full gear, <a href="#" class="pickup-toggle" data-target="pickup-info-3">Naha transfer</a>, pro underwater photo (all files)</li>
+      <li>Not included: Lunch</li>
+    </ul>
+    <h3>Requirements</h3>
+    <ul>
+      <li>Hold a Mermaid or Freedive A1 (or equivalent) certification</li>
+      <li>Age 10–60 (guardian signature if minor)</li>
+      <li>Pass <a href="https://hank0729.github.io/dive2025/health.html" target="_blank">Health Self‑Check</a></li>
+    </ul>
+    <h3>Notes</h3>
+    <ul>
+      <li>Sites may change due to sea conditions—stay reachable.</li>
+      <li>No alcohol; no refund for voluntary withdrawal.</li>
+      <li>Read <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">Booking & Cancellation Policy</a>.</li>
+    </ul>
+    <h3>Recommended to Bring</h3>
+    <ul>
+      <li>Swimsuit / rash guard</li>
+      <li>Sandals, towel, change of clothes</li>
+    </ul>
+    <center style="margin-top:2rem;">
+      <h4>Re‑encounter the sea as a mermaid.</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/HE7VTN/order?step=1" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div style="padding:10px 25px; background:#005abe; color:#fff; font-size:16px; font-weight:bold; border-radius:6px; display:inline-block;">Book Now</div>
+      </a>
+    </center>
+    <div id="pickup-info-3" style="display:none; margin-top:1rem;">
+      <h3>Transfer Info</h3>
+      <p>Complimentary Naha city pick‑up & drop.</p>
+      <p>Solo friendly—no rental car required.</p>
+      <p>Self‑arrive? We send detailed directions & time.</p>
+      <p>Leave early for peak traffic; keep contact open.</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5: Freediving Experience -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" aria-label="Close">&times;</span>
+    <h2>Freediving Experience</h2>
+    <p class="intro">“With one breath, meet your purest self.”</p>
+    <center><img src="images/schedule5.jpg" alt="Freedive experience" /></center>
+    <p>Freediving is not a contest of holding breath or depth—it is a quiet dialogue between body, breath, and sea.<br>No prior diving or strong swimming ability needed. Release tension; let the water support you and discover trust in stillness.<br>At <b>RiShima Dive</b> you begin at the surface and gradually descend—perhaps sharing a moment with a sea turtle beneath beams of sun.</p>
+    <h3>Pricing Options</h3>
+    <select name="itinerary5" style="margin-bottom:.5rem; padding:.5rem;">
+      <option>Kerama Islands | Half Day 2 Dives | Boat ¥18,800</option>
+      <option>Kerama Islands | Full Day 3 Dives | Boat ¥20,800</option>
+    </select>
+    <p><small>Tax‑inclusive. No hidden fees.</small></p>
+    <details>
+      <summary><strong>Half‑Day Schedule</strong></summary>
+      <ul>
+        <li><b>07:00 / 12:00</b> Port meet (arrive 10 min early)</li>
+        <li><b>07:15 / 12:15</b> Registration & gear check</li>
+        <li><b>07:30 / 12:30</b> Depart (briefing on board)</li>
+        <li><b>08:00 / 13:00</b> Two freedive sites</li>
+        <li><b>11:00 / 16:00</b> Return to Naha (hot shower)</li>
+        <li><b>11:30 / 16:30</b> Finish / hotel drop</li>
+      </ul>
+      <p><em>* No shampoo/body wash onboard</em></p>
+    </details>
+    <details>
+      <summary><strong>Full‑Day Schedule</strong></summary>
+      <ul>
+        <li><b>07:00</b> Port meet</li>
+        <li><b>07:15</b> Registration & gear check</li>
+        <li><b>07:30</b> Depart for Kerama area (briefing)</li>
+        <li><b>08:00</b> Two sites (adjusted by comfort)</li>
+        <li><b>11:30</b> Light lunch onboard (BYO)</li>
+        <li><b>12:30</b> Third site</li>
+        <li><b>14:00</b> Return cruise</li>
+        <li><b>15:00</b> Finish / hotel drop</li>
+      </ul>
+      <p><em>* Actual timing may vary with sea & traffic</em></p>
+    </details>
+    <h3>Included</h3>
+    <ul>
+      <li>Tax, boat, instructor, insurance, full gear, <a href="#" class="pickup-toggle" data-target="pickup-info-4">Naha transfer</a>, professional photo (all files)</li>
+      <li>Not included: Lunch</li>
+    </ul>
+    <h3>Requirements</h3>
+    <ul>
+      <li>Age 10–60 (guardian signature if minor)</li>
+      <li>Pass <a href="https://hank0729.github.io/dive2025/health.html" target="_blank">Health Self‑Check</a></li>
+    </ul>
+    <h3>Notes</h3>
+    <ul>
+      <li>Schedule may adjust to weather/sea conditions.</li>
+      <li>No alcohol on activity day.</li>
+      <li>No refund for voluntary early exit.</li>
+      <li>Read <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">Booking & Cancellation Policy</a>.</li>
+    </ul>
+    <h3>Bring</h3>
+    <ul><li>Swimsuit, rash guard, sandals, towel, change of clothes</li></ul>
+    <center style="margin-top:2rem;">
+      <h4>Open your arms—let us guide you.</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/MILXQB/order?step=1" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div style="padding:10px 25px; background:#005abe; color:#fff; font-size:16px; font-weight:bold; border-radius:6px; display:inline-block;">Book Now</div>
+      </a>
+    </center>
+    <div id="pickup-info-4" style="display:none; margin-top:1rem;">
+      <h3>Transfer Info</h3>
+      <p>Complimentary pick‑up within Naha city.</p>
+      <p>Solo travelers welcome—no rental car required.</p>
+      <p>If self‑arriving, we will send meeting point & time.</p>
+      <p>Please depart early for traffic; keep contact open.</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6: Freedive Underwater Photography -->
+<div id="modal6" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" aria-label="Close">&times;</span>
+    <h2>Freedive Underwater Photography</h2>
+    <p class="intro">“More than diving—a deep reconnection with Okinawa’s sea.”</p>
+    <center><img src="images/自由潛水水中攝影(行程).JPEG" alt="Freedive photography" /></center>
+    <p>Sink quietly into blue: time slows; your heartbeat syncs with the sea.<br>This time <b>RiShima Dive</b> guides you back to that pure stillness. From the shore haven of Sunabe, to the light mosaics of the Blue Cave, to the translucent Kerama reefs—each breath‑hold becomes a new connection.<br>Sometimes you push limits; sometimes you simply remain suspended.<br>This journey is not for exams or cards—only for yourself.</p>
+    <h3>RiShima Dive Believes</h3>
+    <blockquote>When freediving returns to its origin, freedom truly returns.</blockquote>
+    <h3>Pricing Options</h3>
+    <select name="itinerary6" style="margin-bottom:.5rem; padding:.5rem;">
+      <option>Kerama Islands | Half Day 2 Dives | Boat ¥17,800</option>
+      <option>Kerama Islands | Full Day 3 Dives | Boat ¥19,800</option>
+    </select>
+    <p><small>Tax‑inclusive. No hidden fees.</small></p>
+    <details>
+      <summary><strong>Half‑Day Schedule</strong></summary>
+      <ul>
+        <li><b>07:00 / 12:00</b> Port meet (arrive 10 min early)</li>
+        <li><b>07:15 / 12:15</b> Registration & gear check</li>
+        <li><b>07:30 / 12:30</b> Depart to Kerama Marine Park (briefing)</li>
+        <li><b>08:00 / 13:00</b> First & second sessions (adjusted individually)</li>
+        <li><b>11:00 / 16:00</b> Return to Naha (hot shower)</li>
+        <li><b>11:30 / 16:30</b> Finish / hotel drop</li>
+      </ul>
+      <p><em>* No shampoo or soap onboard (reef care)</em></p>
+    </details>
+    <details>
+      <summary><strong>Full‑Day Schedule</strong></summary>
+      <ul>
+        <li><b>07:00</b> Port meet (arrive 10 min early)</li>
+        <li><b>07:15</b> Registration / gear check</li>
+        <li><b>07:30</b> Depart to Kerama marine park</li>
+        <li><b>08:00</b> First & second sessions (adaptive)</li>
+        <li><b>11:30</b> Light lunch onboard (BYO)</li>
+        <li><b>12:30</b> Third photography session</li>
+        <li><b>14:00</b> Return cruise</li>
+        <li><b>15:00</b> Finish (timing may vary)</li>
+      </ul>
+      <p><em>* Actual timing may shift due to weather/traffic</em></p>
+    </details>
+    <h3>Included</h3>
+    <ul>
+      <li>Tax, boat, instructor, insurance, full gear, <a href="#" class="pickup-toggle" data-target="pickup-info-5">Naha transfer</a>, pro photography (all photos + video)</li>
+      <li>Not included: Lunch</li>
+    </ul>
+    <h3>Requirements</h3>
+    <ul>
+      <li>Hold AIDA / PADI / Molchanovs freediving certification</li>
+      <li>Age 10–60 (guardian signature if minor)</li>
+      <li>Pass <a href="https://hank0729.github.io/dive2025/health.html" target="_blank">Health Self‑Check</a></li>
+    </ul>
+    <h3>Notes</h3>
+    <ul>
+      <li>Sites may change with sea conditions.</li>
+      <li>No alcohol; no refund for early withdrawal.</li>
+      <li>Read <a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank">Booking & Cancellation Policy</a>.</li>
+    </ul>
+    <h3>Bring</h3>
+    <ul><li>Swimsuit, rash guard, sandals, towel, change of clothes</li></ul>
+    <center style="margin-top:2rem;">
+      <h4>Sync with the ocean—and meet yourself again.</h4>
+      <a href="https://rishimadive.rezio.shop/widget/product/KODEOQ/order?step=1" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div style="padding:8px 25px; background:#005abe; color:#fff; font-size:14px; font-weight:bold; border-radius:5px; display:inline-block;">Book Now</div>
+      </a>
+    </center>
+    <div id="pickup-info-5" style="display:none; margin-top:1rem;">
+      <h3>Transfer Info</h3>
+      <p>Complimentary pick‑up within Naha city.</p>
+      <p>Solo travelers welcome.</p>
+      <p>Self‑arrive? We provide meeting map & time.</p>
+      <p>Depart early for traffic—stay reachable.</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+// Toggle pickup info blocks
+ document.querySelectorAll('.pickup-toggle').forEach(function(toggle){
+   toggle.addEventListener('click', function(e){
+     e.preventDefault();
+     const targetId = this.dataset.target;
+     const el = document.getElementById(targetId);
+     if(!el) return;
+     el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
+     el.scrollIntoView({ behavior:'smooth', block:'start'});
+   });
+ });
+</script>
+<script>
+// Modal open/close
+ $(function(){
+   $('.open-modal').on('click', function(e){ e.preventDefault(); const id = $(this).data('modal'); $('#'+id).fadeIn(200); });
+   $('.modal-close').on('click', function(){ $(this).closest('.modal').fadeOut(200); });
+   $('.modal').on('click', function(e){ if(e.target === this){ $(this).fadeOut(200); } });
+ });
+</script>
+</body>
+</html>
