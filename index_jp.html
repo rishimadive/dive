@@ -1,0 +1,364 @@
+<!-- index_jp.html -->
+
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <title>RiShima Dive</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 1rem auto;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .slides {
+            display: flex;
+            height: 100%;
+            transition: transform .5s ease-in-out;
+        }
+        .slide {
+            flex: 0 0 100%;
+            height: 100%;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        .carousel-nav button {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, .35);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+            cursor: pointer;
+            transition: background .3s ease, transform .3s ease;
+        }
+        .carousel-nav button:hover {
+            background: rgba(255, 255, 255, .6);
+            transform: scale(1.1);
+        }
+        .carousel-nav button:active {
+            transform: scale(.95);
+        }
+        .carousel-nav svg {
+            width: 1rem;
+            height: 1rem;
+            pointer-events: none;
+        }
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 0.75rem;
+            z-index: 10;
+        }
+        .dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index: 10;
+        }
+        .dots button {
+            all: unset;
+            display: block;
+            width: 0.7rem;
+            height: 0.7rem;
+            margin: 0 0.3rem;
+            background: rgba(255, 255, 255, .35);
+            backdrop-filter: blur(4px);
+            cursor: pointer;
+            transition: background .3s ease, transform .3s ease;
+        }
+        .dots button:hover {
+            background: rgba(255, 255, 255, .6);
+            transform: scale(1.25);
+        }
+        .dots button.active {
+            background: rgba(255, 255, 255, .9);
+            transform: scale(1.4);
+        }
+        .split.contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contact-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            width: 100%;
+        }
+        .social-icons {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .si {
+            display: inline-block;
+            width: 1.8rem;
+            height: 1.8rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, .35));
+            transition: transform .25s, filter .25s;
+        }
+        .si:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 6px rgba(0, 0, 0, .5));
+        }
+        .si.line { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg'); }
+        .si.instagram { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); }
+        .si.xiaohongshu { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg'); }
+        .si.wechat { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg'); }
+        .si.email { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg'); }
+
+        @media screen and (max-width: 736px) {
+            .contact-bar h2 { display: none; }
+            .contact-bar {
+                justify-content: center !important;
+                align-items: center;
+            }
+            .social-icons { margin: 0 auto; }
+        }
+
+        .language-switcher{
+            position:fixed;
+            top:1rem;
+            left:1rem;
+            z-index:2000;
+            user-select:none;
+        }
+        .lang-btn{
+            background:rgba(255,255,255,.6);
+            border:none;
+            font-size:1.4rem;
+            padding:.1rem .65rem;
+            border-radius:50%;
+            cursor:pointer;
+            backdrop-filter:blur(4px);
+            box-shadow:0 2px 8px rgba(0,0,0,.25);
+            transition:background .25s;
+        }
+        .lang-btn:hover{ background:rgba(255,255,255,.9); }
+
+        .lang-dropdown{
+            position:absolute;
+            top:0;
+            left:calc(100% + .4rem);
+            background:#fff;
+            border-radius:6px;
+            box-shadow:0 4px 12px rgba(0,0,0,.15);
+            list-style:none;
+            padding:.4rem 0;
+            display:none;
+        }
+        .lang-dropdown a{
+            display:block;
+            padding:.45rem 1.25rem;
+            color:#333;
+            text-decoration:none;
+            white-space:nowrap;
+            transition:background .2s;
+        }
+        .lang-dropdown a:hover{ background:#f2f2f2; }
+    </style>
+
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper" class="fade-in">
+
+    <!-- Intro -->
+    <div id="intro">
+        <p>あなたの海へ</p>
+        <h1>RiShima Dive</h1>
+        <p>あなた自身の海へ向かう旅</p>
+        <ul class="actions">
+            <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly" aria-label="続ける">続ける</a></li>
+        </ul>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="index_jp.html" class="logo">RiShima Dive</a>
+    </header>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn" aria-label="言語を切り替える">🌐</button>
+        <ul class="lang-dropdown">
+            <li><a href="index.html">繁體中文</a></li>
+            <li><a href="index_en.html">English</a></li>
+            <li><a href="index_jp.html">日本語</a></li>
+        </ul>
+    </div>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="links">
+            <li class="active"><a href="index_jp.html">ホーム</a></li>
+            <li><a href="detail.html">私たちについて</a></li>
+            <li><a href="traffic.html">ツアー紹介</a></li>
+            <li><a href="check.html">PADIコース紹介</a></li>
+            <li><a href="question.html">よくある質問</a></li>
+            <li><a href="https://hank0729.github.io/dive2025/cancel.html" target="_blank" rel="noopener noreferrer">予約手順と予約システム</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+        <!-- Featured Post -->
+        <article class="post featured">
+            <header class="major">
+                <span class="date">自然と一体になるひととき</span>
+                <h2><a href="#">RiShima Dive</a></h2>
+            </header>
+
+            <div class="carousel">
+                <div class="slides">
+                    <div class="slide"><img src="images/輪播.jpg" alt="スライド1"></div>
+                    <div class="slide"><img src="images/輪播(1).jpg" alt="スライド2"></div>
+                    <div class="slide"><img src="images/輪播＋自由潛水體驗.jpg" alt="スライド3 自由潜水体験"></div>
+                    <div class="slide"><img src="images/輪播＋自由潛水體驗(1).jpg" alt="スライド4 自由潜水体験"></div>
+                    <div class="slide"><img src="images/輪播＋慶良間浮潛行程.jpg" alt="スライド5 慶良間シュノーケル"></div>
+                    <div class="slide"><img src="images/輪播1.jpg" alt="スライド6"></div>
+                    <div class="slide"><img src="images/輪播+美人魚水中攝影.jpg" alt="スライド7 マーメイド水中撮影"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button id="prev" aria-label="前へ">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                    </button>
+                    <button id="next" aria-label="次へ">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="dots">
+                    <button data-index="0" class="active" aria-label="スライド1へ"></button>
+                    <button data-index="1" aria-label="スライド2へ"></button>
+                    <button data-index="2" aria-label="スライド3へ"></button>
+                    <button data-index="3" aria-label="スライド4へ"></button>
+                    <button data-index="4" aria-label="スライド5へ"></button>
+                    <button data-index="5" aria-label="スライド6へ"></button>
+                    <button data-index="6" aria-label="スライド7へ"></button>
+                </div>
+            </div>
+
+            <br><br>
+            <h2>RiShima Dive について</h2>
+            <p>「Ri」は琉球の古語で「海」を意味し、<br>「Shima」は紺碧に抱かれたその島を表します。</p>
+            <p>波がささやき、島とともに呼吸するとき、RiShima Dive は静かに生まれました。<br>
+                それはダイバーのための海の秘境であり、自然へ回帰する心の旅でもあります。</p>
+            <p>海に最も近いスタイルで、沖縄の最も澄んだブルーと最も静かな深淵へご案内します。<br>
+                ここでは陽光と波光のあいだで魚たちと舞い、<br>
+                サンゴの上で自分と海との対話を聴くことができます。</p>
+            <p>「琉嶋」という名は単なる呼び名ではなく一つの招待状。— すべての潜降を、あなたと海との最も深い結びつきに。</p>
+            <p>琉球の海は物語の始まり。<br>そしてあなたはその物語で最も輝く一頁となるでしょう。</p>
+            <ul class="actions stacked">
+                <li><a href="traffic.html" class="button primary fit">ツアーを見る</a></li>
+            </ul>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="contact-bar" style="padding-top: 50px;">
+            <h2>　　お問い合わせ</h2>
+            <div class="social-icons">
+                <a href="https://lin.ee/JWvtCOY" target="_blank" aria-label="LINE" class="si line"></a>
+                <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram" class="si instagram"></a>
+                <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource=" target="_blank" aria-label="小紅書 (RED)" class="si xiaohongshu"></a>
+                <a href="weixin://dl/chat?YUNYUNDIVE" aria-label="WeChat" class="si wechat"></a>
+                <a href="mailto:rishimadive@gmail.com" aria-label="メール" class="si email"></a>
+                <span>　　</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div id="copyright">
+        <ul><li>&copy; RiShima Dive 2025</li></ul>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+(function() {
+    const slides = document.querySelector('.carousel .slides');
+    const dots = document.querySelectorAll('.carousel .dots button');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let current = 0, total = dots.length;
+
+    function go(idx) {
+        slides.style.transform = `translateX(${-100*idx}%)`;
+        dots.forEach(d => d.classList.toggle('active', +d.dataset.index === idx));
+        current = idx;
+    }
+
+    prev.addEventListener('click', () => go((current - 1 + total) % total));
+    next.addEventListener('click', () => go((current + 1) % total));
+    dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.index)));
+
+    let timer = setInterval(() => go((current + 1) % total), 3000);
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => clearInterval(timer));
+    carousel.addEventListener('mouseleave', () => {
+        timer = setInterval(() => go((current + 1) % total), 3000);
+    });
+})();
+
+/* 言語切替ドロップダウン */
+(function(){
+    const switcher=document.querySelector('.language-switcher');
+    if(!switcher) return;
+    const btn=switcher.querySelector('.lang-btn');
+    const dropdown=switcher.querySelector('.lang-dropdown');
+
+    btn.addEventListener('click',e=>{
+        e.stopPropagation();
+        dropdown.style.display = dropdown.style.display==='block' ? 'none' : 'block';
+    });
+    document.addEventListener('click',()=>{ dropdown.style.display='none'; });
+})();
+</script>
+</body>
+</html>
