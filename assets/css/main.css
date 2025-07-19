@@ -4550,3 +4550,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     content: "－";
     transform: rotate(180deg);
   }
+
+          button{
+            box-shadow:inset 0px 0px 0px 0px #ffffff !important;
+        }
