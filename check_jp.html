@@ -1,0 +1,387 @@
+<!-- check_jp.html -->
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <title>RiShima Dive</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        html { scroll-behavior:smooth; }
+        .quick-nav { padding:10px; text-align:center; border-bottom:none !important; }
+        .quick-nav a { color:#aacbe2 !important; font-weight:bold !important; font-size:1rem !important; }
+        .quick-nav .button:hover { background-color:#005fa3 !important; }
+        .post { border-top:white !important; padding-top:100px !important; }
+        .date { margin-bottom:0 !important; }
+        .modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,.6); }
+        .modal-content { background:#fff; margin:8% auto; padding:30px 40px; border-radius:12px; width:90%; max-width:600px; box-shadow:0 8px 24px rgba(0,0,0,.2); font-family:'Helvetica Neue', Arial, sans-serif; color:#333; line-height:1.6; position:relative; }
+        .modal-content h2 { font-size:1.8rem; margin-bottom:.5em; color:#005fa3; border-bottom:2px solid #aacbe2; padding-bottom:.3em; }
+        .modal-content p.intro { font-style:italic; margin-bottom:1em; color:#555; }
+        .modal-content h3 { font-size:1.2rem; margin-top:1.5em; margin-bottom:.5em; color:#005fa3; }
+        .modal-content ul { margin-left:1.2em; list-style:disc; }
+        .modal-content select { width:100%; padding:10px; margin-bottom:.5em; border:1px solid #ccc; border-radius:6px; font-size:1rem; }
+        .modal-content small { display:block; margin-bottom:1em; color:#777; }
+        .modal-close { position:absolute; top:16px; right:1px; font-size:1.5rem; color:#aaa; background:none; border:none; cursor:pointer; z-index:10; }
+        .modal-close:hover { color:#333; }
+        .itinerary-table { width:100%; border-collapse:collapse; margin:.8rem 0 1.2rem; font-size:1rem; }
+        .itinerary-table th, .itinerary-table td { padding:.55rem .8rem; border:1px solid #ddd; text-align:left; }
+        .itinerary-table th { background:#f5f8fc; color:#005fa3; font-weight:600; }
+        .contact-bar { display:flex; justify-content:space-between; align-items:center; padding:.5rem 0; width:100%; }
+        .social-icons { display:flex; gap:.75rem; }
+        .si { display:inline-block; width:1.8rem; height:1.8rem; background-size:contain; background-repeat:no-repeat; background-position:center; filter:drop-shadow(0 0 3px rgba(0,0,0,.35)); transition:transform .25s, filter .25s; }
+        .si:hover { transform:scale(1.15); filter:drop-shadow(0 0 6px rgba(0,0,0,.5)); }
+        .si.line { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/line.svg'); }
+        .si.instagram { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); }
+        .si.xiaohongshu { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaohongshu.svg'); }
+        .si.wechat { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg'); }
+        .si.email { background-image:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg'); }
+        @media screen and (max-width:736px){ .contact-bar h2{display:none;} .contact-bar{justify-content:center !important;} .social-icons{margin:0 auto;} }
+        .pickup-toggle { color:#005abe; font-weight:bold; cursor:pointer; text-decoration:underline; }
+        .pickup-toggle:hover { color:#003d80; }
+    </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+    <header id="header">
+        <a href="index_jp.html" class="logo">RiShima Dive</a>
+    </header>
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="index_jp.html">ホーム</a></li>
+            <li><a href="detail_jp.html">私たちについて</a></li>
+            <li><a href="traffic_jp.html">ツアー紹介</a></li>
+            <li class="active"><a href="check_jp.html">PADIコース</a></li>
+            <li><a href="question_jp.html">よくある質問</a></li>
+            <li><a href="https://hank0729.github.io/dive2025/cancel_jp.html" target="_blank" rel="noopener noreferrer">予約規約・予約</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+        <section class="post">
+            <header class="major">
+                <h1>PADI マーメイドコース案内</h1>
+                <span class="date">自然に抱かれるコバルトブルーの旅</span>
+                <div class="quick-nav" style="padding-top:0; padding-bottom:10px;">
+                    <a href="#card1">PADI ディスカバー マーメイド</a>
+                    <a href="#card2">PADI ベーシック マーメイド</a>
+                    <a href="#card3">PADI マーメイド</a>
+                    <a href="#card4">PADI アドバンスド マーメイド</a>
+                </div>
+            </header>
+            <h4>太陽・ガラスのような海・マーメイドテール――沖縄がくれる三つの夢。</h4>
+            <p>沖縄は透明度の高い“ガラスの海”、眩しい日差し、多彩なサンゴ礁が揃う、アジア屈指のマリンフィールド。<br>RiShima Dive では、マーメイドに憧れるすべての方のために PADI マーメイド系統を段階的にご用意。<br>初めての体験から本格的なスキルアップ・資格取得まで、ゼロから夢の尾びれをまとい、本物の水中マーメイドへと進化していけます。<br>旅の特別な記念にも、将来のパフォーマンス / 指導の第一歩にも、ここがあなたの“はじまりの海”。</p>
+            <h4>“見る海” から “海の一部になる” へ――沖縄でその一歩を。</h4>
+            <br>
+            <div class="card-container">
+                <div class="card" id="card1">
+                    <h3>1. PADI ディスカバー マーメイド｜PADI Discover Mermaid</h3>
+                    <h4>沖縄に来たらまずはテールを履こう！夢の第一歩、未経験でも安心。</h4>
+                    <p>経験ゼロでOK。国際認定インストラクターが、専用テールの装着から基本のフロート、ドルフィンキックを丁寧にサポート。<br>浅いプールで安全・快適に“人間からマーメイドへ” の変化を体感します。<br>旅の思い出づくりにも、童話世界のプチ体験にも最適。<br><a class="open-modal" data-modal="modal1">→ 詳細を見る</a></p>
+                </div>
+                <br>
+                <div class="card" id="card2">
+                    <h3>2. PADI ベーシック マーメイド｜PADI Basic Mermaid</h3>
+                    <h4>体験から一歩前へ。沖縄の蒼で “基礎力” を固める。</h4>
+                    <p>呼吸コントロール、安定したフロート、方向転換、推進と軽い潜降など、体系立てて学ぶ入門資格コース。<br>自信を持ってテールを扱う感覚を養い、次のステップ “PADI Mermaid” への土台を築きます。<br><a class="open-modal" data-modal="modal2">→ 詳細を見る</a></p>
+                </div>
+                <br>
+                <div class="card" id="card3">
+                    <h3>3. PADI マーメイド｜PADI Mermaid</h3>
+                    <h4>沖縄の“ガラスの海” があなたのステージへ。</h4>
+                    <p>長距離キック、ホバリング（静止）、エレガントなターンなど高度な動作を強化し、環境適応やセルフマネジメントも習得。<br>資格取得後は、より表現力豊かな撮影やパフォーマンスに挑戦できるレベルへ。<br><a class="open-modal" data-modal="modal3">→ 詳細を見る</a></p>
+                </div>
+                <br>
+                <div class="card" id="card4">
+                    <h3>4. PADI アドバンスド マーメイド｜PADI Advanced Mermaid</h3>
+                    <h4>プロフェッショナル表現・指導・出演へのゲートを開く。</h4>
+                    <p>高度な水中姿勢・持久力・チームワーク・水中振付（コレオ）・撮影対応を包括的に磨く 2 日プログラム。<br>将来インストラクターや水中パフォーマーを目指す方の重要ステップ。<br><a class="open-modal" data-modal="modal4">→ 詳細を見る</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer id="footer">
+        <div class="contact-bar" style="padding-top:50px;">
+            <h2>　　お問い合わせ</h2>
+            <div class="social-icons">
+                <a href="https://lin.ee/JWvtCOY" target="_blank" aria-label="LINE" class="si line"></a>
+                <a href="https://www.instagram.com/diver_yunwei/" target="_blank" aria-label="Instagram" class="si instagram"></a>
+                <a href="https://www.xiaohongshu.com/user/profile/60158cfc0000000001003ecd?xhsshare=userQrCode&exSource=" target="_blank" aria-label="小紅書" class="si xiaohongshu"></a>
+                <a href="weixin://dl/chat?YUNYUNDIVE" aria-label="WeChat" class="si wechat"></a>
+                <a href="mailto:rishimadive@gmail.com" aria-label="Email" class="si email"></a>
+                <span>　　</span>
+            </div>
+        </div>
+    </footer>
+    <div id="copyright"><ul><li>&copy; RiShima Dive 2025</li></ul></div>
+</div>
+
+<!-- Modals -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="閉じる">&times;</button>
+    <h2>PADI ディスカバー マーメイド｜PADI Discover Mermaid</h2>
+    <img src="images/PADI 美人魚體驗行程.JPG" alt="ディスカバーマーメイド" style="width:100%; border-radius:8px; margin:1rem 0;" />
+    <p>沖縄に来たらまずは <strong>RiShima Dive</strong> でテールを履こう！<br>経験ゼロ歓迎。専任インストラクターが装備チェックから安全説明、基本動作まで丁寧にガイド。<br>浅いプールで安心・快適、旅の思い出にも最適です。</p>
+    <h3>コース概要</h3>
+    <ul>
+      <li><strong>所要時間：</strong> 半日</li>
+      <li><strong>場所：</strong> プール（足の着く水深）</li>
+      <li><strong>内容：</strong> ウォームアップ / テール着用 / 基本フロート / ドルフィンキック / 写真・動画撮影</li>
+      <li><strong>対象：</strong> まずは夢を形にしたい方 / 旅行の特別記念に</li>
+      <li><strong>推奨年齢：</strong> 10〜60 歳（未成年は保護者同意）</li>
+      <li><strong>インストラクター比：</strong> 1 : 2</li>
+    </ul>
+    <h3>スケジュール（午前 / 午後）</h3>
+    <table class="itinerary-table">
+      <tr><th>時間</th><th>内容</th></tr>
+      <tr><td><b>08:00 / 13:00</b></td><td>集合（10 分前到着）</td></tr>
+      <tr><td><b>08:15 / 13:15</b></td><td>書類・装備確認</td></tr>
+      <tr><td><b>08:30 / 13:30</b></td><td>説明（安全 / 動作 / 中英対応）</td></tr>
+      <tr><td><b>09:00</b></td><td>ウォームアップ</td></tr>
+      <tr><td><b>10:00</b></td><td>マーメイド基本練習 & 撮影</td></tr>
+      <tr><td><b>11:00</b></td><td>自由撮影・シェア</td></tr>
+      <tr><td><b>11:30 / 16:30</b></td><td>終了・更衣 / シャワー</td></tr>
+    </table>
+    <h3>料金</h3>
+    <p><strong>￥22,800（税込）</strong><br><small>表示は最終税込価格・追加料金なし</small></p>
+    <h3>料金に含まれるもの</h3>
+    <ul>
+      <li>インストラクター料 / プール使用料 / 保険 / フル装備 / <a href="#" class="pickup-toggle" data-target="pickup-info-1">那覇市内送迎</a> / 写真 & 動画データ</li>
+      <li>含まれない：昼食</li>
+    </ul>
+    <h3>参加条件</h3>
+    <ul>
+      <li>10〜60 歳（未成年は保護者同意）</li>
+      <li><a href="https://hank0729.github.io/dive2025/health_jp.html" target="_blank">健康セルフチェック</a> に適合すること（不可の場合は参加・返金不可）</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>天候等で前日変更の可能性あり / 連絡可能状態を維持</li>
+      <li>当日飲酒不可・途中離脱は返金不可</li>
+      <li>予約前に <a href="https://hank0729.github.io/dive2025/cancel_jp.html" target="_blank">予約規約・キャンセルポリシー</a> をご確認ください</li>
+    </ul>
+    <h3>持ち物</h3>
+    <p>水着 / ラッシュガード / サンダル / 着替え / タオル</p>
+    <h3 style="text-align:center; margin-top:2rem;">夢を“最初の一枚の写真”にしよう</h3>
+    <p style="text-align:center;">沖縄の水面があなたのスタートライン。</p>
+    <div style="text-align:center; margin-top:1rem;">
+      <a href="https://rishimadive.rezio.shop/widget/product/Y8JKBS/order?step=1" target="_blank" style="text-decoration:none;">
+        <div style="padding:8px 25px; background:#005abe; color:#fff; font-size:14px; font-weight:bold; border-radius:5px; display:inline-block;">今すぐ予約</div>
+      </a>
+    </div>
+    <div id="pickup-info-1" style="display:none; margin-top:1rem;">
+      <h3>送迎情報</h3>
+      <p>那覇市内は無料送迎対応。お一人参加でも交通の心配不要。</p>
+      <p>自走の場合は集合時間・場所を事前にご案内します。</p>
+      <p>朝夕の交通渋滞にご注意のうえ余裕を持ってお越しください。</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="閉じる">&times;</button>
+    <h2>PADI ベーシック マーメイド｜PADI Basic Mermaid</h2>
+    <img src="images/PADI 基礎人魚課程1.JPG" alt="ベーシックマーメイド" style="width:100%; border-radius:8px; margin:1rem 0;" />
+    <p>体験から “基礎力” へステップアップするための入門資格。<br>呼吸・浮力・方向転換・推進・軽い潜降の基本を体系的に習得し、次段階への自信を構築します。</p>
+    <h3>コース概要</h3>
+    <ul>
+      <li><strong>所要時間：</strong> 半日</li>
+      <li><strong>場所：</strong> プール</li>
+      <li><strong>内容：</strong> 装備の扱い / 安全基礎 / 基本スキル練習 / 写真撮影</li>
+      <li><strong>対象：</strong> 正式資格を取得したい・基礎を固めたい方</li>
+      <li><strong>推奨年齢：</strong> 10〜60 歳</li>
+      <li><strong>インストラクター比：</strong> 1 : 2</li>
+    </ul>
+    <h3>参考スケジュール（午前）</h3>
+    <table class="itinerary-table">
+      <tr><th>時間</th><th>内容</th></tr>
+      <tr><td><b>09:00</b></td><td>集合・装備説明</td></tr>
+      <tr><td><b>09:30</b></td><td>呼吸 & 浮力コントロール</td></tr>
+      <tr><td><b>10:00</b></td><td>ドルフィンキック練習</td></tr>
+      <tr><td><b>11:00</b></td><td>軽い潜降 / 応用</td></tr>
+      <tr><td><b>11:30</b></td><td>終了・シェア</td></tr>
+    </table>
+    <h3>料金</h3>
+    <p><strong>￥29,800（税込）</strong><br><small>最終税込価格・追加料金なし</small></p>
+    <h3>料金に含まれるもの</h3>
+    <ul>
+      <li>認定料 / 保険 / フル装備 / <a href="#" class="pickup-toggle" data-target="pickup-info-2">那覇市内送迎</a> / 写真</li>
+      <li>含まれない：昼食</li>
+    </ul>
+    <h3>参加条件</h3>
+    <ul>
+      <li>10〜60 歳（未成年は保護者同意）</li>
+      <li><a href="https://hank0729.github.io/dive2025/health_jp.html" target="_blank">健康セルフチェック</a> 適合必須</li>
+      <li>キャンセル時は規約に従い ¥21,000 を差し引いた金額を精算</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>天候・海況で前日変更の可能性</li>
+      <li>当日飲酒不可 / 途中離脱は返金不可</li>
+      <li>詳細は <a href="https://hank0729.github.io/dive2025/cancel_jp.html" target="_blank">キャンセルポリシー</a> を参照</li>
+    </ul>
+    <h3>持ち物</h3>
+    <p>水着 / ラッシュガード / サンダル / 着替え / タオル</p>
+    <h3 style="text-align:center; margin-top:2rem;">次のステージへ進む準備を。</h3>
+    <div style="text-align:center; margin-top:1rem;">
+      <a href="https://rishimadive.rezio.shop/widget/product/AYH2NE/order?step=1" target="_blank" style="text-decoration:none;">
+        <div style="padding:8px 25px; background:#005abe; color:#fff; font-size:14px; font-weight:bold; border-radius:5px; display:inline-block;">今すぐ予約</div>
+      </a>
+    </div>
+    <div id="pickup-info-2" style="display:none; margin-top:1rem;">
+      <h3>送迎情報</h3>
+      <p>那覇市内は無料送迎。</p>
+      <p>自走の場合は集合場所・時間を事前に案内。</p>
+      <p>交通渋滞に備え余裕を持って出発ください。</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="閉じる">&times;</button>
+    <h2>PADI マーメイド｜PADI Mermaid</h2>
+    <img src="images/PADI 美人魚課程.JPG" alt="マーメイドコース" style="width:100%; border-radius:8px; margin:1rem 0;" />
+    <p>“ガラスの海” をステージに、さらなる表現とコントロールを磨くステップ。<br>長距離推進、ホバリング、優雅なターン、環境適応、安全意識を統合して習得します。</p>
+    <h3>コース概要</h3>
+    <ul>
+      <li><strong>所要時間：</strong> 1 日</li>
+      <li><strong>場所：</strong> プール</li>
+      <li><strong>内容：</strong> 高度スキル / 表現練習 / 環境アダプト / 写真</li>
+      <li><strong>対象：</strong> Basic Mermaid 修了者で更に上達したい方</li>
+      <li><strong>推奨年齢：</strong> 10〜60 歳</li>
+      <li><strong>インストラクター比：</strong> 1 : 4</li>
+    </ul>
+    <h3>参考スケジュール（終日）</h3>
+    <table class="itinerary-table">
+      <tr><th>時間</th><th>内容</th></tr>
+      <tr><td><b>09:00</b></td><td>集合・オリエンテーション</td></tr>
+      <tr><td><b>09:30</b></td><td>長距離キック</td></tr>
+      <tr><td><b>10:30</b></td><td>ホバリング & コントロール</td></tr>
+      <tr><td><b>12:00</b></td><td>昼食休憩</td></tr>
+      <tr><td><b>13:00</b></td><td>ターン & 環境適応</td></tr>
+      <tr><td><b>15:00</b></td><td>Fun Dive 体験（¥4,000 割引）</td></tr>
+      <tr><td><b>16:00</b></td><td>修了 & 認定</td></tr>
+    </table>
+    <h3>料金</h3>
+    <p><strong>￥46,800（税込）</strong><br><small>追加費用なし / Fun Dive 追加で ¥4,000 割引</small></p>
+    <h3>料金に含まれるもの</h3>
+    <ul>
+      <li>認定料 / 保険 / 装備 / <a href="#" class="pickup-toggle" data-target="pickup-info-3">那覇市内送迎</a> / 写真</li>
+      <li>含まれない：昼食</li>
+    </ul>
+    <h3>参加条件</h3>
+    <ul>
+      <li>Basic Mermaid 修了</li>
+      <li>10〜60 歳（未成年は保護者同意）</li>
+      <li><a href="https://hank0729.github.io/dive2025/health_jp.html" target="_blank">健康セルフチェック</a> 適合必須</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>海況・天候で前日変更あり</li>
+      <li>当日飲酒不可・途中離脱返金なし</li>
+      <li>キャンセル時 ¥21,000 控除後精算</li>
+      <li><a href="https://hank0729.github.io/dive2025/cancel_jp.html" target="_blank">規約・ポリシー</a> 必読</li>
+    </ul>
+    <h3>持ち物</h3>
+    <p>水着 / ラッシュガード / サンダル / 着替え / タオル</p>
+    <div style="text-align:center; margin-top:1.2rem;">
+      <a href="https://rishimadive.rezio.shop/widget/product/AYH2NE/order?step=1" target="_blank" style="text-decoration:none;">
+        <div style="padding:8px 25px; background:#005abe; color:#fff; font-size:14px; font-weight:bold; border-radius:5px; display:inline-block;">今すぐ予約</div>
+      </a>
+    </div>
+    <div id="pickup-info-3" style="display:none; margin-top:1rem;">
+      <h3>送迎情報</h3>
+      <p>那覇市内無料送迎 / 自走時は事前案内。</p>
+      <p>渋滞を考慮し早めの出発を推奨。</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="閉じる">&times;</button>
+    <h2>PADI アドバンスド マーメイド｜PADI Advanced Mermaid</h2>
+    <img src="images/PADI 進階美人魚課程.JPG" alt="アドバンスドマーメイド" style="width:100%; border-radius:8px; margin:1rem 0;" />
+    <p>沖縄の“ガラスの海” を舞台に、表現 / 指導 / パフォーマンスへの扉を開く 2 日間。<br>高度な姿勢制御・持久力・水中振付・チームワーク・撮影対応などを統合し、プロを目指す基盤を築きます。</p>
+    <h3>コース概要</h3>
+    <ul>
+      <li><strong>所要時間：</strong> 2 日</li>
+      <li><strong>場所：</strong> 1 日目プール / 2 日目オープンウォーター</li>
+      <li><strong>内容：</strong> 高度ドルフィンキック / コレオ構成 / 協調動作 / 撮影対応</li>
+      <li><strong>対象：</strong> Mermaid 修了で更に専門性を高めたい方</li>
+      <li><strong>推奨年齢：</strong> 12〜60 歳</li>
+      <li><strong>インストラクター比：</strong> 1 : 4</li>
+    </ul>
+    <h3>参考スケジュール（2 日間）</h3>
+    <table class="itinerary-table">
+      <tr><th>時間</th><th>内容</th></tr>
+      <tr><td><b>Day1 09:00‑12:00</b></td><td>プール高度スキル</td></tr>
+      <tr><td><b>Day1 13:00‑16:00</b></td><td>水中振付基礎</td></tr>
+      <tr><td><b>Day2 08:00‑11:00</b></td><td>海洋実践</td></tr>
+      <tr><td><b>Day2 11:30‑13:00</b></td><td>撮影対応 / 表現強化</td></tr>
+      <tr><td><b>Day2 14:00‑16:00</b></td><td>修了セレモニー & 認定</td></tr>
+    </table>
+    <h3>料金</h3>
+    <p><strong>￥68,000（税込）</strong><br><small>追加費用なし / 2 日目ボートダイブ変更 +¥6,000 / Fun Dive 追加で ¥4,000 割引</small></p>
+    <h3>料金に含まれるもの</h3>
+    <ul>
+      <li>認定料 / 保険 / 装備 / <a href="#" class="pickup-toggle" data-target="pickup-info-4">那覇市内送迎</a> / 写真</li>
+      <li>含まれない：昼食</li>
+    </ul>
+    <h3>参加条件</h3>
+    <ul>
+      <li>PADI Mermaid 修了</li>
+      <li>12〜60 歳（未成年は保護者同意）</li>
+      <li><a href="https://hank0729.github.io/dive2025/health_jp.html" target="_blank">健康セルフチェック</a> 適合必須（不適合は参加・返金不可）</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>海況・天候で変更あり</li>
+      <li>当日飲酒不可 / 途中離脱返金不可</li>
+      <li>キャンセル時 ¥21,000 控除後精算</li>
+      <li><a href="https://hank0729.github.io/dive2025/cancel_jp.html" target="_blank">規約</a> を必ず確認</li>
+    </ul>
+    <h3>持ち物</h3>
+    <p>水着 / ラッシュガード / サンダル / 着替え / タオル</p>
+    <div style="text-align:center; margin-top:1.2rem;">
+      <a href="https://rishimadive.rezio.shop/widget/product/AYH2NE/order?step=1" target="_blank" style="text-decoration:none;">
+        <div style="padding:8px 25px; background:#005abe; color:#fff; font-size:14px; font-weight:bold; border-radius:5px; display:inline-block;">今すぐ予約</div>
+      </a>
+    </div>
+    <div id="pickup-info-4" style="display:none; margin-top:1rem;">
+      <h3>送迎情報</h3>
+      <p>那覇市内無料送迎 / 自走時は事前案内。</p>
+      <p>交通状況により時間変動あり。余裕を持って集合。</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=12KHNUhkFuLIzN2DXl0SF9vAnzZwX9Lo&ehbc=2E312F" width="520" height="480"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  document.querySelectorAll('.open-modal').forEach(btn=>{
+    btn.addEventListener('click',()=>{ document.getElementById(btn.dataset.modal).style.display='block'; });
+  });
+  document.querySelectorAll('.modal-close').forEach(btn=>{
+    btn.addEventListener('click',()=>{ btn.closest('.modal').style.display='none'; });
+  });
+  window.addEventListener('click',e=>{ if(e.target.classList.contains('modal')) e.target.style.display='none'; });
+  document.querySelectorAll('.pickup-toggle').forEach(t=>{
+    t.addEventListener('click',e=>{ e.preventDefault(); const id=t.dataset.target; const el=document.getElementById(id); if(el){ el.style.display=(el.style.display==='none'||!el.style.display)?'block':'none'; el.scrollIntoView({behavior:'smooth', block:'start'}); } });
+  });
+</script>
+</body>
+</html>
